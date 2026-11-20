@@ -791,6 +791,17 @@ svg.dsvg.zoomed:active{cursor:grabbing}
 @media (max-width:820px){.gmore{grid-template-columns:1fr}}
 .gmore dl{margin:0 0 10px;font-size:14.5px;line-height:1.5}.gmore dt{color:var(--bone);font-weight:600;margin-top:6px}.gmore dd{margin:2px 0 0;color:var(--text)}
 .gmore ul,.gmore ol{margin:4px 0 10px;padding-left:20px;font-size:14.5px;line-height:1.55}.gmore li{margin:3px 0}
+
+/* deeper walkthroughs */
+.tmore{margin:8px 0 4px;border-left:2px solid #7FB3E0;padding-left:10px}
+.tmb{all:unset;cursor:pointer;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#7FB3E0}
+.tmore p{display:none;margin:6px 0 0;font-size:14px;color:var(--text);line-height:1.55}.tmore.open p{display:block}
+.tdots{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 2px}
+.tdot{all:unset;cursor:pointer;width:10px;height:10px;border-radius:50%;border:1px solid var(--brass);background:transparent}
+.tdot.past{background:rgba(210,174,99,.45)}.tdot.on{background:var(--brass);transform:scale(1.3)}
+.tdeep{display:flex;gap:6px;align-items:center;margin-top:8px;font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.tfaq .tq{border-bottom:1px solid rgba(42,66,98,.5);padding:6px 0}.tfaq summary{cursor:pointer;color:var(--bone);font-size:15px}
+.tfaq .tq p{margin:6px 0 4px;font-size:14.5px;line-height:1.55}.tqm{font-size:13.5px;color:var(--muted);margin:10px 0 0}
 </style>
 </head>
 <body>
@@ -2468,6 +2479,221 @@ pcSvg:{steps:[["p:40,150","Domains","Lanes are domains."],["p:440,305","A hundre
  how:{see:[["Dots","Moves."]],ctl:[["Run","Days."]],d:["Run.","Step.","Score yourself."],mis:["Treating it as fixed."],team:["Which moves did we skip?"]},
  ch:[["Run to day 100.",/day 100/i,"Run the hundred days.",["▶ Run the hundred days"]]]}};
 
+/* ================= DEEPER WALKTHROUGHS AND QUESTIONS · THE CYNEFIN FIELD KIT ================= */
+/* steps: [target, title, text, act, more] · faq: [[q, a]] */
+function DEEPMODEL(name,xl,yl,warn,desc,cell,rx){return {steps:[
+["p:315,240","The "+name+" domain model","A three-by-three model of one Cynefin domain, from Snowden’s v45º work.",null,desc],
+["p:315,418","The horizontal axis","Across the bottom: "+xl+", from low on the left to high on the right.",null,"Each column is a level of "+xl+". Read the column first: it tells you how much of that dimension is present in the appointment."],
+["p:22,201","The vertical axis","Up the side: "+yl+", from low at the bottom to high at the top.",null,"Each row is a level of "+yl+". A cell is where a column and a row meet: a particular combination of the two."],
+["p:315,206","The centre cell","The middle of the model.",null,"The centre is usually where most appointments begin or settle. It is the balanced state from which movement in any direction is possible."],
+["p:315,96","The line of coherence","The gold cells form the line of coherence.",null,"On the line, the two dimensions are in step: the domain is working as it should. Off the line, one dimension has run ahead of the other."],
+["p:205,96","Warnings","Red cells are warnings: "+warn+".",null,"Warnings are not failures yet. They are states from which failure is likely if nothing changes. Receivers meet them constantly."],
+["p:425,316","Management action","Blue marks a cell where deliberate action is called for.",null,"These are the cells where a receiver should intervene rather than wait: "+cell+"."],
+["c:Rotate 45º","Rotate 45º","Rotate the model to the v45º view.","do","Rotated, the line of coherence runs level. Snowden turned each model this way so that the four models could be stepped and joined on one sheet."],
+["c:Trace a path","Trace a path","Trace an appointment’s path through the cells.",null,"Tap the cells in the order the appointment passed through them. The panel counts how many steps sit on the line of coherence and which warnings you crossed."],
+["c:▶ Run all nine","Run all nine","Or run through all nine cells.",null,"Each cell appears with its receivership scenario in the panel: a short case of what that state looks like on a parade in receivership."],
+["panel","The panel","The panel explains the cell, its receivership scenario and the colour key.",null,"Read the scenario against your own appointment. Which cell are you in, and which way are you moving?"]],
+faq:[["Why rotate the model?","So the line of coherence runs level; it lets the four models be stepped and joined on the v45º sheet."],["What does ‘off the line’ mean?","One dimension has run ahead of the other: the domain is out of balance, and some kind of correction is likely to be needed."],["Can an appointment be in two cells?","Different parts of it can. Decompose the appointment and place each part."],["Where do these models come from?","Snowden’s v45º work on the Cynefin domain models, as set out in the Cynefin wiki."]],ch:rx}}
+var DEEP6={
+sheet:{steps:[
+["p:400,260","The v45º sheet","Four domain models, each rotated forty-five degrees and stepped so that each overlaps the next.",null,"The sheet is Snowden’s way of showing that the domains are not boxes side by side but connected states with transitions between them."],
+["p:150,216","Complex","Bottom left: the complex domain.",null,"Where cause and effect can only be seen in retrospect, and practice is emergent. Many appointments start here, whatever the file says."],
+["p:330,156","Complicated","A step up: complicated.",null,"Where experts can analyse the situation, and good practice exists. A valuation or a lease review lives here."],
+["p:510,96","Clear","At the top: clear.",null,"Where best practice applies and the answer is obvious to everyone. Rent collection routines, statutory notices."],
+["p:668,246","Chaotic","Chaotic sits off the sheet, below the cliff.",null,"No cause and effect can be found in time. A fire, a collapse, a sudden insolvency: act first, then sense."],
+["p:232,314","Step up","Arrows marked ‘step up’ show movement towards order.",null,"Moving up the sheet means adding constraint: turning a pattern that has emerged into practice. Done too early, it fixes the wrong pattern."],
+["p:640,166","The catastrophic collapse","The red arrow from clear into chaos.",null,"The fold: complacency in best practice tips suddenly into chaos. It is the most dangerous movement on the sheet, and it often begins in routine."],
+["p:400,440","Step down","From chaos back to complex.",null,"Recovery from chaos is not straight back to order. It goes through the complex domain, where new patterns are allowed to form."],
+["c:▶ Play the path","Play the path","Play a typical path across the sheet.","do","Watch where the path steps up, where it collapses and where it recovers."],
+["c:Slope view","Slope view","Switch to the slope view.",null,"A 3D impression of the sheet as a landscape: the cliff edge becomes visible as a drop."],
+["panel","Reading each step","The panel names each step of the path.",null,"Use it to describe your last appointment’s journey in the framework’s own terms."]],
+faq:[["Is up the sheet better?","No. Each domain suits different problems; forcing complex problems into order is a common failure."],["Why is chaos off the sheet?","It is not a state anyone chooses to be in; it is where you fall."],["What is the fold?","The catastrophic collapse from clear to chaotic, usually through complacency."]]},
+m_clear:DEEPMODEL("Clear","compliance enforcement","attitude of actors","complacency, gaming and the cliff edge","The Clear domain is where best practice applies. Its model shows the tension between how hard rules are enforced and how people respond to them.","confronting gaming with impact, and confronting cynicism with evidence",null),
+m_complicated:DEEPMODEL("Complicated","strategic focus","engagement","premature engagement and narrowing in a small room","The Complicated domain is where experts analyse. Its model shows the tension between how focused the strategy is and how widely people are engaged in it.","closing down options while widening engagement",null),
+m_complex:DEEPMODEL("Complex","level of coherence (evidence)","degree of consensus","group think and orthodoxy without evidence","The Complex domain is where patterns emerge from probes. Its model shows the tension between how much evidence supports a view and how widely it is shared.","exaptation at the edge of chaos, and listening to heretics and mavericks",null),
+m_chaotic:DEEPMODEL("Chaotic","awareness of the shift into chaos","ability to impose constraints","here be dragons, and death and rebirth","The Chaotic domain is where you must act to create stability. Its model shows the tension between how aware you are of the shift and how much you can constrain it.","managed innovation, and pulling back to think again",null),
+drSvg:{steps:[
+["p:137,12","Drift, month by month","A best-practice routine, followed for thirty-six months.",null,"The routine starts in Clear. The question the chart asks is whether anyone is still watching it work."],
+["p:117,218","Clear best practice","The safe zone at the bottom.",null,"Drift near zero: the routine is being checked and adjusted."],
+["p:341,218","Complacency","The middle zone.",null,"Drift rising: the routine still works, nobody is looking, and weak signals go unnoticed."],
+["p:685,30","The fold","The line at the top.",null,"Cross it and the routine collapses into chaos: the insurance lapses, the fire door is wedged, the arrears spiral."],
+["p:390,430","Months","The time axis, 0 to 36.",null,"Collapse rarely comes early. It comes after a long run of things apparently working."],
+["#drA","Attention","How closely people still watch the routine.",null,"Attention catches weak signals before they accumulate."],
+["#drS","Signal strength","How loud the weak signals are.",null,"Quiet signals need more attention to catch."],
+["c:Neglectful","A preset","Load Neglectful.","do","It runs immediately: low attention, and the line climbs."],
+["c:Compare all three","Compare","Compare all three presets.",null,"Same building, same thirteen failures, same luck. Only the settings differ, so the difference is attention."],
+["c:The way back","The way back","Try the way back.",null,"Recovering from complacency is possible, but slower than falling into it."],
+["panel","Weak signals","The panel counts signals caught and missed.",null,"Each missed signal pushes the drift on. Each caught one pulls it back."]],
+faq:[["What is a weak signal?","A small sign that a routine is no longer working: a missed inspection, a late report, a tenant complaint."],["Why does collapse come late?","Because the routine keeps working while drift accumulates, until it doesn’t."],["Does vigilance mean more checks?","No: it means people still looking at what the checks show."]]},
+vaSvg:{steps:[
+["p:490,32","The value scale","Possible values for the parade, £1.5m to £3m.",null,"A wide scale on purpose: experts on different bases can disagree by a third or more."],
+["p:83,60","Five experts","Each row is one expert.",null,"RICS valuer, local agent, auctioneer, building surveyor, investment agent: each on their own basis."],
+["p:467,91","A range","Each bar is that expert’s range.",null,"The width shows their uncertainty; the position shows their basis."],
+["p:608,384","The loan","The dashed line is the loan balance.",null,"£2.4m. Anchoring is the pull of this figure on everyone’s judgement."],
+["p:416,366","Spread and common ground","Below: the overall spread and median.",null,"A wide spread means the figure is not knowable yet: the problem is complex. A narrow one means it is complicated or clear."],
+["c:Honest independent","Independent","Load honest independent readings.","do","The spread is wide: it reads as complex. Probe the market."],
+["c:Anchored on the loan","Anchored","Now anchored on the loan.",null,"The figures converge near £2.4m. It reads as complicated, with a warning: false consensus."],
+["c:Next challenge","Ritual dissent","Apply ritual dissent, one challenge at a time.",null,"Each challenge removes an assumption, such as a clean fire-safety position. Watch the ranges drop and widen."],
+["c:RICS Registered","Experts","Add or remove experts.",null,"Remove experts until the panel reads clear: that is how false confidence is manufactured."],
+["panel","The reading","The panel says which domain the figure is in and what to do.",null,"Complex: probe the market. Complicated: commission the right expert on the right basis. Clear: list at the common figure."]],
+faq:[["What is ritual dissent?","A structured challenge to a view, one point at a time, from Cynefin practice."],["Why is convergence a warning?","When figures converge on the loan rather than on evidence, entrained thinking makes a complex question look clear."],["Is this a valuation?","No: figures are illustrative."]]},
+prSvg:{steps:[
+["p:470,22","Twelve weeks","Weeks 0 to 12, with checkpoints at 4 and 8.",null,"Probes run in parallel. At each checkpoint you amplify what shows promise and dampen what doesn’t."],
+["p:441,200","Lanes","Each chosen probe runs as a lane.",null,"A probe is a small, safe-to-fail experiment that tests a hypothesis about the parade."],
+["c:Suggested portfolio","Suggested portfolio","Load the suggested portfolio.","do","Eight probes for about £31k."],
+["panel","Eight tests","The panel checks the portfolio.",null,"Coherent, safe-to-fail, varied, contradictory, cheap enough, and more. A good portfolio passes all eight."],
+["c:Big bet","Big bet","Load Big bet.",null,"A full refurbishment is not a probe: it fails every test. It is a bet on one hypothesis."],
+["c:Too safe","Too safe","Load Too safe.",null,"All low-risk probes: it fails variety. Nothing could surprise you."],
+["c:▶ Run","Run","Run the portfolio.",null,"At week 4 the run pauses for you to amplify or dampen."],
+["c:Auto: amplify above","Amplify and dampen","Use auto, or tap lanes yourself.",null,"Amplify the lanes rising above the line; dampen those below."],
+["panel","Twelve weeks on","The panel names the emerging pattern.",null,"Adopt it carefully, only once the system shows strong signs of stability, and keep a few contrary probes running."]],
+faq:[["What makes a probe safe-to-fail?","If it fails, the appointment can absorb the cost and learn from it."],["Why include contradictory probes?","So you can tell which hypothesis is true, rather than confirming one."],["Is waiting for the market a probe?","No: it tests nothing."]]},
+ctSvg:{steps:[
+["p:380,250","The building","Shops on the ground floor, flats above, roof void at the top.",null,"An occupied block in receivership: the receiver has duties to the people in it."],
+["p:380,420","The fire","A fire starts in one space, chosen by the seed.",null,"Each hour it can spread to connected spaces."],
+["p:380,300","The stair core","The central stair connects the floors.",null,"A hub: secure it and the fire spreads more slowly."],
+["c:You command","You command","Command it yourself.","do","Two actions an hour."],
+["p:380,300","Act","Click a space to secure it, or a burning one to fight it.",null,"Then press Next hour. In chaos you cannot wait for the full picture."],
+["c:Act first: fight the fire","Act first","Try the act-first strategy.",null,"Acting before the picture was clear buys time to sense it: often contained in the first hour."],
+["c:Wait for full information","Wait","Try waiting for full information.",null,"No action until hour 3. By then the fire has spread."],
+["c:Compare all strategies","Compare","Compare all strategies.",null,"Act, sense, respond: the chaotic domain’s decision model."],
+["panel","The log","The panel keeps the log, affected spaces and displaced people.",null,"Use New seed to try a different fire."]],
+faq:[["Why act before knowing?","In chaos, the cost of waiting is greater than the cost of a wrong first move."],["Which spaces are hubs?","The stair core, plant room and lift shaft connect most spaces."],["Does acting first always win?","No: try several seeds."]]},
+fw:{steps:[
+["p:105,45","Complex","Top left.",null,"Enabling constraints; probe, sense, respond; emergent practice."],
+["p:560,45","Complicated","Top right.",null,"Governing constraints; sense, analyse, respond; good practice."],
+["p:101,300","Chaotic","Bottom left.",null,"No effective constraints; act, sense, respond; novel practice."],
+["p:466,300","Clear","Bottom right.",null,"Fixed constraints; sense, categorise, respond; best practice."],
+["p:380,242","Aporetic","The centre, upper part.",null,"Knowing that you don’t know: a deliberate state of suspension before deciding."],
+["p:380,280","Confused","The centre, lower part.",null,"Not knowing which domain you are in, and not knowing that you don’t know."],
+["p:292,12","The liminal line","A boundary zone through all but Clear.",null,"Where a situation is between domains, and choices about constraint matter most."],
+["p:446,488","The catastrophic fold","Between Clear and Chaotic.",null,"The cliff."],
+["c:Constraints","Lenses","Switch lenses.","do","Constraints, practice, decision model, examples, receivership."],
+["c:Receivership","The receivership lens","Read the domains for receivership.",null,"What each domain looks like on an appointment."],
+["p:105,45","Tap a domain","Tap any domain.",null,"The panel gives its full reading: constraints, practice, decision model, example."]],
+faq:[["What defines a domain?","The kind of constraint: fixed, governing, enabling, or none."],["What is aporetic?","A knowing state of not-knowing, held on purpose."],["Is the framework a matrix?","No: domains are not quadrants on axes."]]},
+histSvg:{steps:[
+["p:50,120","1999","The first reference.",null,"A CBI publication."],
+["p:248,186","2007","A leader’s framework.",null,"The HBR article that made it widely known."],
+["p:314,120","2013","v45º.",null,"The domain models."],
+["p:446,120","2017","Liminality.",null,"The liminal line."],
+["p:512,186","2019–20","The aporetic turn.",null,"The centre redefined."],
+["c:▶ Play the history","Play","Play the history.","do","Each age in turn."],
+["panel","Each moment","The panel tells each story.",null,"Note which changes matter most for receivers."]],
+faq:[["Why does the history matter?","Different versions are in use; knowing which you learned avoids confusion."],["What are the ages?","Snowden’s periods of the framework’s development."]]},
+itSvg:{steps:[
+["p:380,300","The drawing","The framework as drawn at each iteration.",null,"Eight iterations from 2000."],
+["p:105,46","Names","Domain names change.",null,"Knowable became complicated; known became simple, then obvious, then clear."],
+["c:▶ Play the history","Play","Play the iterations.","do","Watch the drawing change."],
+["c:Cause and effect","Lenses","Read through three aspects.",null,"Cause and effect, practice, decision model."],
+["panel","What changed","The panel explains each change.",null,"And why it mattered."]],
+faq:[["Why did the names change?","To avoid implying that ordered domains are easy or simple."],["Which iteration is current?","The last one in the sequence."]]},
+nightSvg:{steps:[
+["p:110,170","Domains","Rows: clear, complicated, complex, chaotic.",null,"The incident moves between them."],
+["p:180,326","23:10","The alarm.",null,"Chaotic: act."],
+["p:407,326","09:00","Next morning.",null,"Complicated: convene experts."],
+["p:634,326","Month 2","Weeks later.",null,"Complex: probe."],
+["c:▶ Play the night","Play","Play the night.","do","Watch the path."],
+["c:Show the receivership translation","Translation","Show the receivership reading.",null,"What the receiver does at each moment."],
+["panel","What to do","The panel says what each moment calls for.",null,"Different domains, different decision models, one incident."]],
+faq:[["Why does the domain change?","As stability returns, more can be known and analysed."],["What’s the commonest mistake?","Staying in command mode after the chaos has passed."]]},
+mlSvg:{steps:[
+["p:117,106","Bars","The share of work machines can carry.",null,"Illustrative: machine and human percentages per domain."],
+["p:105,49","Complex","Humans lead; machines detect.",null,"Machines can spot emerging patterns; humans interpret."],
+["p:507,106","Complicated","Machines assist.",null,"Analysis can be shared."],
+["p:507,394","Clear","Automate, with oversight.",null,"Routine work."],
+["p:117,394","Chaotic","Human authority.",null,"Machines monitor."],
+["c:Role","Lenses","Switch lenses.","do","Role, decision model, what machines can and cannot do."],
+["c:▶ Tour the domains","Tour","Tour the domains.",null,"Ends at the centre, where humans are foundational."]],
+faq:[["Can complex work be automated?","Detection can be; judgement cannot."],["Why are humans foundational at the centre?","Because deciding which domain applies is a judgement of context."]]},
+csSvg:{steps:[
+["p:157,54","We can change it","Top.",null,"Constraints the receiver controls."],
+["p:190,428","Only others can","Bottom.",null,"Law, lender policy, planning."],
+["p:410,466","Controllability","Left to right.",null,"How far each can be changed."],
+["c:▶ Run the method","Run","Run the seven steps.","do","Typology, identification, controllability, and more."],
+["c:Fixed / governing / enabling","Typologies","Colour by type.",null,"Fixed and governing for order; enabling for complexity."],
+["panel","Each step","The panel explains each step.",null,"Map your own appointment’s constraints."]],
+faq:[["Are constraints bad?","No: they make coherence possible."],["What is an enabling constraint?","One that allows patterns to form without fixing them."]]},
+esSvg:{steps:[
+["p:405,476","Time to change","Across.",null,"How long a change would take."],
+["p:30,250","Energy to change","Up.",null,"How much effort it would need."],
+["p:238,110","Action zone","Bottom left.",null,"Cheap and quick to change."],
+["p:440,44","Counterfactual","Top right.",null,"For now, nothing changes here."],
+["c:▶ Run the method","Run","Run estuarine mapping.","do","Eight steps."],
+["c:Clear micro-projects","Micro-projects","Show micro-projects.",null,"Small changes in the action zone."]],
+faq:[["What is an actant?","Anything that acts in the system, human or not."],["Why a counterfactual line?","To stop wasting effort on what cannot change now."]]},
+phaseSvg:{steps:[
+["p:400,200","The curve","Order against applied constraint.",null,"Like water freezing."],
+["p:216,296","Latent heat","Flat stretches.",null,"Energy goes in; nothing visible changes."],
+["#phaseR","Constraint","Slide.","do","Watch the domain change."],
+["c:▶ Climb to order","Climb","Climb to clear.",null,"Each phase shift needs a latent stretch."],
+["c:Collapse","The fold","Collapse.",null,"Sudden, unlike the climb."]],
+faq:[["Why do changes stall?","Latent heat: effort is building but not yet visible."],["Why is collapse sudden?","The fold is a cliff, not a slope."]]},
+dyn:{steps:[
+["p:380,260","Movement","Lines between domains.",null,"Position matters less than direction."],
+["c:Blue line","Blue","Play the blue line.","do","It settles."],
+["c:Red line","Red","Play red.",null,"It breaks false stability."],
+["c:Purple line","Purple","Play purple.",null,"It never settles."],
+["p:380,103","Inflection points","α β γ δ.",null,"Tap to read each."]],
+faq:[["What does each colour mean?","Three typical patterns of movement."],["Where do I see this?","In how appointments move over months."]]},
+classic:{steps:[
+["p:380,260","Ten movements","After Kurtz and Snowden (2003).",null,"Named in today’s domain names."],
+["c:Collapse","Collapse","Choose collapse.","do","Clear into chaos."],
+["c:Swarming","Swarming","Choose swarming.",null,"Patterns form from chaos."],
+["c:▶ Play all ten","Play","Play all ten.",null,"Each with a receivership reading."]],
+faq:[["Are these rules?","No: recognisable patterns."],["Which is commonest?","Collapse through complacency."]]},
+apSvg:{steps:[
+["p:380,136","Held in the centre","The appointment in aporia.",null,"Deliberately not yet assigned to a domain."],
+["c:Decompose","Decompose","Decompose.","do","Split the appointment into parts."],
+["c:Recompose","Recompose","Recompose.",null,"Join parts differently."],
+["c:Exapt","Exapt","Exapt.",null,"Use something for a new purpose."],
+["c:Shallow dive","Shallow dive","A shallow dive.",null,"A bounded dip into chaos to break entrainment."]],
+faq:[["Why hold the appointment in aporia?","To resist the first diagnosis."],["What is exaptation?","Repurposing something for a function it wasn’t designed for."]]},
+ptSvg:{steps:[
+["p:380,222","The parade","Units along Station Road.",null,"Managing emergence rather than designing outcomes."],
+["c:1 · Set boundaries","Step 1","Set boundaries.","do","What is in and out."],
+["c:2 · Introduce catalytic probes","Step 2","Catalytic probes.",null,"Small starts."],
+["c:3 · Identify attractors","Step 3","Attractors.",null,"What draws activity."],
+["c:▶ Run the party","Run","Run all six.",null,"Amplify, monitor, intervene."]],
+faq:[["Why a party?","Snowden’s metaphor: you can’t design a good party, only set it up."],["What is an attractor?","Something that draws people and activity."]]},
+crSvg:{steps:[
+["p:150,320","Assess","Chaotic.",null,"Orient; act quickly."],
+["p:310,320","Adapt","Complex.",null,"Probe."],
+["p:630,320","Transcend","Complicated.",null,"Build lasting change."],
+["p:615,30","Incidents","Click any.",null,"What happens in each phase."],
+["c:▶ Run the crisis","Run","Run the crisis.","do","Watch control loosen."]],
+faq:[["Why loosen control?","Draconian constraints early, relaxed later."],["What is exapt here?","Using crisis capabilities for new purposes."]]},
+tpSvg:{steps:[
+["p:430,58","Markers","Ordered, complex, chaotic.",null,"Three points of tension."],
+["p:380,300","Items","Fifteen numbered items.",null,"Drag each."],
+["c:Draw the boundaries","Boundaries","Draw boundaries.","do","From the clusters."],
+["c:Reference placement","Reference","See a reference.",null,"Compare with yours."]],
+faq:[["Why drag rather than sort?","To place by tension, not category."],["What is the reference?","One reasonable placement."]]},
+lsSvg:{steps:[
+["p:380,37","Getting paid","Top corner.",null,"Stories about money."],
+["p:139,441","Being safe","Bottom left.",null,"Stories about safety."],
+["p:615,441","Being heard","Bottom right.",null,"Stories about voice."],
+["p:380,523","Tone","Below.",null,"Too slow to too hasty."],
+["c:▶ Show the shift","Shift","Show the shift.","do","Month 1 to month 6."],
+["c:Resident","Filter","Filter by group.",null,"Read one group."]],
+faq:[["What is a micro-narrative?","A short story signified by its teller."],["Why patterns first?","So no single story dominates."]]},
+runSvg:{steps:[
+["p:380,260","Sixty-one scenarios","Placed on the framework.",null,"Model cells, liminal, aporetic, lines, steps, classic."],
+["c:▶ Run every scenario","Run","Run all.","do","Watch them placed."],
+["c:Liminal","Filter","Filter.",null,"One type."]],
+faq:[["What are the scenarios?","Short receivership cases."],["Can I speed it up?","Yes: Speed."]]},
+jSvg:{steps:[
+["p:380,260","A journey","One appointment across the framework.",null,"Six steps."],
+["c:▶ Play journey","Play","Play.","do","Watch it move."],
+["panel","Each step","The panel explains.",null,"From aporetic to clear."]],
+faq:[["Is this typical?","One plausible journey."],["Can I step?","Yes: Step."]]},
+pcSvg:{steps:[
+["p:40,150","Lanes","Domains.",null,"Where each move sits."],
+["p:440,305","Days","0 to 100.",null,"The first hundred days."],
+["c:▶ Run the hundred days","Run","Run.","do","Thirteen moves."]],
+faq:[["Must I follow it?","No: a protocol to adapt."],["Where do the moves come from?","Every instrument in the treatise."]]}};
+(function(){Object.keys(DEEP6).forEach(function(id){if(!TOUR[id])return;var d=DEEP6[id];TOUR[id].steps=d.steps;TOUR[id].faq=d.faq})})();
+
 (function(){
 "use strict";
 var NS="http://www.w3.org/2000/svg";
@@ -3387,37 +3613,40 @@ function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(
 function saveFile(fn,data,type){function plain(){var blob=new Blob([data],{type:type||"text/plain"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=fn;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
  if(window.claude&&typeof window.claude.use==="function"){window.claude.use("downloads").then(function(dl){if(dl)return dl.save({filename:fn,data:data});plain()}).catch(function(){plain()})}else plain()}
 /* ================= TOURS, LABELS, CHALLENGES, NOTES, FULL HOW-TO ================= */
-(function(){var DONE=store("fcr6-ch")||{},NOTES=store("fcr6-notes")||{};var cur=null;
+(function(){var DONE=store("fcr6-ch")||{},NOTES=store("fcr6-notes")||{};var cur=null,DEEPON=!!store("fcr6-deep"),DEMO=false,dT=0;
  function norm(t){return String(t||"").replace(/^[▶⚡↺✎⌖★]\s*/,"").trim().toLowerCase()}
  function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
  function ctlIn(sec,lab,grid){var l=norm(lab);function f(root){return $$("button",root).filter(function(b){return !b.closest(".tourbar,.guide,.revs,.deckbar,.atlasbar,.tpanel,.tkey")&&norm(b.textContent).indexOf(l)===0})[0]||null}return (grid&&f(grid))||f(sec)}
- function resolve(id,t){var svg=$("#"+id),sec=svg.closest("section"),grid=svg.closest(".dgrid");if(t.indexOf("p:")===0){var a=t.slice(2).split(",");return {svg:svg,pt:[+a[0],+a[1]]}}if(t.indexOf("c:")===0)return {el:ctlIn(sec,t.slice(2),grid)};if(t==="panel")return {el:$(".panelx",grid)||$(".panelx",sec)};if(t==="hist")return {el:$(".runhist",sec)};return {el:$(t)}}
+ function resolve(id,t){var svg=$("#"+id),sec=svg.closest("section"),grid=svg.closest(".dgrid");if(t.indexOf("p:")===0){var a=t.slice(2).split(",");return {svg:svg,pt:[+a[0],+a[1]]}}if(t.indexOf("c:")===0)return {el:ctlIn(sec,t.slice(2),grid)};if(t==="panel")return {el:$(".panelx",grid)||$(".panelx",sec)};if(t==="hist")return {el:$(".runhist",sec)||sec.querySelector('[id$="Hist"]')};return {el:$(t)}}
  function ptRect(svg,p){var m=svg.getScreenCTM();if(!m)return null;var q=svg.createSVGPoint();q.x=p[0];q.y=p[1];var r=q.matrixTransform(m);return {left:r.x-14,top:r.y-14,right:r.x+14,bottom:r.y+14,width:28,height:28}}
  /* ---- the tour ---- */
  var call=H("div",{class:"tcall",hidden:"",role:"dialog","aria-live":"polite"},null,document.body);var ring=null,hl=null,raf=0,waitOff=null;
  function clearHl(){if(ring){ring.remove();ring=null}if(hl){hl.classList.remove("tour-hl");hl=null}if(waitOff){waitOff();waitOff=null}}
  function place(){if(!cur)return;var st=TOUR[cur.id].steps[cur.k],r=resolve(cur.id,st[0]);var rect=r.pt?ptRect(r.svg,r.pt):r.el?r.el.getBoundingClientRect():null;
   if(innerWidth<700||!rect){call.style.left="8px";call.style.right="8px";call.style.top="auto";call.style.bottom="8px";call.classList.add("tdock");call.classList.remove("tup","tdown");return}
-  call.classList.remove("tdock");call.style.right="auto";call.style.bottom="auto";var w=Math.min(380,innerWidth-24);call.style.width=w+"px";var h=call.offsetHeight;var below=rect.bottom+14+h<innerHeight;var top=below?rect.bottom+12:Math.max(8,rect.top-h-12);var left=Math.max(12,Math.min(innerWidth-w-12,rect.left+rect.width/2-w/2));
+  call.classList.remove("tdock");call.style.right="auto";call.style.bottom="auto";var w=Math.min(440,innerWidth-24);call.style.width=w+"px";var h=call.offsetHeight;var below=rect.bottom+14+h<innerHeight;var top=below?rect.bottom+12:Math.max(8,rect.top-h-12);var left=Math.max(12,Math.min(innerWidth-w-12,rect.left+rect.width/2-w/2));
   top=Math.max(8,Math.min(top,innerHeight-h-8));call.style.top=top+"px";call.style.left=left+"px";call.classList.toggle("tdown",below);call.classList.toggle("tup",!below);call.style.setProperty("--ax",Math.max(16,Math.min(w-16,rect.left+rect.width/2-left))+"px")}
  function loop(){place();raf=requestAnimationFrame(loop)}
  function show(){clearHl();var T=TOUR[cur.id],st=T.steps[cur.k],r=resolve(cur.id,st[0]);var target=r.pt?r.svg.closest(".dgrid")||r.svg:r.el;
   if(r.pt){ring=S("g",{class:"tring",style:"pointer-events:none"},r.svg);S("circle",{cx:r.pt[0],cy:r.pt[1],r:18,fill:"none",stroke:"#D2AE63","stroke-width":3},ring);S("circle",{cx:r.pt[0],cy:r.pt[1],r:4,fill:"#D2AE63"},ring)}else if(r.el){hl=r.el;hl.classList.add("tour-hl")}
   if(target){var tr=target.getBoundingClientRect();if(tr.top<90||tr.bottom>innerHeight-40)scrollToEl(r.pt?r.svg:target)}
   var last=cur.k===T.steps.length-1,act=st[3]==="do"&&r.el;
-  call.innerHTML='<div class="tchead"><span class="tcn">'+(cur.k+1)+' / '+T.steps.length+'</span><b>'+esc(st[1])+'</b><button type="button" class="tcx" data-tx aria-label="End the tour">✕</button></div><p>'+st[2]+'</p>'+(act?'<p class="tcdo">Your turn: '+(r.el.tagName==="INPUT"?"move it":"press it")+'. The tour moves on when you do.</p>':'')+'<div class="tcbar"><button type="button" class="chip" data-tb'+(cur.k?"":" disabled")+'>◀ Back</button>'+(act&&r.el.tagName!=="INPUT"?'<button type="button" class="chip" data-tdo>Do it for me</button>':'')+'<button type="button" class="chip play" data-tn>'+(last?"Finish ✓":"Next ▶")+'</button></div>';
-  call.hidden=false;if(act){var ev=r.el.tagName==="INPUT"?"input":"click";var fn=function(){setTimeout(function(){if(cur&&TOUR[cur.id].steps[cur.k]===st)next()},r.el.tagName==="INPUT"?1200:900)};r.el.addEventListener(ev,fn,{once:true});waitOff=function(){r.el.removeEventListener(ev,fn)}}
+  var more=st[4];var dots=T.steps.map(function(x,i){return '<button type="button" class="tdot'+(i===cur.k?' on':'')+(i<cur.k?' past':'')+'" data-tj="'+i+'" title="'+esc(x[1])+'" aria-label="Step '+(i+1)+': '+esc(x[1])+'"></button>'}).join("");
+  call.innerHTML='<div class="tchead"><span class="tcn">'+(DEMO?'DEMO · ':'')+(cur.k+1)+' / '+T.steps.length+'</span><b>'+esc(st[1])+'</b><button type="button" class="tcx" data-tx aria-label="End the tour">✕</button></div><p>'+st[2]+'</p>'+(more?'<div class="tmore'+(DEEPON?' open':'')+'"><button type="button" class="tmb" data-tm>'+(DEEPON?'▾':'▸')+' Go deeper</button><p>'+more+'</p></div>':'')+(act&&!DEMO?'<p class="tcdo">Your turn: '+(r.el.tagName==="INPUT"?"move it":"press it")+'. The tour moves on when you do.</p>':'')+'<div class="tdots">'+dots+'</div><div class="tcbar"><button type="button" class="chip" data-tb'+(cur.k?"":" disabled")+'>◀ Back</button>'+(act&&!DEMO&&r.el.tagName!=="INPUT"?'<button type="button" class="chip" data-tdo>Do it for me</button>':'')+(DEMO?'<button type="button" class="chip" data-tpause>❚❚ Pause demo</button>':'')+'<button type="button" class="chip play" data-tn>'+(last?"Finish ✓":"Next ▶")+'</button></div><label class="tdeep"><input type="checkbox" data-tdeep'+(DEEPON?' checked':'')+'> Always show deeper notes</label>';
+  clearTimeout(dT);if(DEMO){if(act&&r.el.tagName!=="INPUT")dT=setTimeout(function(){if(cur&&TOUR[cur.id].steps[cur.k]===st)r.el.click()},1600);dT=setTimeout(function(){if(cur&&DEMO&&TOUR[cur.id].steps[cur.k]===st)next()},(more&&DEEPON?9000:6500)+(act?2500:0))}
+  call.hidden=false;if(act&&!DEMO){var ev=r.el.tagName==="INPUT"?"input":"click";var fn=function(){setTimeout(function(){if(cur&&TOUR[cur.id].steps[cur.k]===st)next()},r.el.tagName==="INPUT"?1200:900)};r.el.addEventListener(ev,fn,{once:true});waitOff=function(){r.el.removeEventListener(ev,fn)}}
   cancelAnimationFrame(raf);setTimeout(loop,reduce?0:350)}
  function next(){if(!cur)return;if(cur.k<TOUR[cur.id].steps.length-1){cur.k++;show()}else end()}
- function end(){clearHl();cancelAnimationFrame(raf);call.hidden=true;if(cur){var b=$('.tourbar[data-for="'+cur.id+'"] [data-tour]');if(b)b.setAttribute("aria-pressed","false")}cur=null}
- call.addEventListener("click",function(e){if(e.target.closest("[data-tx]"))end();else if(e.target.closest("[data-tn]"))next();else if(e.target.closest("[data-tb]")){cur.k=Math.max(0,cur.k-1);show()}else if(e.target.closest("[data-tdo]")){var st=TOUR[cur.id].steps[cur.k],r=resolve(cur.id,st[0]);if(r.el)r.el.click()}});
+ function end(){clearTimeout(dT);DEMO=false;clearHl();cancelAnimationFrame(raf);call.hidden=true;if(cur){var b=$('.tourbar[data-for="'+cur.id+'"] [data-tour]');if(b)b.setAttribute("aria-pressed","false")}cur=null}
+ call.addEventListener("change",function(e){if(e.target.matches("[data-tdeep]")){DEEPON=e.target.checked;store("fcr6-deep",DEEPON);show()}});
+ call.addEventListener("click",function(e){var j=e.target.closest("[data-tj]");if(j){DEMO=false;cur.k=+j.getAttribute("data-tj");show();return}if(e.target.closest("[data-tm]")){var m=e.target.closest(".tmore");m.classList.toggle("open");e.target.closest("[data-tm]").textContent=(m.classList.contains("open")?"▾":"▸")+" Go deeper";return}if(e.target.closest("[data-tpause]")){DEMO=false;clearTimeout(dT);show();return}if(e.target.closest("[data-tx]"))end();else if(e.target.closest("[data-tn]"))next();else if(e.target.closest("[data-tb]")){cur.k=Math.max(0,cur.k-1);show()}else if(e.target.closest("[data-tdo]")){var st=TOUR[cur.id].steps[cur.k],r=resolve(cur.id,st[0]);if(r.el)r.el.click()}});
  document.addEventListener("keydown",function(e){if(!cur)return;if(e.key==="Escape")end();else if(e.key==="ArrowRight"&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))next();else if(e.key==="ArrowLeft"&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)&&cur.k){cur.k--;show()}});
- function start(id){end();cur={id:id,k:0};var b=$('.tourbar[data-for="'+id+'"] [data-tour]');if(b)b.setAttribute("aria-pressed","true");show()}
+ function start(id,demo){end();DEMO=!!demo;cur={id:id,k:0};var b=$('.tourbar[data-for="'+id+'"] [data-tour]');if(b)b.setAttribute("aria-pressed","true");show()}
  /* ---- per instrument ---- */
  Object.keys(TOUR).forEach(function(id){var svg=$("#"+id);if(!svg)return;var T=TOUR[id],sec=svg.closest("section"),grid=svg.closest(".dgrid");if(!grid)return;
   var bar=H("div",{class:"tourbar","data-for":id});var anchor=grid;while(anchor.previousElementSibling&&anchor.previousElementSibling.matches(".dtools,.prpick,.stepper,.tabs"))anchor=anchor.previousElementSibling;anchor.parentNode.insertBefore(bar,anchor);
-  var nCh=T.ch.length;bar.innerHTML='<span class="tbl">New here?</span><button type="button" class="chip play" data-tour aria-pressed="false">▶ Walk me through it · '+T.steps.length+' steps</button><button type="button" class="chip" data-lab aria-pressed="false">⌖ Label the diagram</button><button type="button" class="chip" data-ch aria-pressed="false">★ Challenges <b class="tchc">0/'+nCh+'</b></button><button type="button" class="chip" data-nt aria-pressed="false">✎ My notes</button>';
-  var chBox=H("div",{class:"tpanel tchal",hidden:""}),ntBox=H("div",{class:"tpanel tnotes",hidden:""});bar.parentNode.insertBefore(chBox,bar.nextSibling);bar.parentNode.insertBefore(ntBox,chBox.nextSibling);
+  var nCh=T.ch.length;bar.innerHTML='<span class="tbl">New here?</span><button type="button" class="chip play" data-tour aria-pressed="false">▶ Walk me through it · '+T.steps.length+' steps</button><button type="button" class="chip" data-demo>▶ Watch a demo</button><button type="button" class="chip" data-lab aria-pressed="false">⌖ Label the diagram</button><button type="button" class="chip" data-faq aria-pressed="false">? Common questions</button><button type="button" class="chip" data-ch aria-pressed="false">★ Challenges <b class="tchc">0/'+nCh+'</b></button><button type="button" class="chip" data-nt aria-pressed="false">✎ My notes</button>';
+  var chBox=H("div",{class:"tpanel tchal",hidden:""}),ntBox=H("div",{class:"tpanel tnotes",hidden:""});bar.parentNode.insertBefore(chBox,bar.nextSibling);bar.parentNode.insertBefore(ntBox,chBox.nextSibling);var fqBox=H("div",{class:"tpanel tfaq",hidden:""});bar.parentNode.insertBefore(fqBox,ntBox.nextSibling);fqBox.innerHTML='<span class="tkh">Common questions</span>'+(T.faq||[]).map(function(q){return '<details class="tq"><summary>'+esc(q[0])+'</summary><p>'+q[1]+'</p></details>'}).join("")+'<p class="tqm">Still stuck? Press <b>▶ Walk me through it</b>, or open <b>How to use this diagram</b> above.</p>';
   /* labels */
   var pins=null,key=null;function labels(on){if(pins){pins.remove();pins=null}if(key){key.remove();key=null}$("[data-lab]",bar).setAttribute("aria-pressed",on);if(!on)return;pins=S("g",{class:"tpins",style:"pointer-events:none"},svg);var n=0,items=[];
    T.steps.forEach(function(st){if(st[0].indexOf("p:")===0){n++;var a=st[0].slice(2).split(",");var g=S("g",null,pins);S("circle",{cx:+a[0],cy:+a[1],r:11,fill:"#D2AE63",stroke:"#0C1726","stroke-width":2},g);S("text",{x:+a[0],y:+a[1]+4,"text-anchor":"middle",fill:"#0C1726",style:"font:700 11px var(--mono)"},g).textContent=n;items.push('<li><span class="kn">'+n+'</span><span><b>'+esc(st[1])+'.</b> '+st[2]+'</span></li>')}else items.push('<li><span class="kn kc">⏵</span><span><b>'+esc(st[1])+'.</b> '+st[2]+'</span></li>')});
@@ -3431,7 +3660,7 @@ function saveFile(fn,data,type){function plain(){var blob=new Blob([data],{type:
   ntBox.innerHTML='<span class="tkh">My notes on this instrument · kept in this browser</span><textarea rows="4" placeholder="What did you notice? What does it say about your own appointment?"></textarea><div class="tnb"><button type="button" class="chip" data-dl>Download all my notes</button><span class="tns"></span></div>';var ta=$("textarea",ntBox);ta.value=NOTES[id]||"";var st0=0;ta.addEventListener("input",function(){NOTES[id]=ta.value;clearTimeout(st0);st0=setTimeout(function(){store("fcr6-notes",NOTES);$(".tns",ntBox).textContent="Saved"},400)});
   $("[data-dl]",ntBox).addEventListener("click",function(){var md="# My notes on the instruments\n\nFrom The Cynefin Field Kit for Fixed Charge Receiverships\n\n"+Object.keys(TOUR).filter(function(k){return NOTES[k]&&NOTES[k].trim()}).map(function(k){return "## "+GUIDE[k].n+"\n\n"+NOTES[k].trim()+"\n"}).join("\n");saveFile("my-instrument-notes.md",md,"text/markdown")});
   function tog(box,btn){var o=box.hidden;box.hidden=!o;$(btn,bar).setAttribute("aria-pressed",o)}
-  bar.addEventListener("click",function(e){if(e.target.closest("[data-tour]")){cur&&cur.id===id?end():start(id)}else if(e.target.closest("[data-lab]"))labels(!pins);else if(e.target.closest("[data-ch]"))tog(chBox,"[data-ch]");else if(e.target.closest("[data-nt]"))tog(ntBox,"[data-nt]")});
+  bar.addEventListener("click",function(e){if(e.target.closest("[data-demo]")){start(id,true);return}if(e.target.closest("[data-faq]")){tog(fqBox,"[data-faq]");return}if(e.target.closest("[data-tour]")){cur&&cur.id===id?end():start(id)}else if(e.target.closest("[data-lab]"))labels(!pins);else if(e.target.closest("[data-ch]"))tog(chBox,"[data-ch]");else if(e.target.closest("[data-nt]"))tog(ntBox,"[data-nt]")});
   RESETS.push(function(){labels(false);if(cur&&cur.id===id)end()});
   /* fuller how-to inside the guide */
   var gd=GUIDE_EL[id],hw=T.how;if(gd&&hw){var more=H("div",{class:"gmore"},'<div class="gcol"><h4>Reading the diagram</h4><dl>'+hw.see.map(function(x){return '<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>'}).join("")+'</dl><h4>The controls</h4><dl>'+hw.ctl.map(function(x){return '<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>'}).join("")+'</dl></div><div class="gcol"><h4>Three ways to use it</h4><ol class="gdepth"><li><b>One minute.</b> '+hw.d[0]+'</li><li><b>Five minutes.</b> '+hw.d[1]+'</li><li><b>Fifteen minutes.</b> '+hw.d[2]+'</li></ol><h4>Common misreadings</h4><ul>'+hw.mis.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><h4>Questions for your team</h4><ul>'+hw.team.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><p><button type="button" class="chip play" data-gtour>▶ Walk me through it</button> <button type="button" class="chip" data-glab>⌖ Label the diagram</button></p></div>');$(".gbody",gd).appendChild(more);
