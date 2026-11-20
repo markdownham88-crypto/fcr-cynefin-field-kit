@@ -6,9 +6,9 @@
 <title>The Cynefin Field Kit for Fixed Charge Receiverships</title>
 <meta name="description" content="The Cynefin v45º domain models, the five-domain framework, liminality, the aporetic turn and every dynamic, applied scenario by scenario to fixed charge receivership. A field treatise by Mark Downham FRICS FNARA RPR.">
 <meta name="author" content="Mark Downham">
-<link rel="canonical" href="https://markdownham88-crypto.github.io/fcr-cynefin-45/">
+<link rel="canonical" href="https://markdownham88-crypto.github.io/fcr-cynefin-field-kit/">
 <meta property="og:type" content="article"><meta property="og:title" content="The Cynefin Field Kit for Fixed Charge Receiverships">
-<meta property="og:url" content="https://markdownham88-crypto.github.io/fcr-cynefin-45/">
+<meta property="og:url" content="https://markdownham88-crypto.github.io/fcr-cynefin-field-kit/">
 <meta name="theme-color" content="#0C1726">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -752,6 +752,45 @@ details.guide[open]>summary::before{transform:rotate(90deg)}
 .kbhint{font:500 11px var(--mono);color:var(--muted);border:1px dotted var(--line);padding:4px 7px;cursor:help;margin-left:4px}
 svg.dsvg.zoomed{cursor:grab}
 svg.dsvg.zoomed:active{cursor:grabbing}
+
+/* tours, labels, challenges, notes */
+.tourbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 10px;padding:10px 12px;border:1px dashed rgba(210,174,99,.5);background:rgba(210,174,99,.04)}
+.tourbar .tbl{font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-right:4px}
+.tourbar .chip[aria-pressed="true"]{border-color:var(--brass);background:rgba(210,174,99,.16);color:var(--bone)}
+.tchc{font-weight:600;color:var(--brass)}.tchc.all{color:#8FC79A}
+.tpanel{margin:0 0 12px;padding:12px 16px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.tpanel[hidden],.tcall[hidden]{display:none!important}
+.tkh{display:block;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.tchal ul{list-style:none;margin:0;padding:0}.tchal li{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(42,66,98,.5);font-size:14.5px;line-height:1.5}
+.tchal li b{font-weight:500;color:var(--text)}.tchal li.ok b{color:#8FC79A}
+.tck{font:600 15px var(--mono);color:var(--muted);min-width:18px}.tchal li.ok .tck{color:#8FC79A}
+.tch-hint{all:unset;cursor:pointer;margin-left:10px;font:500 11px var(--mono);color:var(--brass);border-bottom:1px dotted var(--brass)}
+.tch-h{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
+.tnotes textarea{width:100%;box-sizing:border-box;background:#0F1D31;border:1px solid var(--line);color:var(--text);padding:10px;font:inherit;font-size:14.5px;line-height:1.5;resize:vertical}
+.tnb{display:flex;gap:12px;align-items:center;margin-top:8px}.tns{font:500 11px var(--mono);color:#8FC79A}
+.tkey{margin:12px 0 4px;padding:12px 16px;border:1px solid rgba(210,174,99,.45);background:rgba(210,174,99,.04)}
+.tkey ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
+@media (max-width:760px){.tkey ol{grid-template-columns:1fr}}
+.tkey li{font-size:14px;line-height:1.5;display:flex;gap:8px}.tkey li b{color:var(--bone)}
+.kn{flex:0 0 22px;height:22px;border-radius:50%;background:var(--brass);color:#0C1726;font:700 11px var(--mono);display:inline-flex;align-items:center;justify-content:center}
+.kn.kc{background:transparent;border:1px solid var(--brass);color:var(--brass)}
+.tring circle:first-child{animation:tpulse 1.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes tpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.35)}}
+.tour-hl{outline:3px solid var(--brass)!important;outline-offset:3px;box-shadow:0 0 0 6px rgba(210,174,99,.18)!important;position:relative;z-index:2}
+.tcall{position:fixed;z-index:80;background:#13243B;border:1px solid var(--brass);padding:12px 14px 12px;box-shadow:0 14px 40px rgba(0,0,0,.55);color:var(--text);font-size:14.5px;line-height:1.55}
+.tcall::before{content:"";position:absolute;left:var(--ax,30px);width:12px;height:12px;background:#13243B;border-left:1px solid var(--brass);border-top:1px solid var(--brass);transform:translateX(-6px) rotate(45deg)}
+.tcall.tdown::before{top:-7px}.tcall.tup::before{bottom:-7px;transform:translateX(-6px) rotate(225deg)}.tcall.tdock::before{display:none}
+.tcall.tdock{position:fixed;width:auto!important}
+.tchead{display:flex;gap:10px;align-items:baseline}.tchead b{flex:1;font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--bone,#EDE6D6)}
+.tcn{font:500 11px var(--mono);color:var(--brass)}.tcx{all:unset;cursor:pointer;color:var(--muted);font-size:16px;padding:0 4px}
+.tcall p{margin:6px 0}.tcdo{color:#8FC79A;font-size:13.5px}
+.tcbar{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.ttoast{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:90;background:#13243B;border:1px solid #8FC79A;color:#8FC79A;padding:10px 16px;font:500 13px var(--mono);box-shadow:0 10px 30px rgba(0,0,0,.5);transition:opacity .6s}
+.ttoast.go{opacity:0}
+.gmore{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:10px;padding-top:14px;border-top:1px dashed var(--line)}
+@media (max-width:820px){.gmore{grid-template-columns:1fr}}
+.gmore dl{margin:0 0 10px;font-size:14.5px;line-height:1.5}.gmore dt{color:var(--bone);font-weight:600;margin-top:6px}.gmore dd{margin:2px 0 0;color:var(--text)}
+.gmore ul,.gmore ol{margin:4px 0 10px;padding-left:20px;font-size:14.5px;line-height:1.55}.gmore li{margin:3px 0}
 </style>
 </head>
 <body>
@@ -788,6 +827,7 @@ svg.dsvg.zoomed:active{cursor:grabbing}
       <a href="https://markdownham88-crypto.github.io/fcr-complex-responsive-process/" target="_blank" rel="noopener"><span>IV</span>Fixed Charge Receiverships using Complex Responsive Processes</a>
       <a href="https://markdownham88-crypto.github.io/framing-complex-problems-fcr/" target="_blank" rel="noopener"><span>V</span>Framing Complex Problems: A Way of Doing Fixed Charge Receiverships</a>
       <a href="#top" class="here"><span>VI</span>The Cynefin Field Kit for Fixed Charge Receiverships</a>
+      <a href="https://markdownham88-crypto.github.io/fcr-inside-out-thinking/" target="_blank" rel="noopener"><span>VII</span>Doing Fixed Charge Receiverships using a Complex Approach to Inside-Out Thinking</a>
     </div>
     <div class="series par" aria-label="The parallel lending series">
       <span class="caps">The parallel lending series</span>
@@ -1301,6 +1341,7 @@ svg.dsvg.zoomed:active{cursor:grabbing}
     <a href="https://markdownham88-crypto.github.io/fcr-complex-responsive-process/"><span>IV</span>Fixed Charge Receiverships using Complex Responsive Processes</a>
     <a href="https://markdownham88-crypto.github.io/framing-complex-problems-fcr/"><span>V</span>Framing Complex Problems: A Way of Doing Fixed Charge Receiverships</a>
     <a href="#top" class="here"><span>VI</span>The Cynefin Field Kit for Fixed Charge Receiverships</a>
+      <a href="https://markdownham88-crypto.github.io/fcr-inside-out-thinking/" target="_blank" rel="noopener"><span>VII</span>Doing Fixed Charge Receiverships using a Complex Approach to Inside-Out Thinking</a>
   </div>
   <div class="series par" aria-label="The parallel lending series" style="margin:0 0 40px">
     <span class="caps">The parallel lending series</span>
@@ -2295,6 +2336,138 @@ pcSvg:{n:"The first hundred days",k:"What do I do, in what order, after appointm
  q:["What does the Vector Theory of Change prefer to abstract goals?",["Fixed targets","A sense of direction from where you are","A detailed plan","Benchmarks"],1,"Start journeys with a sense of direction rather than abstract goals."],src:["estuary","methods","fieldguide"]}
 };
 
+/* ================= TOURS, LABELS, HOW-TO, CHALLENGES · THE CYNEFIN FIELD KIT ================= */
+/* steps: [target, title, text, act] · ch: [challenge, regex on panel, hint, test actions] */
+function MODELTOUR(name,xl,yl,warn){return {steps:[
+["p:315,418","The horizontal axis","Across the bottom: "+xl+". The three columns run from low to high."],
+["p:22,201","The vertical axis","Up the side: "+yl+". The three rows run from low to high."],
+["p:315,206","Nine cells","Each cell is a state the "+name+" domain can be in. Click any cell to read what it means on a receivership."],
+["p:205,96","Warnings","Red cells are warnings: "+warn+"."],
+["c:Rotate 45º","Rotate 45º","Rotate the model to the v45º view, where the line of coherence runs level.","do"],
+["c:Trace a path","Trace a path","Trace a typical path through the cells, step by step."],
+["c:▶ Run all nine","Run all nine","Or run through all nine cells in turn, with the receivership reading of each in the panel."],
+["panel","The reading","The panel explains each cell, and the colour key: gold the line of coherence, red warning, blue management action."]],
+how:{see:[["Axes","Two dimensions that define the domain."],["Cells","Nine states, each with a name."],["Colours","Gold: coherence · red: warning · blue: action."]],ctl:[["Rotate 45º","Turns to the v45º view."],["Trace a path","A typical journey through the cells."],["Run all nine","Every cell in turn."],["Click a cell","Its meaning on a receivership."]],
+ d:["Run all nine.","Rotate, then trace a path.","Place your current appointment in one cell and decide which way it is moving."],mis:["Reading the cells as fixed categories. Appointments move between them."],team:["Which cell is our current appointment in, and which is it heading for?"]},
+ ch:[["Run through all nine cells.",/scenario 9 of 9/i,"Press Run all nine and let it finish.",["▶ Run all nine"]],["Trace a path of three or more cells.",/trace · [3-9] steps/i,"Press Trace a path, then tap three cells in order.",[]],["Trace a path that stays on the line of coherence.",/on the line of coherence\s*([2-9]) of \1 steps/i,"Tap only gold cells, in order.",[]]]}}
+var TOUR={
+sheet:{steps:[
+["p:150,216","Complex","The four models sit on a stepped sheet: complex at the bottom left…"],
+["p:330,156","Complicated","…complicated a step up…"],
+["p:510,96","Clear","…and clear at the top."],
+["p:668,246","Chaotic","Chaotic sits off the sheet, below the cliff edge."],
+["p:640,166","The catastrophic collapse","The arrow from clear to chaotic is the fold: complacency in best practice tips over the edge."],
+["c:▶ Play the path","Play the path","Play a typical path across the sheet.","do"],
+["c:Slope view","Slope view","Switch to the slope view to see the sheet as a landscape."]],
+how:{see:[["Steps","The four domain models, each overlapping the next."],["Arrows","Step up, step down, and the catastrophic collapse."]],ctl:[["Play the path","Animates a journey."],["Slope view","A 3D impression of the sheet."]],
+ d:["Play the path once.","Read each arrow’s label against the panel.","Trace your last appointment’s journey across the sheet."],mis:["Reading ‘up’ as better. Each domain suits different problems."],team:["Where on the sheet did our last appointment start, and where did it end?"]},
+ ch:[["Play the path across the sheet.",/the path · 5 of 5/i,"Press Play the path.",["▶ Play the path"]]]},
+m_clear:MODELTOUR("clear","compliance enforcement","attitude of actors","complacency, gaming and the cliff edge"),
+m_complicated:MODELTOUR("complicated","strategic focus","engagement","premature engagement and narrowing in a small room"),
+m_complex:MODELTOUR("complex","level of coherence (evidence)","degree of consensus","group think and orthodoxy without evidence"),
+m_chaotic:MODELTOUR("chaotic","awareness of the shift into chaos","ability to impose constraints","here be dragons, and death and rebirth"),
+drSvg:{steps:[
+["p:137,12","Drift, month by month","The chart follows a best-practice routine drifting over thirty-six months."],
+["p:117,218","Three zones","Clear best practice, complacency, then the fold and chaos."],
+["p:685,30","The fold","Cross this line and the routine collapses into chaos."],
+["#drA","Attention","Set how closely people still watch the routine. Higher attention catches more weak signals."],
+["#drS","Signals","Set how loud the weak signals are."],
+["c:Compare all three","Compare presets","Compare Neglectful, Typical and Vigilant on the same building, with the same luck.","do"],
+["panel","Weak signals","The panel counts weak signals caught and missed. Missed ones push the drift on."]],
+how:{see:[["Line","Drift over thirty-six months."],["Zones","Best practice, complacency, the fold, chaos."],["Markers","Weak signals caught or missed."]],ctl:[["Play / Step a month","Run the routine forward."],["Presets","Neglectful, Typical, Vigilant."],["Compare all three","Same failures, different settings."],["The way back","Recovery from complacency."],["Sliders","Attention, signal strength, and the third setting."]],
+ d:["Compare all three.","Play Typical and catch signals.","Find the lowest attention that still never reaches the fold."],mis:["Thinking vigilance means more checks. It means people still looking."],team:["Which of our routines has nobody looked at for a year?"]},
+ ch:[["Compare all three presets.",/three presets · same building/i,"Press Compare all three.",["Compare all three"]],["Run a routine to month 36.",/month 36 of 36/i,"Press Play and let it run.",["Vigilant"]]]},
+vaSvg:{steps:[
+["p:490,32","The value scale","Across the top: possible values for the parade, from £1.5m to £3m."],
+["p:83,60","Five experts","Each row is one expert’s range on their own basis."],
+["p:608,384","The loan","The dashed line is the loan balance: £2.4m."],
+["p:416,366","Spread","The spread and the common ground across the experts."],
+["c:Honest independent","Independent","Honest independent readings spread wide: the figure reads as complex.","do"],
+["c:Anchored on the loan","Anchored","Anchored readings converge near the loan: it reads as complicated, with a warning of false consensus."],
+["c:Next challenge","Ritual dissent","Challenge each reading in turn and watch the spread change."]],
+how:{see:[["Ranges","Each expert’s range."],["Spread","How far apart they are."],["Domain","What the spread says about the problem."]],ctl:[["Presets","Independent, anchored, after dissent, two experts."],["Expert chips","Add or remove an expert."],["Next challenge","Apply ritual dissent."],["Record","Log the reading."]],
+ d:["Compare Independent and Anchored.","Run ritual dissent to the end.","Remove experts until the panel falsely reads as clear."],mis:["Treating convergence as confidence. Anchoring makes figures agree."],team:["Were our last valuations independent of the loan figure?"]},
+ ch:[["Produce a false consensus.",/false consensus/i,"Anchor on the loan.",["Anchored on the loan"]],["Run full ritual dissent on independent readings.",/5 challenges[\s\S]*reads as complex/i,"Press After full ritual dissent.",["After full ritual dissent"]]]},
+prSvg:{steps:[
+["p:470,22","Twelve weeks","Across the top: twelve weeks of probing, with checkpoints at weeks 4 and 8."],
+["p:441,200","Your portfolio","Choose up to eight probes. Each runs as a lane."],
+["c:Suggested portfolio","A suggested portfolio","Start with the suggested portfolio.","do"],
+["panel","Eight tests","The panel checks the portfolio: coherent, safe-to-fail, varied, cheap enough, and more."],
+["c:▶ Run","Run it","Run the twelve weeks. At each checkpoint, amplify what works and dampen what does not."],
+["c:Compare all four","Compare","Compare the four ready-made portfolios."]],
+how:{see:[["Lanes","Each probe over twelve weeks."],["Checkpoints","Weeks 4 and 8."],["Tests","Eight checks on the portfolio."]],ctl:[["Probe chips","Add or remove probes."],["Run / Continue","Run to each checkpoint."],["Auto","Amplify and dampen automatically."],["Presets","Balanced, too safe, one hypothesis, big bet."]],
+ d:["Run the suggested portfolio.","Compare all four presets.","Build a portfolio under £20k that passes all eight tests."],mis:["Treating ‘wait for the market’ as a probe."],team:["What are our current probes, and which would we dampen?"]},
+ ch:[["Build a portfolio worth running.",/a portfolio worth running/i,"Use the suggested portfolio.",["Suggested portfolio"]],["Run a portfolio for twelve weeks.",/twelve weeks on/i,"Run, then continue twice.",["Suggested portfolio","▶ Run","Auto: amplify above, dampen below","Auto: amplify above, dampen below"]]]},
+ctSvg:{steps:[
+["p:380,250","The building","A block of flats over shops, floor by floor."],
+["p:380,420","Where it starts","A fire starts somewhere, by seed. It spreads hour by hour."],
+["c:You command","You command","Command it yourself: two actions an hour.","do"],
+["p:380,300","Act","Click a space to secure it, or a burning space to fight it; then press Next hour."],
+["c:Act first: fight the fire","Strategies","Compare the ready strategies: act first, or wait for full information."],
+["panel","The log","The panel keeps the log and counts affected spaces and displaced people."]],
+how:{see:[["Floors","Spaces in the building."],["Colours","Burning, affected, secured."]],ctl:[["You command","Play yourself."],["Next hour","Advance."],["Strategies","Automatic policies."],["New seed","A new fire."]],
+ d:["Compare fight the fire and wait for full information.","Command one fire yourself.","Find the seed where acting first fails, and why."],mis:["Thinking chaos rewards planning. It rewards acting to create stability."],team:["What is our first hour in a crisis?"]},
+ ch:[["Contain a fire by acting first.",/contained/i,"Act first: fight the fire.",["Act first: fight the fire"]],["See what waiting costs.",/gathering information/i,"Wait for full information.",["Wait for full information"]]]},
+fw:{steps:[
+["p:105,45","Complex","Probe, sense, respond."],["p:560,45","Complicated","Sense, analyse, respond."],["p:101,300","Chaotic","Act, sense, respond."],["p:466,300","Clear","Sense, categorise, respond."],
+["p:380,260","The centre","Aporetic and confused: not knowing which domain you are in."],
+["p:446,488","The fold","The catastrophic fold between clear and chaotic."],
+["c:Constraints","Lenses","Switch lenses: constraints, practice, decision model, examples, receivership.","do"]],
+how:{see:[["Domains","Five, defined by constraint."],["Centre","Aporetic and confused."],["Liminal line","The boundary zone."],["Fold","The cliff."]],ctl:[["Lenses","Read every domain through one aspect."],["Liminal / Fold","Highlight the boundaries."],["Click a domain","Its full reading."]],
+ d:["Click each domain.","Try every lens.","Read the receivership lens for the domain your appointment is in."],mis:["Placing whole appointments in one domain."],team:["Which parts of our appointment are in which domain?"]},
+ ch:[["Read a domain in full.",/domain\s+(complex|complicated|chaotic|clear|aporetic|confused)/i,"Tap any domain on the diagram.",[]]]},
+histSvg:{steps:[["p:380,150","Twenty-five years","Each point is a moment in Cynefin’s history, from 1999 to now."],["c:▶ Play the history","Play","Play the history.","do"],["panel","Each moment","The panel tells each moment’s story."]],
+ how:{see:[["Timeline","Dates and milestones."]],ctl:[["Play","Steps through."],["Step","By hand."]],d:["Play it.","Step through and read.","Note which change matters most to receivers."],mis:["Treating the framework as fixed."],team:["Which version of Cynefin did we learn?"]},
+ ch:[["Play the history to the present.",/2026 · third age/i,"Press Play.",["▶ Play the history"]]]},
+itSvg:{steps:[["p:380,300","The framework then","The framework as drawn at each iteration."],["c:▶ Play the history","Play","Play the eight iterations.","do"],["c:Cause and effect","Lenses","Read any iteration through cause and effect, practice or decision model."],["panel","What changed","The panel explains each change."]],
+ how:{see:[["Drawing","The framework at that date."]],ctl:[["Play","Eight iterations."],["Lenses","Three aspects."]],d:["Play.","Read each iteration’s changes.","Compare the 2000 and current versions."],mis:["Assuming the names never changed."],team:["Which iteration does our training use?"]},
+ ch:[["Play all eight iterations.",/iteration 8 of 8/i,"Press Play.",["▶ Play the history"]]]},
+nightSvg:{steps:[["p:110,170","Four domains","Rows: the domains."],["p:440,326","A night and its aftermath","Across: from 23:10 to month 3."],["c:▶ Play the night","Play the night","Play the night of the fire.","do"],["panel","What to do","The panel says what each moment calls for."]],
+ how:{see:[["Path","How the incident moves between domains."]],ctl:[["Play","The night."],["Translation","The receivership reading."]],d:["Play.","Show the receivership translation.","Plan your own first night."],mis:["Staying in chaotic too long."],team:["Who acts at 23:10 on our appointments?"]},
+ ch:[["Play the night to month 3.",/month 3/i,"Press Play the night.",["▶ Play the night"]]]},
+mlSvg:{steps:[["p:105,49","Domains","The classic framework."],["p:117,106","Bars","An illustrative share of work machines can take in each domain."],["c:Role","Lenses","Read the domains for role, decision model, what machines can and cannot do.","do"],["c:▶ Tour the domains","Tour","Tour the domains."]],
+ how:{see:[["Bars","Machine and human shares."]],ctl:[["Lenses","Six readings."],["Tour","Each domain."],["Presets","Automate everything, Cynefin allocation, human only."]],d:["Tour.","Try every lens.","Allocate your own tasks."],mis:["Automating complex work."],team:["Which of our tasks should never be automated?"]},
+ ch:[["Tour the domains.",/machines detect/i,"Press Tour the domains.",["▶ Tour the domains"]],["Tour all the way to the centre, where humans are foundational.",/humans are foundational/i,"Press Tour the domains and let it finish.",["▶ Tour the domains"]]]},
+csSvg:{steps:[["p:157,54","Who can change it","Top: constraints we can change. Bottom: only others can."],["p:410,466","Controllability","Left to right: how far each constraint can be changed."],["c:▶ Run the method","Run the method","Run the seven steps.","do"],["c:Fixed / governing / enabling","Typologies","Colour the map by type."]],
+ how:{see:[["Dots","Fifteen constraints."]],ctl:[["Steps 1–7","The method."],["Typologies","Three ways to classify."]],d:["Run the method.","Try each typology.","Map your appointment’s constraints."],mis:["Treating all constraints as obstacles."],team:["Which constraints could we change ourselves?"]},
+ ch:[["Run the method to step 7.",/step 7 of 7/i,"Run the method.",["▶ Run the method"]]]},
+esSvg:{steps:[["p:405,476","Time to change","Across: time."],["p:30,250","Energy to change","Up: energy."],["p:238,110","Zones","Action zone, liminal, counterfactual, volatile."],["c:▶ Run the method","Run the method","Run the eight steps.","do"],["c:Clear micro-projects","Micro-projects","Show the micro-projects."]],
+ how:{see:[["Numbered dots","Nineteen actants."],["Zones","What can be changed, and how."]],ctl:[["Steps","The method."],["Placements","Original and micro-projects."]],d:["Run.","Read each actant.","Place your own."],mis:["Treating the map as the territory."],team:["Which actants are in our action zone?"]},
+ ch:[["Run estuarine mapping to step 7.",/step 7 of 7/i,"Run the method.",["▶ Run the method"]]]},
+phaseSvg:{steps:[["p:400,200","The curve","Order against constraint and energy."],["p:216,296","Latent heat","Flat stretches: energy going in, no visible change."],["#phaseR","Constraint","Slide to apply constraint.","do"],["c:Collapse","The fold","Collapse it."]],
+ how:{see:[["Curve","Phase shifts."]],ctl:[["Slider","Constraint."],["Climb / Collapse","Animations."]],d:["Climb.","Collapse.","Find the latent stretches."],mis:["Expecting change to be visible at once."],team:["Where are we putting energy with no visible result yet?"]},
+ ch:[["Climb all the way to order.",/constraint applied: 100/i,"Press Climb to order.",["▶ Climb to order"]]]},
+dyn:{steps:[["p:380,260","Movement","Lines show how situations move between domains."],["c:Blue line","Lines","Play a line.","do"],["c:v45º step shifts","Step shifts","Replay the step shifts."]],
+ how:{see:[["Lines","Typical movements."]],ctl:[["Lines","Blue, red, purple."]],d:["Play all three.","Read each.","Draw your own."],mis:["Ignoring movement."],team:["Which way is our appointment moving?"]},
+ ch:[["Show all three lines.",/all three lines/i,"Press All three.",["All three"]]]},
+classic:{steps:[["p:380,260","Ten movements","Classic dynamics between domains."],["c:Collapse","Choose one","Choose a movement.","do"],["c:▶ Play all ten","Play all ten","Play them all."]],
+ how:{see:[["Arrows","Each movement."]],ctl:[["Movements","Ten."]],d:["Play all ten.","Read three.","Match one to your appointment."],mis:["Treating them as rules."],team:["Which movement are we in?"]},
+ ch:[["Play all ten movements.",/classic movement 10 of 10/i,"Press Play all ten.",["▶ Play all ten"]]]},
+apSvg:{steps:[["p:380,136","Held in the centre","The appointment held in aporia."],["c:Decompose","Moves","Decompose, recompose, exapt or dive.","do"]],
+ how:{see:[["Centre","Aporia."]],ctl:[["Four moves","Ways out."]],d:["Try each move.","Read each.","Decompose your appointment."],mis:["Rushing out of the centre."],team:["What don’t we know yet?"]},
+ ch:[["Decompose the appointment.",/move 1 of 4/i,"Press Decompose.",["Decompose"]],["Try the shallow dive.",/move 4 of 4/i,"Press Shallow dive.",["Shallow dive"]]]},
+ptSvg:{steps:[["p:380,222","The parade","Units along Station Road."],["c:1 · Set boundaries","Six steps","Step through the party method.","do"],["c:▶ Run the party","Run","Run it."]],
+ how:{see:[["Units","The parade."]],ctl:[["Steps 1–6","The method."]],d:["Run.","Step.","Plan your own party."],mis:["Designing the outcome."],team:["What are our attractors?"]},
+ ch:[["Run the party to the sixth move.",/move 6 of 6/i,"Press Run the party.",["▶ Run the party"]]]},
+crSvg:{steps:[["p:390,320","Four phases","Assess, adapt, exapt, transcend."],["p:615,30","Incidents","Click any incident."],["c:▶ Run the crisis","Run","Run the crisis.","do"]],
+ how:{see:[["Bars","Level of control."]],ctl:[["Run","Phases."]],d:["Run.","Click incidents.","Plan your phases."],mis:["Keeping draconian constraints too long."],team:["When do we relax constraints?"]},
+ ch:[["Run the crisis to phase 4.",/phase 4 of 4/i,"Run the crisis.",["▶ Run the crisis"]]]},
+tpSvg:{steps:[["p:430,58","Three markers","Ordered, complex, chaotic."],["p:380,300","Fifteen items","Drag each into tension with the markers."],["c:Draw the boundaries","Boundaries","Draw the boundaries.","do"],["c:Check my placement","Check","Check your placement."]],
+ how:{see:[["Items","Fifteen."]],ctl:[["Steps","Method."]],d:["Reference placement.","Drag and check.","Do it with your team."],mis:["Placing by category."],team:["Where would we place our items?"]},
+ ch:[["Draw the boundaries.",/draw the boundaries/i,"Press Draw the boundaries.",["Draw the boundaries"]]]},
+lsSvg:{steps:[["p:380,37","Three corners","Getting paid, being safe, being heard."],["p:380,523","Tone","Below: too slow to too hasty."],["c:▶ Show the shift","The shift","Show the shift from month 1 to month 6.","do"],["c:Resident","Filters","Filter by group."]],
+ how:{see:[["Dots","Twenty-eight stories."]],ctl:[["Months","1, 6, both."],["Filters","Groups and zones."]],d:["Show the shift.","Filter by group.","Collect your own stories."],mis:["Reading single stories first."],team:["What would our tenants’ stories show?"]},
+ ch:[["Show the shift.",/month 1 → month 6/i,"Press Show the shift.",["▶ Show the shift"]],["Read one person’s story.",/· month \d+ ·/i,"Tap any dot.",[]]]},
+runSvg:{steps:[["p:380,260","Sixty-one scenarios","Each placed on the framework."],["c:▶ Run every scenario","Run","Run them all.","do"],["c:Liminal","Filters","Filter by type."]],
+ how:{see:[["Dots","Scenarios."]],ctl:[["Run","All."],["Filters","Types."]],d:["Run.","Filter.","Add your own."],mis:["Treating it as a test."],team:["Which scenario is ours?"]},
+ ch:[["Run every scenario.",/scenario 61 of 61/i,"Press Run.",["▶ Run every scenario"]]]},
+jSvg:{steps:[["p:380,260","A journey","One appointment moving across the framework."],["c:▶ Play journey","Play","Play the journey.","do"]],
+ how:{see:[["Path","The journey."]],ctl:[["Step","By hand."],["Tabs","Journeys."]],d:["Play.","Step.","Draw yours."],mis:["Treating it as a plan."],team:["Where did our last appointment go?"]},
+ ch:[["Play the journey to step 6.",/step 6 of 6/i,"Play the journey.",["▶ Play journey"]]]},
+pcSvg:{steps:[["p:40,150","Domains","Lanes are domains."],["p:440,305","A hundred days","Across: days 0 to 100."],["c:▶ Run the hundred days","Run","Run the hundred days.","do"]],
+ how:{see:[["Dots","Moves."]],ctl:[["Run","Days."]],d:["Run.","Step.","Score yourself."],mis:["Treating it as fixed."],team:["Which moves did we skip?"]},
+ ch:[["Run to day 100.",/day 100/i,"Run the hundred days.",["▶ Run the hundred days"]]]}};
+
 (function(){
 "use strict";
 var NS="http://www.w3.org/2000/svg";
@@ -3208,6 +3381,62 @@ var CR_EVENTS=[[0,"02:10 · Flood from the roof tank into four flats","Assess: o
   else if(k==="ArrowLeft"&&!document.activeElement.closest("svg")){if(click(".player .pbtn:nth-of-type(2)"))e.preventDefault()}
   else if(k==="r"||k==="R"){click(".dtools .chip.reset")}
   else if(k==="+"||k==="="){ov.__zoom&&ov.__zoom(1.4)}else if(k==="-"){ov.__zoom&&ov.__zoom(1/1.4)}else if(k==="0"){ov.__fit&&ov.__fit()}})})();
+
+/* helpers for this treatise */
+function store(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||"null");localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+function saveFile(fn,data,type){function plain(){var blob=new Blob([data],{type:type||"text/plain"});var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=fn;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500)}
+ if(window.claude&&typeof window.claude.use==="function"){window.claude.use("downloads").then(function(dl){if(dl)return dl.save({filename:fn,data:data});plain()}).catch(function(){plain()})}else plain()}
+/* ================= TOURS, LABELS, CHALLENGES, NOTES, FULL HOW-TO ================= */
+(function(){var DONE=store("fcr6-ch")||{},NOTES=store("fcr6-notes")||{};var cur=null;
+ function norm(t){return String(t||"").replace(/^[▶⚡↺✎⌖★]\s*/,"").trim().toLowerCase()}
+ function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+ function ctlIn(sec,lab,grid){var l=norm(lab);function f(root){return $$("button",root).filter(function(b){return !b.closest(".tourbar,.guide,.revs,.deckbar,.atlasbar,.tpanel,.tkey")&&norm(b.textContent).indexOf(l)===0})[0]||null}return (grid&&f(grid))||f(sec)}
+ function resolve(id,t){var svg=$("#"+id),sec=svg.closest("section"),grid=svg.closest(".dgrid");if(t.indexOf("p:")===0){var a=t.slice(2).split(",");return {svg:svg,pt:[+a[0],+a[1]]}}if(t.indexOf("c:")===0)return {el:ctlIn(sec,t.slice(2),grid)};if(t==="panel")return {el:$(".panelx",grid)||$(".panelx",sec)};if(t==="hist")return {el:$(".runhist",sec)};return {el:$(t)}}
+ function ptRect(svg,p){var m=svg.getScreenCTM();if(!m)return null;var q=svg.createSVGPoint();q.x=p[0];q.y=p[1];var r=q.matrixTransform(m);return {left:r.x-14,top:r.y-14,right:r.x+14,bottom:r.y+14,width:28,height:28}}
+ /* ---- the tour ---- */
+ var call=H("div",{class:"tcall",hidden:"",role:"dialog","aria-live":"polite"},null,document.body);var ring=null,hl=null,raf=0,waitOff=null;
+ function clearHl(){if(ring){ring.remove();ring=null}if(hl){hl.classList.remove("tour-hl");hl=null}if(waitOff){waitOff();waitOff=null}}
+ function place(){if(!cur)return;var st=TOUR[cur.id].steps[cur.k],r=resolve(cur.id,st[0]);var rect=r.pt?ptRect(r.svg,r.pt):r.el?r.el.getBoundingClientRect():null;
+  if(innerWidth<700||!rect){call.style.left="8px";call.style.right="8px";call.style.top="auto";call.style.bottom="8px";call.classList.add("tdock");call.classList.remove("tup","tdown");return}
+  call.classList.remove("tdock");call.style.right="auto";call.style.bottom="auto";var w=Math.min(380,innerWidth-24);call.style.width=w+"px";var h=call.offsetHeight;var below=rect.bottom+14+h<innerHeight;var top=below?rect.bottom+12:Math.max(8,rect.top-h-12);var left=Math.max(12,Math.min(innerWidth-w-12,rect.left+rect.width/2-w/2));
+  top=Math.max(8,Math.min(top,innerHeight-h-8));call.style.top=top+"px";call.style.left=left+"px";call.classList.toggle("tdown",below);call.classList.toggle("tup",!below);call.style.setProperty("--ax",Math.max(16,Math.min(w-16,rect.left+rect.width/2-left))+"px")}
+ function loop(){place();raf=requestAnimationFrame(loop)}
+ function show(){clearHl();var T=TOUR[cur.id],st=T.steps[cur.k],r=resolve(cur.id,st[0]);var target=r.pt?r.svg.closest(".dgrid")||r.svg:r.el;
+  if(r.pt){ring=S("g",{class:"tring",style:"pointer-events:none"},r.svg);S("circle",{cx:r.pt[0],cy:r.pt[1],r:18,fill:"none",stroke:"#D2AE63","stroke-width":3},ring);S("circle",{cx:r.pt[0],cy:r.pt[1],r:4,fill:"#D2AE63"},ring)}else if(r.el){hl=r.el;hl.classList.add("tour-hl")}
+  if(target){var tr=target.getBoundingClientRect();if(tr.top<90||tr.bottom>innerHeight-40)scrollToEl(r.pt?r.svg:target)}
+  var last=cur.k===T.steps.length-1,act=st[3]==="do"&&r.el;
+  call.innerHTML='<div class="tchead"><span class="tcn">'+(cur.k+1)+' / '+T.steps.length+'</span><b>'+esc(st[1])+'</b><button type="button" class="tcx" data-tx aria-label="End the tour">✕</button></div><p>'+st[2]+'</p>'+(act?'<p class="tcdo">Your turn: '+(r.el.tagName==="INPUT"?"move it":"press it")+'. The tour moves on when you do.</p>':'')+'<div class="tcbar"><button type="button" class="chip" data-tb'+(cur.k?"":" disabled")+'>◀ Back</button>'+(act&&r.el.tagName!=="INPUT"?'<button type="button" class="chip" data-tdo>Do it for me</button>':'')+'<button type="button" class="chip play" data-tn>'+(last?"Finish ✓":"Next ▶")+'</button></div>';
+  call.hidden=false;if(act){var ev=r.el.tagName==="INPUT"?"input":"click";var fn=function(){setTimeout(function(){if(cur&&TOUR[cur.id].steps[cur.k]===st)next()},r.el.tagName==="INPUT"?1200:900)};r.el.addEventListener(ev,fn,{once:true});waitOff=function(){r.el.removeEventListener(ev,fn)}}
+  cancelAnimationFrame(raf);setTimeout(loop,reduce?0:350)}
+ function next(){if(!cur)return;if(cur.k<TOUR[cur.id].steps.length-1){cur.k++;show()}else end()}
+ function end(){clearHl();cancelAnimationFrame(raf);call.hidden=true;if(cur){var b=$('.tourbar[data-for="'+cur.id+'"] [data-tour]');if(b)b.setAttribute("aria-pressed","false")}cur=null}
+ call.addEventListener("click",function(e){if(e.target.closest("[data-tx]"))end();else if(e.target.closest("[data-tn]"))next();else if(e.target.closest("[data-tb]")){cur.k=Math.max(0,cur.k-1);show()}else if(e.target.closest("[data-tdo]")){var st=TOUR[cur.id].steps[cur.k],r=resolve(cur.id,st[0]);if(r.el)r.el.click()}});
+ document.addEventListener("keydown",function(e){if(!cur)return;if(e.key==="Escape")end();else if(e.key==="ArrowRight"&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))next();else if(e.key==="ArrowLeft"&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)&&cur.k){cur.k--;show()}});
+ function start(id){end();cur={id:id,k:0};var b=$('.tourbar[data-for="'+id+'"] [data-tour]');if(b)b.setAttribute("aria-pressed","true");show()}
+ /* ---- per instrument ---- */
+ Object.keys(TOUR).forEach(function(id){var svg=$("#"+id);if(!svg)return;var T=TOUR[id],sec=svg.closest("section"),grid=svg.closest(".dgrid");if(!grid)return;
+  var bar=H("div",{class:"tourbar","data-for":id});var anchor=grid;while(anchor.previousElementSibling&&anchor.previousElementSibling.matches(".dtools,.prpick,.stepper,.tabs"))anchor=anchor.previousElementSibling;anchor.parentNode.insertBefore(bar,anchor);
+  var nCh=T.ch.length;bar.innerHTML='<span class="tbl">New here?</span><button type="button" class="chip play" data-tour aria-pressed="false">▶ Walk me through it · '+T.steps.length+' steps</button><button type="button" class="chip" data-lab aria-pressed="false">⌖ Label the diagram</button><button type="button" class="chip" data-ch aria-pressed="false">★ Challenges <b class="tchc">0/'+nCh+'</b></button><button type="button" class="chip" data-nt aria-pressed="false">✎ My notes</button>';
+  var chBox=H("div",{class:"tpanel tchal",hidden:""}),ntBox=H("div",{class:"tpanel tnotes",hidden:""});bar.parentNode.insertBefore(chBox,bar.nextSibling);bar.parentNode.insertBefore(ntBox,chBox.nextSibling);
+  /* labels */
+  var pins=null,key=null;function labels(on){if(pins){pins.remove();pins=null}if(key){key.remove();key=null}$("[data-lab]",bar).setAttribute("aria-pressed",on);if(!on)return;pins=S("g",{class:"tpins",style:"pointer-events:none"},svg);var n=0,items=[];
+   T.steps.forEach(function(st){if(st[0].indexOf("p:")===0){n++;var a=st[0].slice(2).split(",");var g=S("g",null,pins);S("circle",{cx:+a[0],cy:+a[1],r:11,fill:"#D2AE63",stroke:"#0C1726","stroke-width":2},g);S("text",{x:+a[0],y:+a[1]+4,"text-anchor":"middle",fill:"#0C1726",style:"font:700 11px var(--mono)"},g).textContent=n;items.push('<li><span class="kn">'+n+'</span><span><b>'+esc(st[1])+'.</b> '+st[2]+'</span></li>')}else items.push('<li><span class="kn kc">⏵</span><span><b>'+esc(st[1])+'.</b> '+st[2]+'</span></li>')});
+   key=H("div",{class:"tkey"},'<span class="tkh">The diagram, labelled</span><ol>'+items.join("")+'</ol>');grid.parentNode.insertBefore(key,grid.nextSibling)}
+  /* challenges */
+  function drawCh(){var d=0;chBox.innerHTML='<span class="tkh">Challenges · they tick themselves when you achieve them</span><ul>'+T.ch.map(function(c,i){var ok=DONE[id+":"+i];if(ok)d++;return '<li class="'+(ok?"ok":"")+'"><span class="tck">'+(ok?"✓":"○")+'</span><span><b>'+esc(c[0])+'</b>'+(ok?'':'<button type="button" class="tch-hint" data-hint="'+i+'">Hint</button><span class="tch-h" data-h="'+i+'" hidden>'+esc(c[2])+'</span>')+'</span></li>'}).join("")+'</ul>';$(".tchc",bar).textContent=d+"/"+nCh;$(".tchc",bar).classList.toggle("all",d===nCh)}
+  chBox.addEventListener("click",function(e){var h=e.target.closest("[data-hint]");if(h){var s=$('[data-h="'+h.getAttribute("data-hint")+'"]',chBox);s.hidden=!s.hidden}});
+  var pan=$(".panelx",grid);function test(){var tx=pan?pan.innerText:"";var hit=false;T.ch.forEach(function(c,i){if(!DONE[id+":"+i]&&c[1].test(tx)){DONE[id+":"+i]=1;hit=c[0]}});if(hit){store("fcr6-ch",DONE);drawCh();var t=H("div",{class:"ttoast"},"★ Challenge complete: "+esc(hit),document.body);setTimeout(function(){t.classList.add("go")},2600);setTimeout(function(){t.remove()},3400)}}
+  if(pan){var tm=0;new MutationObserver(function(){clearTimeout(tm);tm=setTimeout(test,250)}).observe(pan,{childList:true,subtree:true,characterData:true})}drawCh();
+  /* notes */
+  ntBox.innerHTML='<span class="tkh">My notes on this instrument · kept in this browser</span><textarea rows="4" placeholder="What did you notice? What does it say about your own appointment?"></textarea><div class="tnb"><button type="button" class="chip" data-dl>Download all my notes</button><span class="tns"></span></div>';var ta=$("textarea",ntBox);ta.value=NOTES[id]||"";var st0=0;ta.addEventListener("input",function(){NOTES[id]=ta.value;clearTimeout(st0);st0=setTimeout(function(){store("fcr6-notes",NOTES);$(".tns",ntBox).textContent="Saved"},400)});
+  $("[data-dl]",ntBox).addEventListener("click",function(){var md="# My notes on the instruments\n\nFrom The Cynefin Field Kit for Fixed Charge Receiverships\n\n"+Object.keys(TOUR).filter(function(k){return NOTES[k]&&NOTES[k].trim()}).map(function(k){return "## "+GUIDE[k].n+"\n\n"+NOTES[k].trim()+"\n"}).join("\n");saveFile("my-instrument-notes.md",md,"text/markdown")});
+  function tog(box,btn){var o=box.hidden;box.hidden=!o;$(btn,bar).setAttribute("aria-pressed",o)}
+  bar.addEventListener("click",function(e){if(e.target.closest("[data-tour]")){cur&&cur.id===id?end():start(id)}else if(e.target.closest("[data-lab]"))labels(!pins);else if(e.target.closest("[data-ch]"))tog(chBox,"[data-ch]");else if(e.target.closest("[data-nt]"))tog(ntBox,"[data-nt]")});
+  RESETS.push(function(){labels(false);if(cur&&cur.id===id)end()});
+  /* fuller how-to inside the guide */
+  var gd=GUIDE_EL[id],hw=T.how;if(gd&&hw){var more=H("div",{class:"gmore"},'<div class="gcol"><h4>Reading the diagram</h4><dl>'+hw.see.map(function(x){return '<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>'}).join("")+'</dl><h4>The controls</h4><dl>'+hw.ctl.map(function(x){return '<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>'}).join("")+'</dl></div><div class="gcol"><h4>Three ways to use it</h4><ol class="gdepth"><li><b>One minute.</b> '+hw.d[0]+'</li><li><b>Five minutes.</b> '+hw.d[1]+'</li><li><b>Fifteen minutes.</b> '+hw.d[2]+'</li></ol><h4>Common misreadings</h4><ul>'+hw.mis.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><h4>Questions for your team</h4><ul>'+hw.team.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><p><button type="button" class="chip play" data-gtour>▶ Walk me through it</button> <button type="button" class="chip" data-glab>⌖ Label the diagram</button></p></div>');$(".gbody",gd).appendChild(more);
+   more.addEventListener("click",function(e){if(e.target.closest("[data-gtour]"))start(id);if(e.target.closest("[data-glab]"))labels(true)})}});
+})();
 
 /* ================= ATLAS ================= */
 (function(){var g=$("#atlasGrid");if(!g)return;var q=$("#atlasQ"),dk=$("#atlasDeck");H("option",{value:""},"All decks ("+CARDS.length+")",dk);Object.keys(DECKS).forEach(function(k){H("option",{value:k},DECKS[k]+" ("+CARDS.filter(function(c){return c.d===k}).length+")",dk)});
