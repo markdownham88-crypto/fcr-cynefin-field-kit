@@ -804,6 +804,20 @@ svg.dsvg.zoomed:active{cursor:grabbing}
 .tfaq .tq p{margin:6px 0 4px;font-size:14.5px;line-height:1.55}.tqm{font-size:13.5px;color:var(--muted);margin:10px 0 0}
 
 .tapnote{border-left:3px solid #D2AE63;background:rgba(210,174,99,.1);padding:8px 10px;margin-bottom:10px;font-size:14px;line-height:1.5}.tapnote b{color:#EDE6D6}
+.rev{outline-offset:3px}
+.rev.on{grid-column:span 2}
+@media (max-width:760px){.rev.on{grid-column:auto}}
+.rev .ans{display:block;font-size:16px;color:var(--bone);line-height:1.5}
+.rev .xsec{display:block;margin-top:12px;padding-top:10px;border-top:1px solid rgba(42,66,98,.8);font-size:14.5px;line-height:1.6;color:var(--text)}
+.rev .xsec b{display:block;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:3px}
+.rev .xcase b{color:#7FB3E0}.rev .xwatch b{color:#E8875A}.rev .xprac b{color:#8FC79A}.rev .xask{font-style:italic;color:var(--bone)}.rev .xask b{font-style:normal;color:#B58CE0}
+.rev .xfoot{display:flex;flex-direction:column;gap:6px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.rev .xl{font:500 12px var(--mono);color:var(--brass);text-decoration:none;border-bottom:1px solid rgba(210,174,99,.35);align-self:flex-start;line-height:1.5}
+.rev .xl:hover{color:var(--bone)}
+.rev .xrel{font:500 12px var(--mono);color:var(--muted)}.rev .xrel .xl{display:inline}
+.rev .xhint{display:block;margin-top:12px;font-size:13px;color:var(--muted);font-style:italic}
+@media print{.rev .xfoot{display:none}}
+.revs{align-items:start}
 </style>
 </head>
 <body>
@@ -2696,6 +2710,835 @@ pcSvg:{steps:[
 faq:[["Must I follow it?","No: a protocol to adapt."],["Where do the moves come from?","Every instrument in the treatise."]]}};
 (function(){Object.keys(DEEP6).forEach(function(id){if(!TOUR[id])return;var d=DEEP6[id];TOUR[id].steps=d.steps;TOUR[id].faq=d.faq})})();
 
+/* ================= DATA CX6: extended reverse explainers for every card ================= */
+/* K(deck, title, going deeper, on the parade, watch for, ask, try-it section or "", [related "deck|title"]) */
+var CX6={},CX6GO={v45:"v45",grammar:"grammar",clear:"clear",complicated:"complicated",complex:"complex",chaotic:"chaotic",framework:"framework",liminal:"phase",dynamics:"dynamics",aporetic:"aporetic",law:"law",misuse:"make",principles:"ages",machines:"machines",crisis:"crisis",iter:"iterations",leader:"leader",cons:"constraints",make:"make",estuary:"estuary",listen:"listen",hundred:"hundred"};
+function K(d,t,deep,cas,watch,ask,go,rel){CX6[d+"|"+t]=[deep,cas,watch,ask,go||CX6GO[d],rel||[]]}
+
+/* ---------- v45 ---------- */
+K("v45","v45º","v45º is not a new framework but a re-drawing of the four domain models so that they can be read as one landscape. Each three-by-three model is turned through 45 degrees, its labels are tightened, and the models are stepped so that they overlap at the edges. The result is a single sheet on which a situation can be followed as it moves: from exploration in Complex, through formalisation in Complicated, into routine in Clear, and, if routine hardens, over the edge into Chaos.",
+"On the parade on Station Road the sheet reads as the life of the appointment. The first weeks sit in Complex: nobody yet knows whether the shops can be let or the flats sold. As probes settle, the valuation and the sale strategy move into Complicated. Rent collection and insurance diaries become Clear. The danger is the long quiet stretch at the end, when the routine stops being questioned.",
+"Reading the sheet as four separate boxes. Its point is the joins: where one model hands over to the next, and where the path can drop off the edge.",
+"Where on the v45º sheet is each part of this appointment today, and which way is it moving?","",["v45|Rotation","v45|Stepping","grammar|Line of coherence"]);
+K("v45","Wording","The re-wording after the Seattle seminar in August 2013 matters because labels steer behaviour. “Evidence based” suggested that Simple was the domain of research; “self-evident” says that cause and effect are obvious to anyone competent. Removing “impose” from the chaotic axis stopped the model reading as a licence for command. The lesson is that the vocabulary of a framework is part of its method, and that it is meant to be revised.",
+"When the receiver presents the domain models to the lender’s workout team, the labels are translated: “options still open”, “stop rules”, “routine we will not change”, “emergency”. The credit officer then sees his own appointment rather than a consultant’s diagram, and the discussion is about the parade, not about Cynefin.",
+"A team arguing about what a label means rather than about the asset. That is a sign the label has not yet been put into their language.",
+"Which of these labels would our credit committee misread, and what word would they use instead?","",["grammar|Rename the axes","misuse|Language"]);
+K("v45","Rotation","Turning each model through 45 degrees changes what the eye follows. In the square version the line of coherence runs corner to corner and looks like one option among many. Rotated, it becomes a level path across the page, and the four paths can be laid end to end. The rotation turns a matrix into a route, which is how a practitioner experiences a situation: as passage, not as classification.",
+"In the monthly report to the lender, the receiver draws the appointment as a single horizontal line: probes (pop-ups, meanwhile licence, planning pre-app), then the chosen sale route, then the routine of collection and completion. The next transition is visible on the line, so the lender can see what has to happen before the parade moves on.",
+"A rotated diagram used only for decoration. If nobody can say where on the path the appointment stands, the rotation has added nothing.",
+"If we drew this appointment as one line from left to right, where would today’s marker sit?","",["v45|v45º","grammar|Line of coherence"]);
+K("v45","Stepping","Stepping records an asymmetry. Moving towards more order costs energy: evidence must be gathered, agreement built, processes written. Moving towards less order can happen for free, and suddenly. So Complicated is drawn above Complex and Clear above Complicated, while Chaos sits below, reachable by a fall. The heights are a reminder that formalising and routinising have a price in time, fees and attention.",
+"Turning the successful pop-up on unit 3 into a formal letting strategy takes a valuer’s advice, the lender’s consent and a lease template: weeks of work and a fee. Losing it again takes one missed insurance renewal. The receiver budgets both: the climb, and the guard rail at the edge.",
+"Plans that show the move to routine as free. If the timetable has no line for formalising, it has assumed the step away.",
+"What will it cost us, in time and fees, to move this part of the appointment one step up?","",["liminal|Phase shift","dynamics|Into Clear"]);
+K("v45","Rob England","Snowden’s credit to Rob England is a small but deliberate act. The Cynefin ecosystem grew through conversation with practitioners, and the habit of naming who contributed what keeps it from hardening into doctrine. It also shows that the framework is open: an improvement can come from anyone who uses it seriously.",
+"On the parade, the idea for a tenants’ noticeboard came from the café owner in unit 1, not from the receiver. Recording it as hers in the case file matters: it shows the lender where good ideas are coming from, and it tells the tenants that what they say is heard.",
+"A strategy paper in which every good idea is the receiver’s. It usually means other voices have been absorbed rather than listened to.",
+"Whose idea was this route, and have we said so?","",["principles|Be a mirror, not an expert","listen|Self-signification"]);
+K("v45","The 3D model","The three-dimensional brief imagined each domain as a hollow, a place where a system can come to rest, with a slippery slope in the middle leading down to a hole marked disorder. The image makes stability physical: a system stays in a domain because it sits in a dip, and it needs energy to climb out. Left alone, things roll towards the centre. It was never built, but the picture is useful.",
+"A receivership left to run itself drifts to the centre. The agent sends the same report, the lender stops reading it, the tenants stop paying because nobody seems to be in charge. The receiver’s diary of reviews is the energy that keeps the parade in its hollow, or lifts it into the next one on purpose.",
+"Long periods with no deliberate review. Drift is silent until something rolls into the hole.",
+"If we stopped attending to this appointment for three months, which way would it roll?","",["framework|The centre","v45|The cylinder"]);
+K("v45","The cylinder","Wrapping the sheet round an asymmetric cylinder joins the end of the path to its beginning. Collapse from Clear into Chaos is not the end of the story: chaos resolves into complexity, and the cycle starts again. The point is that no routine is final. Every stable state carries the seed of its own disruption, and every disruption is a fresh start.",
+"When the parade is sold, the buyer inherits a set of routines, from service charge to rent days. If the lessons of the receivership travel with the sale pack (the tenants’ concerns, the stair-light history, the café’s trading pattern) the next owner starts higher up the path. If not, the next crisis begins from scratch.",
+"Exit reports that record figures but not lessons. The cycle then restarts at the bottom.",
+"What does the next owner need to know so that this does not happen again?","",["v45|The 3D model","dynamics|Red"]);
+K("v45","Red, blue, green","The colour code reads the sheet as an instrument panel. Red marks the places where a warning is due, typically the corners where the path leaves the line of coherence. Blue marks the management actions that keep the path on the line. Green marks deviations worth using: the places where something unexpected can be turned to advantage. Snowden left the code unsettled, which invites adaptation.",
+"The receiver’s monthly report uses the same three colours. Red: the agent’s arrears figures look too tidy. Blue: insurance renewed, stair light fixed, licence signed. Green: the nail bar is attracting evening trade nobody planned for, and that might change what the shops are worth.",
+"Reports that are all blue. An appointment with no warnings and no surprises is either finished or not being watched.",
+"What on this appointment is red, what is blue, and what is green this month?","",["grammar|Corners","complex|Exaptation corner"]);
+
+/* ---------- grammar ---------- */
+K("grammar","Three by three","Each domain model sets two dimensions against each other, each with three levels, giving nine cells. That is enough to distinguish meaningful states without pretending to precision. The cells are not boxes to be filled but positions from which a situation can move: along the line of coherence, or off it into one of the corners that lead towards disorder.",
+"Take the managing agent’s attitude to the receiver’s new rent process. On the Clear model, attitude runs from complacent to pragmatic to questioning; enforcement runs from zombie-like to self-evident. Placing the agent in a cell turns a vague unease into a precise question: are they going along without understanding, or working with it sensibly?",
+"Treating the nine cells as a scoring grid. The value is in the conversation about which cell, not in the answer.",
+"Which of the nine cells is this issue in today, and which cell do we want it in next month?","",["grammar|Line of coherence","grammar|Corners"]);
+K("grammar","Line of coherence","The line of coherence is the path along which change can happen sensibly: the dimensions move together, so that, for instance, enforcement rises as acceptance rises. It owes something to Ashby’s requisite variety and to Boisot’s information space. On the line, the system can adjust. Off the line, one dimension has run ahead of the other and the mismatch produces problems that must be corrected.",
+"When the receiver introduces a strict rent-demand routine, the tenants’ acceptance has to grow with it. If enforcement rises while the shopkeepers still feel unheard, the appointment slips off the line: arrears rise, complaints go to the councillor. The correction is to slow enforcement or build acceptance, not to push harder.",
+"One dimension moving fast while the other stays still. That is the moment of leaving the line.",
+"Are both dimensions moving together here, or has one run ahead?","",["grammar|Corners","v45|Rotation"]);
+K("grammar","Corners","The two off-line corners are where the model warns of disorder. The bottom-left corner leads towards a less ordered domain, as when a complex situation tips into chaos. The top-right corner leads towards a more ordered one, as when Clear ossifies. They are not failures in themselves, but they are where an appointment needs attention before a transition happens by accident.",
+"On the parade’s Clear model, the top-right corner is the agent running the same service-charge routine for years without checking it against the lease. The bottom-left is a routine so loosely enforced that nobody knows who has paid. The receiver checks both corners before every lender report.",
+"A corner nobody has looked at in months. Corners are where surprises come from.",
+"Which corner of this model are we closest to, and what would take us into it?","",["grammar|Line of coherence","clear|Ossification"]);
+K("grammar","Cook’s handbook","Snowden insists the models are a cook’s handbook, not a recipe. A recipe tells you what to do; a handbook reminds you of what experienced cooks have noticed, and leaves the judgement to you. The models are deliberately semi-developed so that users adapt them to their own setting. Following them mechanically defeats their purpose.",
+"The receiver does not use the same Complex model for the parade as for a hotel appointment. For the parade, consensus means agreement among the lender, the agent and the tenants. For a hotel it means the operator, the brand and the staff. The cells keep their shape; the content changes.",
+"A model used identically on every asset. That is a recipe in disguise.",
+"What would we change in this model to make it fit this particular asset?","",["misuse|Not a recipe","grammar|Rename the axes"]);
+K("grammar","Rename the axes","Snowden expects organisations to put the labels into their own language. The dimensions describe kinds of variation; the words are scaffolding. Renaming the axes is an act of ownership: it forces a team to decide what the dimension means in its world, and that decision is itself sense-making.",
+"For the lender, “degree of consensus” becomes “how many people on the credit committee believe this”, and “level of coherence” becomes “how good is the evidence”. The receiver uses those words in the case meeting. Nobody needs to know they came from a domain model.",
+"Teams adopting the jargon wholesale. It can create an in-group and hide disagreement behind shared words.",
+"How would we describe this axis in our own words?","",["v45|Wording","misuse|Language"]);
+K("grammar","Scaffolding","After Pendleton-Jullian and Juarrero, scaffolding is structure that holds a building up while it is made, then comes down or is absorbed. Cynefin aims at coherence, where things hang together, not alignment, where everyone points the same way. The framework is meant to support thinking, not to remain on view as a structure everybody must work inside.",
+"By the time the parade’s sale route is agreed, the lender’s team should be able to explain it in plain terms: why the shops were let before the sale, why the flats were sold vacant, what was tested and what held. The Cynefin diagrams stay in the receiver’s file. The lender keeps the reasoning.",
+"A framework that is still being presented after the strategy has settled. Scaffolding left up becomes a cage.",
+"Can we explain this strategy without the diagram?","",["misuse|Coherence, not alignment","misuse|Language"]);
+
+/* ---------- clear ---------- */
+K("clear","Attitude of actors","Attitude is the human dimension of Clear: how the people running a routine relate to it. Complacent actors go along without thought; pragmatic actors work with the rule and adjust where it chafes; questioning actors ask whether it still fits. Management can influence attitude through example, explanation and consequence, but cannot order it into being. That is why it is drawn as the dimension to watch rather than the one to set.",
+"The managing agent’s staff on the parade run the rent-demand cycle. The senior negotiator is pragmatic and flags tenants who need a payment plan. The junior who inherited the file is complacent and sends demands to a unit that has been empty since March. The receiver responds differently to each: support for one, a visit with the other.",
+"A whole team at the complacent end. Routines run, but nobody is looking.",
+"Is the team running this routine going along, working with it, or questioning it?","",["clear|Compliance enforcement","clear|Cynics"]);
+K("clear","Compliance enforcement","Enforcement is the dimension management controls. At one end it is zombie-like: rules applied regardless of reality. In the middle, it trades off the rule against circumstance. At the other end, it is self-evident: the rule plainly fits and everyone can see why. The aim is not maximum enforcement but enforcement that matches the evidence.",
+"The receiver’s insurance diary is self-evident enforcement: the building must be covered, every year, without exception. The agent’s rule that every arrears letter goes out on day seven, even to the café owner who has paid on day ten for twelve years, is drifting towards zombie enforcement.",
+"Rules enforced because ‘that is how we do it’. Habit is the slope towards zombie enforcement.",
+"Is this rule enforced because the evidence supports it, or because it always has been?","",["clear|Attitude of actors","clear|Gaming"]);
+K("clear","Best practice","Best practice lives in one cell: where enforcement is self-evident and actors accept it pragmatically. There, cause and effect are clear to everyone, and the right move is to do the same thing every time. Snowden adds that movement should stop there. Best practice is a resting place, not a stage on the way to something better, and it should be guarded rather than optimised.",
+"On every appointment the receiver serves notices, checks insurance, secures the building and opens a client account in the same way. On the parade these are done in the first forty-eight hours, by checklist, without discussion. Their value lies in being boringly identical across every case.",
+"Calling anything ‘best practice’ that has merely worked once. The term belongs only to what is self-evident.",
+"Is this truly self-evident to anyone competent, or is it good practice dressed as best?","",["clear|The receiver’s Clear","framework|Five kinds of practice"]);
+K("clear","Gaming","Gaming appears when enforcement is indifferent to reality but the people involved are pragmatic. They build workarounds to make the system function despite itself. Gaming is often well intended, but it hides the gap between rule and reality, so the system looks healthy until the workaround fails and the hidden problem surfaces all at once.",
+"The agent’s arrears report shows nil arrears for the nail bar, month after month. On inspection, the negotiator has been allocating the café’s overpayments against the nail bar’s account to keep the figures clean. Nobody gained, but the report was fiction. The receiver treats it as information: the rent cycle does not fit the nail bar’s trading pattern.",
+"Figures that are too smooth. Real routines have noise; perfect ones are usually managed.",
+"What workaround is making these figures look this tidy?","",["clear|Cynics","clear|Weak-signal reporting"]);
+K("clear","Cynics","Cynics complain because they care: they can see that the rule is failing and are frustrated that nobody acts. A rise in cynicism is the early warning that enforcement has drifted from reality. Suppressing it removes the warning. Engaging it, by giving the cynic a real question, turns complaint into intelligence.",
+"The building surveyor on the parade grumbles that the panel’s standard repair specification is absurd for a 1930s parade. Instead of overruling him, the receiver asks him to mark up which items do not fit. The marked-up specification saves money and becomes the template for the next similar appointment.",
+"Cynicism treated as a discipline problem. The complaint usually contains a fact you need.",
+"What does our sharpest critic know about this routine that we do not?","",["clear|Gaming","clear|Ossification"]);
+K("clear","Entropy death","Entropy death sounds alarming but describes something useful: practices that have reached the end of their development and no longer need to change. They can run for decades with high utility. The danger is not the practice but forgetting to check that the context it serves has not moved.",
+"Quarter-day rent demands, the annual insurance renewal and the gas-safety cycle on the flats have run unchanged for years. The receiver lets them run, but on appointment checks each against the actual leases and units. One flat turns out to have had its boiler removed: the gas-safety routine was certifying an appliance that no longer exists.",
+"Long-lived routines that are never re-checked at appointment. Stable practice can sit on changed facts.",
+"Has anything changed underneath this routine since it was last checked?","",["clear|Ossification","machines|Drift"]);
+K("clear","Ossification","Ossification is the constant shadow of standardisation. A practice that works is repeated; repetition becomes habit; habit becomes truth that nobody questions. At that point the routine continues even after its context has shifted, and the system slides towards the cliff edge between Clear and Chaos without anyone noticing.",
+"The panel’s instruction letter for sales was written for buy-to-let flats. Used unchanged on the parade, it tells the agent to market with vacant possession, which would mean evicting the café and the nail bar, the two tenants keeping the parade alive. The receiver diaries an annual review of every standard document.",
+"Templates that nobody can explain. If no one knows why a clause is there, it may have outlived its reason.",
+"When was this template last read against the asset it is being used on?","",["framework|Catastrophic fold","clear|The fold in practice"]);
+K("clear","The receiver’s Clear","Some receivership work genuinely belongs in Clear: the notice of appointment, day-one insurance and security, rent demands, client-account handling, statutory returns. These should be done the same way every time, because variation adds risk and nothing else. Their place in Clear also means they can be automated and delegated, provided someone re-checks them.",
+"On the parade, the receiver’s team completes the day-one checklist before lunch: notices served, locks changed on the vacant unit, insurers informed, client account opened. None of it needs judgement. What needs judgement, whether to keep the café, how to market the flats, is kept out of the checklist.",
+"Clear work creeping into strategy. A routine that starts deciding what happens to the asset has left its domain.",
+"Which parts of this appointment are genuinely routine, and are we protecting them from creep?","",["clear|Best practice","machines|Machines dominate by design"]);
+K("clear","Make bureaucrats live the consequences","Snowden’s summary advice for Clear is to have rule-makers experience what their rules do to the people who must follow them. Rules written at a distance tend towards zombie enforcement because their authors never meet the mismatch. Bringing them close restores the feedback that keeps Clear honest.",
+"The credit officer insists on a standard repair budget for every flat. The receiver takes her to flat 4, where damp has lifted the floor and the standard budget would cover a third of the work. After the visit, she approves a flat-by-flat budget and asks for photos with each future report.",
+"Rule-makers who have never seen the asset. Their rules will fit the average, not the case.",
+"Who wrote this rule, and when did they last see what it does on the ground?","",["clear|Cynics","principles|Be a mirror, not an expert"]);
+K("clear","The fold in practice","The catastrophic fold works quietly. Over-constrained order keeps producing acceptable results while weak signals pile up beneath it: small failures, ignored complaints, workarounds. Because nothing visibly breaks, confidence grows. Then a threshold is crossed and the system fails all at once, falling from Clear straight into Chaos with no warning visible in the headline figures.",
+"On the parade the arrears figure was fine. Meanwhile the stair light was out for six weeks, the fire door was propped, and two residents had complained to the councillor. Then a small fire in the bin store filled the stairwell with smoke. The headline figures had been measuring the wrong thing.",
+"Healthy headline numbers alongside a rising count of small complaints. The complaints are the distance to the edge.",
+"How many small failures went unreported last quarter?","",["framework|Catastrophic fold","clear|Weak-signal reporting"]);
+K("clear","Weak-signal reporting","Weak-signal reporting is the cheap habit that keeps Clear honest: a regular, easy way for the people closest to the building to say what looks wrong. It is deliberately low-friction, one question, every visit, because a heavy reporting system discourages exactly the small observations that matter.",
+"Every visit, the receiver’s inspector asks the cleaner and the security guard the same question: what changed since last time? In week nine the cleaner mentions that the fire door is being wedged open in the evenings. That single sentence prompts a door-closer repair weeks before it could have mattered.",
+"Reporting that only captures what was asked for. Weak signals are, by definition, unasked.",
+"Who is closest to this building, and when did we last ask them what has changed?","",["clear|The fold in practice","listen|Micro-narratives"]);
+
+/* ---------- complicated ---------- */
+K("complicated","Strategic focus","Strategic focus tracks how far a strategy has advanced: still forming, closing down options, or in full exploitation. Each stage calls for a different style of work. Forming needs breadth and expert challenge; closing down needs decision; exploitation needs execution and discipline. Being explicit about the stage prevents the lender from expecting execution while options are still open.",
+"In month two the parade’s strategy is forming: let and sell, sell as a whole, or split shops from flats. By month four the valuer’s evidence has closed down the whole-sale option. By month six the strategy is in exploitation: shops let, flats marketed. The receiver states the stage at the top of each report.",
+"A lender treating a forming strategy as a commitment. That creates pressure to close too early.",
+"Is this strategy still forming, narrowing, or being executed, and have we said so?","",["complicated|Engagement","complicated|Small room first"]);
+K("complicated","Engagement","Engagement runs from a few key players, through consensus-building, to mandated consent. Snowden stresses the word “can”: these are possibilities, not obligations. The art lies in matching engagement to focus. Too wide too early, and the strategy is argued away before it forms. Too narrow too late, and the people who must live with it reject it.",
+"While the parade’s options are forming, the circle is small: receiver, workout officer, valuer. As options close, the tenants hear the plan in person, the council’s planning officer is briefed, and the agent is instructed. The brochure comes last, after everyone affected has heard the plan from the receiver.",
+"Tenants learning the plan from the brochure. Engagement came too late, and they will resist it.",
+"Who needs to hear this before it becomes public, and have they?","",["complicated|Strategic focus","complicated|Exploitation without engagement"]);
+K("complicated","With a twist","After rotation, the line of coherence in the Complicated model becomes horizontal, drawn with a twist and a gradient. The gradient shows that moving from forming to exploitation consumes energy: evidence has to be gathered, options closed, people brought along. The twist marks the turn from analysis to commitment.",
+"The step from ‘we think the shops should be let first’ to ‘the shops are let’ takes three months on the parade: valuation advice, lender consent, heads of terms, solicitors. The receiver’s timetable shows each piece. A plan that showed it as a week would have set up failure.",
+"Timetables that compress the move from decision to execution. The energy has to come from somewhere.",
+"What energy, in time, fees and people, will it take to get from decision to done?","",["v45|Stepping","complicated|Strategic focus"]);
+K("complicated","Exploitation without engagement","At the top extreme, leaders exploit a strategy while keeping it close. Compliance replaces commitment; people do what they are told and disguise what they really do. Snowden’s remedy is to widen engagement or, if the leader is right and can explain why, to impose openly. What fails is the quiet middle course.",
+"The receiver decided to change the parade’s rent-payment dates without telling the tenants why. Payments slowed; the café owner started paying late on purpose. A tenants’ meeting explaining the reason (aligning with the lender’s reporting) restored payments within a month.",
+"Silent compliance followed by slippage. People are doing what they were told, minimally.",
+"Have the people carrying this out been told why, or only what?","",["complicated|Engagement","complicated|The Longitude problem"]);
+K("complicated","The Longitude problem","Named after the eighteenth-century fight over longitude, this is the bottom extreme: engagement opened before the strategy has formed, so entrenched practice competes with the new idea on unequal terms and smothers it. The remedies are to reduce the group and decide for none of the camps, to mix factions, or to curb the politics until evidence arrives.",
+"At an early round-table, the agent argues for auction and the lender’s asset manager for private treaty, before any valuation exists. The receiver closes the meeting, commissions the valuation and a soft-market test, and reconvenes with evidence. Neither camp wins by default.",
+"Debate hardening before evidence exists. Whoever is loudest or most senior will win.",
+"Are we arguing about this before we have the facts that would settle it?","",["complicated|Small room first","complicated|Anchoring"]);
+K("complicated","Time-wasters","The earlier model warned of groups who keep arguing minor doctrinal points after the strategic question has been settled. Their energy is real, but it pulls attention from execution. The response is to stop the distraction and enforce the agreed standard, without reopening the strategy.",
+"With the sale route agreed, the agent keeps reopening how the flats should be lotted, two at a time or one at a time. The receiver records the decision and the reason, and stops the discussion. Execution resumes.",
+"Settled decisions coming back to every meeting. That is a sign the decision was not recorded with its reasons.",
+"Is this a new question, or one we have already settled?","",["complicated|Exploitation without engagement","complicated|Strategic focus"]);
+K("complicated","The receiver’s Complicated","Much receivership work is genuinely Complicated: title, valuation bases, VAT, lease analysis, planning, the powers in the deed. The answers are knowable with the right expertise and governed by rules. The receiver’s job here is to instruct well: clear questions, a stated basis, and an honest view of what would change the answer.",
+"On the parade, the receiver instructs a valuer on two stated bases (with tenants in place and with vacant possession), a VAT adviser on the option to tax, and a solicitor on whether the café’s lease is protected. Each instruction ends with the same question: what would change your view?",
+"Expert reports with no stated basis or assumptions. You cannot test what has not been made explicit.",
+"What would change your view?","",["complicated|Competing expertise","law|Cuckmere Brick (1971)"]);
+K("complicated","Small room first","A strategy should be formed in a small group working with safe-to-fail evidence, then opened up as options close. This sequence protects the strategy from premature politics while ensuring that others can still shape it before it hardens. Opening too late is as damaging as opening too early.",
+"The parade’s strategy is formed by the receiver, the workout officer and the valuer over three weeks. Once it narrows to ‘let the shops, sell the flats’, the circle widens to the tenants, the council and the agent, while there is still room to change the details.",
+"A small room that never opens. Everyone else then meets the strategy as a fait accompli.",
+"When will we widen this group, and what will we still let them change?","",["complicated|Engagement","complicated|The Longitude problem"]);
+K("complicated","Competing expertise","Competing expertise is a micro-domain where experts disagree not about facts but about method. Two valuers may reach different figures because they use different bases, each defensible. Arguing about the numbers gets nowhere; the method has to be settled first, then the figure follows.",
+"On the parade, one valuer values the shops on their passing rents; another on estimated rental value after re-letting. The figures are £180,000 apart. The receiver asks the lender to decide which basis suits the strategy, then asks both valuers for a figure on that basis. The gap shrinks to £20,000.",
+"Experts debating figures while using different bases. The disagreement is upstream.",
+"Do we disagree about the answer, or about how to get it?","",["liminal|Complicated liminal","complicated|The receiver’s Complicated"]);
+K("complicated","Anchoring","Anchoring is the bias by which the first figure spoken pulls every later estimate towards it. In receivership the anchor is often the loan balance. Valuers, agents and bidders drift towards it, producing an apparent consensus that looks Clear but is really a shared bias.",
+"On the parade the loan balance is £1.4m. The receiver commissions two valuations before anyone mentions it. They come back at £1.1m and £1.15m. Had the balance been mentioned first, both would probably have edged upward, and the lender would have held out for a price the market would never pay.",
+"Estimates clustering around a number someone said early. That is anchoring, not agreement.",
+"Who said the first number, and how far has everything moved towards it?","",["complicated|Ritual dissent","complex|Group think"]);
+K("complicated","Ritual dissent","Ritual dissent is a structured way of attacking a proposal. A spokesperson presents it, then turns their back and listens in silence while the group criticises it. The silence and the turned back depersonalise the criticism, so people say what they really think and the presenter hears it without defending.",
+"Before the parade’s sale recommendation goes to the lender, the receiver presents it to the agent, the building surveyor and the asset manager, then turns away. They point out that the café’s lease renewal could deter buyers, and that the flats’ service charge is unrecoverable. Both points are fixed before the lender sees the paper.",
+"Proposals that are only ever presented to supporters. They reach the decision-maker untested.",
+"Who could tear this apart, and have we let them?","",["complicated|Assent","dynamics|Ritual dissent"]);
+K("complicated","Assent","Ritual assent is the other half of the method: instead of attacking, the group offers positive alternatives the presenter had not considered. It widens the option set rather than narrowing it. Used together, dissent and assent test an idea and enrich it.",
+"After the dissent round on the parade’s sale plan, the receiver asks for assent: what different sale route could work? The surveyor suggests selling the shops to the café owner, who has been asking. It becomes a probe, and in the end the café owner buys her own unit.",
+"Critique that never produces an alternative. You know what is wrong but not what else to do.",
+"What different route would you suggest?","",["complicated|Ritual dissent","complex|Parallel probes"]);
+
+/* ---------- complex ---------- */
+K("complex","Degree of consensus","The vertical axis of the Complex model measures how widely an idea is shared. At the bottom sit the cognoscenti, a small group who see something others do not. In the middle is orthodoxy, the accepted view. At the top is group think, where agreement has become a substitute for evidence. Consensus is neither good nor bad in itself; what matters is how it lines up with the evidence beside it.",
+"On the parade, the lender’s team agrees that the shops are worthless and should be sold vacant. Nobody has tested it; the view came from one bad experience on another parade. Counting believers against evidence puts the lender near group think, and the receiver proposes a cheap test before anyone acts on it.",
+"Rising agreement with no new evidence. Consensus is running ahead of coherence.",
+"How many people believe this, and how much evidence do they have?","",["complex|Group think","complex|Level of coherence"]);
+K("complex","Level of coherence","The horizontal axis grades evidence. Abductive evidence is a plausible inference from rich experience, or in extremis a punt. Inductive evidence rests on a number of cases. Evidence beyond reasonable doubt is proof. All three are legitimate, but they must be named for what they are: a hunch presented as proof misleads the decision-maker.",
+"The receiver tells the lender: ‘My hunch, from thirty years of parades, is that the café holds the street together. That is abductive. We will test it with two pop-ups this quarter, which will give us inductive evidence. We will not have proof until a buyer bids.’ The lender knows exactly what it is relying on.",
+"Hunches written up in the language of proof. Grading the evidence prevents false confidence.",
+"Is this a hunch, a pattern from a few cases, or proof?","",["complex|Degree of consensus","complex|Coherence, not proof"]);
+K("complex","Exaptation corner","The bottom-left corner of the Complex model, low consensus and abductive evidence, is the edge of chaos. It holds the most creativity and opportunity, because nothing has yet been decided. Starting there keeps scanning wide. Skipping it, by jumping straight to an accepted answer, reduces resilience and leaves opportunities unseen.",
+"In the first fortnight, the receiver writes down three contradictory hypotheses about the parade: it is a failing street that should be sold fast; it is a neighbourhood centre that can be revived; its real value is the planning potential of the upper floors. Each becomes a probe. The third turns out to matter most.",
+"Appointments that begin with a single hypothesis. The edge of chaos was skipped.",
+"What are three contradictory things that could be true about this asset?","",["complex|Parallel probes","complex|Heretics and mavericks"]);
+K("complex","Group think","Group think is the top-left danger: high consensus with little evidence. It feels safe because everyone agrees, but it carries a high risk of sudden collapse when reality contradicts the shared view. Snowden’s remedy is disruption, not destruction: break up the certainty enough to let evidence back in, without destroying the team’s cohesion.",
+"The whole lender team is certain the borrower’s director will co-operate. No one has spoken to him. The receiver asks one question at the case meeting: ‘What would we see if he were planning to obstruct us?’ Two answers come back, both already happening.",
+"Meetings where nobody disagrees. Unanimity without data is the warning.",
+"What would we see if we were wrong about this?","",["complex|Degree of consensus","complicated|Anchoring"]);
+K("complex","Heretics and mavericks","Heretics hold unpopular views; mavericks act on them. Both are uncomfortable but valuable in Complex, because they carry hypotheses the group has dismissed. The advice is to use them: give them a sandpit, a bounded space free of normal controls, where the idea can prove or disprove itself without risking the whole appointment.",
+"The agent’s junior negotiator thinks the vacant unit could work as a community food bank and evening café, against everyone’s instinct. The receiver gives her a three-month licence at peppercorn rent and a small budget. Footfall in the evening doubles, and the nail bar extends its hours.",
+"Dissenters sidelined rather than tested. Their idea might be the one that works.",
+"Who here has an unpopular idea, and what would a small, safe test look like?","",["complex|Exaptation corner","complex|Oblique and naïve probes"]);
+K("complex","Parallel probes","Probes in Complex should be safe to fail, run in parallel, deliberately contradictory, finely grained and short. Running them in parallel avoids the bias of sequencing, where each probe is designed around the result of the last. Contradiction ensures the system is asked several questions at once, and short, small probes keep the cost of failure low.",
+"On the parade the receiver runs three probes at once: a soft-market test of the whole parade, a meanwhile licence on the empty unit, and a planning pre-application for the upper floors. Each answers a different question, and none commits the lender. By week eight the results together point to the route.",
+"Probes run one after another. Each then inherits the assumptions of the one before.",
+"Which three things could we test at the same time, cheaply, that contradict each other?","",["complex|The decision rule","complex|Too safe"]);
+K("complex","Challenge","Challenge sits in the middle of the Complex model: there is some evidence, but not proof. Radical disruption here could do more harm than good, because the idea may be right. Measured challenge, asking for the next piece of evidence, is the proportionate response.",
+"A buyer makes a verbal offer for the parade at a good price, and the lender wants to celebrate. The receiver asks for a written offer with proof of funds before anyone stops marketing. The written offer arrives at £60,000 less, with conditions.",
+"Treating partial evidence as proof, or attacking it as if it were worthless. Both are disproportionate.",
+"What is the next piece of evidence that would confirm or refute this?","",["complex|Level of coherence","complex|Group think"]);
+K("complex","The receiver’s Complex","In receivership, Complex is where value is made or lost: tenants’ intentions, how the street reads to passers-by, who might buy, the borrower’s family, the council’s mood. These are agents acting on each other, and their behaviour only makes sense in hindsight. They cannot be analysed into an answer; they have to be probed and watched.",
+"The receiver spends a morning a fortnight on Station Road: coffee at the café, a word with the nail-bar owner, a look at who walks past at four o’clock. That time produces more useful intelligence than any report, including the news that the council plans a bus-route change.",
+"Complex work done only from the office. The street will not show up in a spreadsheet.",
+"When did we last spend time on the street, and what did we learn?","",["framework|Complex","listen|Micro-narratives"]);
+K("complex","Oblique and naïve probes","Some probes should address related problems rather than the target directly; these are oblique. Others should draw on people from adjacent fields who bring naïve capability: they do not know what is supposed to be impossible. Both widen the range of possibilities the system can reveal.",
+"The receiver asks a housing association manager, not a retail agent, to look at the parade’s shops. She points out that the flats’ residents are the shops’ main customers and suggests a resident discount scheme. It lifts the nail bar’s weekday trade and makes the flats more saleable.",
+"Probes designed only by specialists in the obvious field. They confirm what the field already thinks.",
+"Who from a neighbouring field could look at this with fresh eyes?","",["complex|Heretics and mavericks","complex|Parallel probes"]);
+K("complex","The decision rule","The decision rule sets the terms before opinions harden: everyone with an idea that has even a remote chance of being useful designs a small experiment around it. The rule shifts the conversation from arguing which idea is right to designing tests, and it protects minority ideas from being dismissed early.",
+"At the first case meeting the receiver sets the rule. The agent proposes an auction test, the asset manager a meanwhile letting, the surveyor a planning pre-app. Each designs a small probe with a cost cap and a stop date. No idea is rejected; all are tested.",
+"Meetings that choose a favourite before any probe has run. The rule has not been set.",
+"Before we decide, can each idea here be turned into a small test?","",["complex|Parallel probes","complex|Coherence, not proof"]);
+K("complex","Too safe","If every probe in a portfolio succeeds, the portfolio is not exploring. Success everywhere means the probes were designed around what was already known. A healthy portfolio includes some probes that are expected to fail, because their failure carries information too.",
+"The receiver includes one probe on the parade that he expects to fail: a weekend market in the car park. It does fail, but it shows that weekend footfall is low, which changes the letting strategy for the vacant unit away from leisure towards services.",
+"Reports in which every probe worked. Ask what was not tried.",
+"Which probe here do we expect to fail, and what would we learn if it does?","",["complex|Parallel probes","complex|Amplify and dampen"]);
+K("complex","Coherence, not proof","A probe needs coherence, not proof, to justify it: the hypothesis must be plausible enough to test. Agreeing that an idea is coherent is not the same as believing it is right. That distinction lets opponents fund each other’s tests without conceding the argument.",
+"The agent thinks the parade will sell best vacant; the asset manager thinks it will sell best tenanted. Each agrees the other’s theory is coherent. Each probe gets a small budget. The tenanted test wins, and the agent accepts it because his own theory was tested fairly.",
+"Ideas dismissed because they are not proven. In Complex, nothing is proven in advance.",
+"Is this idea coherent enough to test, even if we doubt it?","",["complex|Level of coherence","complex|The decision rule"]);
+K("complex","Amplify and dampen","When a probe works, amplify it carefully, and adopt it fully only once the system shows strong signs of stability. When a probe goes badly, dampen it or end it. Amplification is gradual because early success in Complex can be a fluke; dampening is quick because harm can spread.",
+"The three-month pop-up in unit 3 is a success. The receiver extends it by three months, not three years, and watches whether the trade holds through winter. It does, and only then is a five-year lease granted.",
+"Early success converted straight into long commitments. Stability has not yet been shown.",
+"Has this success held long enough to commit to?","",["complex|Too safe","dynamics|Alpha"]);
+
+/* ---------- chaotic ---------- */
+K("chaotic","Ability to impose constraints","The vertical axis of the Chaotic model asked whether constraints could be imposed: easily, with unknown success, or not at all. In v45 the labels became known, unknown and unknowable, and the word “impose” went. The question remains the first in any emergency: can we put a boundary round this right now?",
+"At 23:10 a fire alarm sounds at the parade. The receiver’s first question: can the building be secured tonight? The fire service has the stair; the residents are out; the insurers’ emergency contractor can board the windows by 2am. Constraints can be imposed, so the next decisions can follow.",
+"Planning the rebuild before the site is secure. Without a boundary, every other decision is premature.",
+"Can we contain this tonight, and if not, what is the nearest boundary we can hold?","",["chaotic|Novel practice","chaotic|The receiver’s Chaotic"]);
+K("chaotic","Awareness of the shift","The horizontal axis distinguishes entering chaos unexpectedly, plausibly or deliberately. Deliberate entry is a valid strategy for innovation. Falling in by accident is usually a mistake. The middle position, plausible, is where good planning moves emergencies: they still happen, but they were foreseen.",
+"The receiver’s day-one protocol for the parade lists fire, flood, squatters in the vacant unit, and a resident safeguarding concern. When the bin-store fire happens in month five, it is a plausible event, not an unexpected one. The phone numbers, authorities and duty contacts are already in place.",
+"Emergencies that were never considered. They arrive as surprises and cost more.",
+"Which emergencies on this appointment are plausible, and are they planned for?","",["chaotic|The receiver’s Chaotic","chaotic|Managed innovation"]);
+K("chaotic","Managed innovation","Managed innovation is the target zone of the Chaotic model: deliberate entry where constraints are easy to reimpose. Removing structure on purpose, for a bounded time, lets distributed cognition produce ideas no plan would generate. The boundaries are set in advance so that chaos can be closed again.",
+"The parade’s upper floors have defeated three agents. The receiver runs a one-week open call: architects, local residents and housing providers can submit any idea, no constraints. Forty ideas arrive. Two, a co-working space and supported housing, become probes.",
+"Open calls without limits set in advance. Deliberate chaos needs a way back.",
+"If we removed the constraints for one week, what would we need in place to close it again?","",["liminal|Chaotic liminal","chaotic|Duffers, better dead"]);
+K("chaotic","Last chance saloon","When chaos has arrived by accident and control is in doubt, the model calls for prompt, authoritarian crisis management. This is the one place in Cynefin where command is the right response: someone must take charge and speak with one voice until constraints are restored.",
+"After the fire, residents, tenants, the councillor and the press all want answers. The receiver takes command: one spokesperson, one update every four hours, one phone line. Rumours stop, and the decisions about rehousing get made.",
+"Committees in a crisis. Consultation is for later.",
+"Who is in command right now, and does everyone know it?","",["chaotic|Commander’s intent","leader|Danger signals in Chaos"]);
+K("chaotic","Death and rebirth","Chaos has two exits. The first is early recognition that the old state is gone, and the creation of something new, which returns the system to Complex. The second is hanging on to the old plan, which leads into inauthentic disorder with no way back. The choice is usually made in the first days.",
+"After the fire, the original plan, selling the flats as they were, is dead. The receiver recognises it in the first week and reframes: refurbish to a higher fire standard and sell as a better product. The parade comes back into Complex with a new direction instead of waiting for the old plan to revive.",
+"Recovery plans that restore the pre-crisis plan unchanged. The context has moved.",
+"Is the old plan still alive, or are we hanging on to it?","",["chaotic|Sense after acting","chaotic|Crisis and innovation teams"]);
+K("chaotic","Duffers, better dead","The phrase, borrowed from Arthur Ransome, names deliberate entry into chaos where constraints are known to be impossible to reimpose. It is plainly foolish: creating disorder you cannot control. Deliberate chaos is only valid where the way back is known.",
+"A suggestion to forfeit every shop lease on the parade at once, to ‘start clean’, would leave six empty units, no income and a street that reads as dead. The receiver rejects it. Any lease change is done one unit at a time, with a replacement in view.",
+"Bold moves with no plan for the morning after. That is chaos you cannot control.",
+"If we did this, could we restore order afterwards?","",["chaotic|Managed innovation","cons|Restorable constraints"]);
+K("chaotic","Crisis and innovation teams","Crises break existing patterns, which makes them a good time to change things that could not be changed before. Snowden recommends running an innovation team alongside the crisis team: one restores order, the other looks for what the disruption has made possible.",
+"On the morning after the fire, the receiver names an innovation lead alongside the crisis lead. While one rehouses residents, the other notices that the fire has exposed the poor layout of the stair core, and commissions a scheme that adds a second escape route and unlocks the upper floors.",
+"Crisis teams that only restore. The chance to improve passes with the emergency.",
+"While we restore order, who is looking for what this makes possible?","",["chaotic|Death and rebirth","crisis|Exapt"]);
+K("chaotic","The receiver’s Chaotic","Chaotic events in receivership include fire, flood, squatters, building-safety emergencies and safeguarding concerns. The rule is to act first, then sense: secure life and property, then work out what happened. An emergency protocol, written on day one, means action does not wait for the receiver to find phone numbers.",
+"The parade’s protocol fits on one page: fire service, insurers’ emergency line, the lender’s duty contact, the council’s housing officer, a locksmith and a board-up contractor. It is in the receiver’s phone and the agent’s file. On the night of the fire, every call is made within forty minutes.",
+"Emergency contacts held in one person’s head. If they are unreachable, the response stalls.",
+"If this happened tonight, who would we call first, and is the number in hand?","",["chaotic|Awareness of the shift","law|Emergencies"]);
+K("chaotic","Commander’s intent","Commander’s intent replaces detailed orders with a clear statement of purpose. In a crisis, crews must act where orders cannot reach, and intent lets them make coherent decisions on their own. A good intent is short enough to remember and concrete enough to decide by.",
+"The receiver’s intent on the night of the fire: everyone safe tonight, everyone housed by Friday. The agent’s staff use it to make dozens of decisions without calling: a hotel booking, a taxi for an elderly resident, keeping the café open as a waiting room.",
+"Crews ringing for permission at every step. The intent was not clear enough.",
+"What is the one sentence everyone should act on?","",["crisis|Commander’s intent","chaotic|Last chance saloon"]);
+K("chaotic","Novel practice","In chaos the first move is novel practice: a new constraint imposed immediately to stop the spread. It is a decision that would be reckless in any other domain, because it is made before the facts are known. The facts follow; the constraint buys time to find them.",
+"Smoke in the stair at midnight: the receiver closes the stair, moves the residents to the café and calls the insurers, all before knowing what caused the fire. The cause, a discarded cigarette in the bin store, is found the next day.",
+"Waiting to understand before acting. In chaos, understanding comes after.",
+"What constraint can we impose now, before we know the cause?","",["chaotic|The decay of action","framework|Five kinds of practice"]);
+K("chaotic","The decay of action","In chaos the relationships between cause and effect are being made and unmade by the event itself. Every hour of waiting lets the situation settle into a shape nobody chose. Delay is not neutral; it is a decision to let the system decide.",
+"The receiver’s out-of-hours number is live from day one. When the fire happens, the agent reaches the receiver in five minutes and the residents are rehoused that night. On a neighbouring appointment without such a number, the delay meant three families slept in their cars.",
+"Emergency procedures that only work in office hours. Chaos does not keep them.",
+"If something happened at 3am, how long would it take to reach someone who can decide?","",["chaotic|Novel practice","hundred|Act, then sense"]);
+K("chaotic","Sense after acting","Once a crisis is contained, the work turns to sensing: what pattern did the event expose? That pattern becomes the permanent constraint of the rebuild. The crisis is information about the system’s weak points, and it should shape what comes next.",
+"The fire showed that the parade’s stair core had no compartmentation and that the bin store sat under the escape route. The receiver funds compartmentation and relocates the bin store before a single flat is redecorated. The improvement becomes part of the sales pitch.",
+"Rebuilding to the pre-crisis specification. The lesson is lost.",
+"What did this event show us about the building that we must fix first?","",["chaotic|Death and rebirth","crisis|Transcend"]);
+
+/* ---------- framework ---------- */
+K("framework","Bounded applicability","Bounded applicability is the core principle of Cynefin. There are few, if any, solutions that work regardless of context, but many valid solutions that work within particular contexts. The framework helps a practitioner choose an approach that fits the situation, and notice when the situation has changed enough that the approach should change too.",
+"The panel’s standard approach, quick sale with vacant possession, works well for a buy-to-let flat. On the parade it would destroy value, because the tenants are what make the shops lettable. The receiver writes in the strategy report why the standard approach does not apply here.",
+"Templates used without asking where they came from. Their context may not be this one.",
+"Where was this approach developed, and is this asset like that place?","",["principles|Bounded applicability","misuse|Not a recipe"]);
+K("framework","Three primary domains","Cynefin rests on three primary states, defined by the kind of constraint present: order, with rigid or governing constraints; complexity, with enabling constraints; and chaos, with no effective constraint. The five domains follow from splitting order in two and adding the central domain of confusion.",
+"The receiver asks of each part of the parade appointment: is it held in order (insurance, rent demands), held loosely (tenants’ behaviour, buyer interest), or not held at all (the night of the fire)? The answer decides the method.",
+"Classifying by how difficult something feels. Difficulty is not the same as constraint.",
+"Is this held tightly, held loosely, or not held at all?","",["framework|Order splits","cons|Fixed, governing, enabling"]);
+K("framework","Order splits","Order splits into Clear, where cause and effect are self-evident and constraints are rigid, and Complicated, where cause and effect can be discovered by expertise and constraints govern. Both are ordered; the difference is whether anyone competent can see the answer or whether an expert has to find it.",
+"Serving a notice of appointment is Clear: anyone trained can do it. Deciding whether the parade should be valued with or without the café’s lease is Complicated: it needs a valuer and a lawyer. The receiver assigns the first to the team and instructs experts for the second.",
+"Experts used for Clear work, or Clear routines used where expertise is needed. Both waste money.",
+"Could any competent person do this, or does it need an expert?","",["framework|Three primary domains","clear|The receiver’s Clear"]);
+K("framework","Complex","A system is complex when it is held by enabling constraints and has many levels of entanglement. Its behaviour is dispositional: it leans in certain directions but has no linear causality that can be traced in advance. Outcomes only make sense in hindsight, so the method is to probe, sense and respond.",
+"How tenants respond to a new rent plan, whether buyers will see the parade as a revival or a risk, how the street reads after the bus route changes: all depend on many interacting agents. None can be predicted, but each can be probed.",
+"Forecasts presented as certainties in complex parts of an appointment. They will be wrong in ways nobody can foresee.",
+"What only makes sense afterwards here, and how will we probe it?","",["complex|The receiver’s Complex","framework|Three primary domains"]);
+K("framework","Chaos","Chaos is the absence of effective constraint. It is often confused with confusion, but they are different: chaos needs action, while confusion needs inquiry. Treating confusion as chaos leads to reckless action; treating chaos as confusion leads to fatal delay.",
+"An appointment where nobody knows who holds the keys, which leases exist or what the borrower has promised is confusing, not chaotic: it needs patient inquiry. The night of the fire is chaotic: it needs immediate action. The receiver uses different modes for each.",
+"Panic in a confusing situation, or analysis in a chaotic one. Both mismatch mode to domain.",
+"Is this chaos, which needs action, or confusion, which needs inquiry?","",["framework|The centre","chaotic|The receiver’s Chaotic"]);
+K("framework","The centre","The central domain is confusion. Since March 2020 its liminal part has been named aporetic: confusion held knowingly, as a deliberate state from which a decision to move can be made. Being in the centre is not failure; it is where every honest appointment begins.",
+"On day one the receiver does not know whether the parade is a sale, a turnaround or a development. He says so to the lender, lists what he will find out in the first month, and moves parts of the appointment out of the centre as the evidence arrives.",
+"Pretending to know on day one. It fixes the appointment in the wrong domain.",
+"What do we honestly not yet know, and how will we find out?","",["aporetic|Aporia","hundred|Stay in the centre"]);
+K("framework","Catastrophic fold","Every other boundary in Cynefin can be crossed gradually, through a liminal zone where the change can be seen and managed. Clear and Chaos meet without one. The cause is success itself: the better a routine works, the less anyone looks at it, so the conditions it depends on can wear away unseen. When they finally give, there is no intermediate state to fall into. The system drops straight from order to the absence of effective constraint.",
+"The parade’s fire-safety routine had been signed off by the agent every year for a decade. Nobody checked whether the fire door was being propped open. The routine looked Clear right up to the night of the fire.",
+"Routines that have run smoothly for years without review. Smoothness is not safety.",
+"Which of our smoothest routines has not been checked against reality lately?","",["clear|The fold in practice","iter|Simple beside chaotic"]);
+K("framework","Simple, Obvious, Clear","The domain now called Clear was first Simple, then Obvious, then in 2020 Clear. Each rename tried to remove a misreading: Simple suggested easy, Obvious suggested trivial. Disorder was split at the same time into aporetic and confused. The names changed; the danger at the edge stayed the same.",
+"Lenders who learned Cynefin in 2007 may still say ‘simple’. The receiver uses whichever word the credit committee knows, but stresses that routine work still needs doing carefully, and that the cliff edge sits beside it.",
+"Arguments about which name is correct. The point is the behaviour, not the label.",
+"Whatever we call it, are we watching the edge?","",["iter|Obvious","iter|Clear and aporetic"]);
+K("framework","Four illustrations","The Cynefin wiki uses four everyday illustrations: the hand-luggage checklist for Clear, engineering a bridge for Complicated, a children’s party for Complex and carnival for Chaos. They are memorable because they make the kind of constraint concrete.",
+"The receivership equivalents: the day-one checklist (Clear), the valuation (Complicated), the tenanted parade (Complex), the night of the fire (Chaos). The receiver uses them when explaining the strategy to a lender who has never heard of Cynefin.",
+"Illustrations taken as definitions. A children’s party can also contain Clear tasks, like the fire exits.",
+"What is our equivalent of the checklist, the bridge, the party and the carnival?","",["framework|Five kinds of practice","crisis|Judged at the end"]);
+K("framework","Five kinds of practice","Each domain has its own kind of practice: best practice in Clear, good practice in Complicated, exaptive practice in Complex, novel practice in Chaos, and deliberate paradox and puzzlement in Aporetic. None is universal. The skill is matching the practice to the part of the situation.",
+"On the parade, notices follow best practice, the valuation follows good practice, the tenant engagement follows exaptive practice through probes, the fire response used novel practice, and the first lender meeting used deliberate puzzlement: ‘what would make us glad we waited?’",
+"One kind of practice applied everywhere. Most appointments need all five.",
+"Which kind of practice does each part of this appointment need?","",["clear|Best practice","aporetic|Inducing aporia"]);
+
+/* ---------- liminal ---------- */
+K("liminal","The liminal line","The liminal line runs through the framework, open at the top and closed at the bottom, crossing every domain except Clear. It marks the transitional zones where a situation is moving from one domain to another. Those zones are where most errors are made, because the old method is still being used while the new one is needed.",
+"The parade’s riskiest moments were transitions: the week the pop-up became a lease, the night the routine fire check gave way to the fire, the day the strategy moved from forming to marketing. The receiver puts each transition in the plan as a stage with its own check.",
+"Plans that list stages but not transitions. The handover is where things are dropped.",
+"Which transition is this appointment in right now, and what check belongs to it?","framework",["liminal|Complex–Complicated","dynamics|Alpha"]);
+K("liminal","Complex–Complicated","Liminal Complex–Complicated is the state of a situation still uncertain but heading towards order: iteration is seeking a good practice, and a phase shift is under way. The shift needs energy, and premature formalisation can freeze the wrong pattern. The discipline is to confirm a pattern several times before writing it into the strategy.",
+"The receiver sees tenants on the parade pay more reliably after a phone call than after a letter. Before writing ‘call first’ into the agent’s routine, he checks it across three months and three different tenants. It holds, and then it is formalised.",
+"Patterns formalised after one good month. The phase shift has not completed.",
+"How many times, independently, have we seen this pattern hold?","phase",["dynamics|Alpha","hundred|Formalise what held"]);
+K("liminal","Chaotic liminal","Liminal chaos is the deliberate removal of effective constraints, for a limited time, for decision support or innovation. It is not falling into chaos; it is choosing to enter it at the edge, with the limits set in advance and a way back planned.",
+"To break the deadlock over the upper floors, the receiver runs a single afternoon workshop with no constraints on what can be suggested: architects, residents, a youth worker, the café owner. The limits are clear in advance: no commitments, two hours, ideas recorded and reviewed next week.",
+"Brainstorms that slide into decisions. Deliberate chaos should end where it was planned to end.",
+"What are the limits of this deliberate disruption, and when does it close?","phase",["chaotic|Managed innovation","dynamics|Ritual dissent"]);
+K("liminal","Complicated liminal","Liminal Complicated is where the method of analysis, or the kind of expertise required, is itself in question. Experts may agree on facts but disagree on how to read them. Until the method is settled, more analysis just produces more disagreement.",
+"Two valuers disagree about the parade not because one is wrong but because one uses an investment basis and the other a vacant-possession basis. The receiver asks the lender which basis fits the strategy; once that is settled, the figures converge.",
+"Expert reports multiplying without convergence. The method is still unsettled.",
+"Do our experts agree on the method, or only disagree on the answer?","phase",["complicated|Competing expertise","complicated|The receiver’s Complicated"]);
+K("liminal","Phase shift","The latent-heat metaphor explains why change can look stuck. Boiling water stays at 100ºC while it absorbs energy before turning to steam; freezing water releases energy while its temperature stays at zero. Domain shifts behave alike: effort is absorbed with no visible result, then the state changes.",
+"For six weeks the receiver’s work on the parade, meetings, pop-ups, a new rent plan, shows no change in the arrears figure. In week seven, arrears drop by a third. The lender nearly lost patience in week five. The receiver now warns at the outset that the first weeks will absorb effort without showing it.",
+"Judging a change effort by early figures. The latent heat has not yet been paid.",
+"Is this stuck, or absorbing the energy it needs before it shifts?","phase",["v45|Stepping","liminal|Triple point"]);
+K("liminal","Triple point","At a triple point, a substance can exist as solid, liquid and gas at once, and the smallest change tips it into any of them. Triple points are used to calibrate thermometers. In Cynefin, the move from chaos into the aporetic is a rapid calibration: establishing what is known, what is not and what must be done now.",
+"In the first hour after the fire the receiver calibrates aloud with the agent: we know everyone is out; we do not know the cause or the damage; we must secure the building and rehouse tonight. That calibration sets the order of every later decision.",
+"Acting in a crisis without stating what is known and unknown. Decisions then rest on assumptions.",
+"What do we know, what don’t we know, and what must we do now?","phase",["chaotic|Novel practice","framework|The centre"]);
+
+/* ---------- dynamics ---------- */
+K("dynamics","Blue","The blue line is the most stable dynamic: from Complex, through the liminal zone, into Complicated and, if the state proves stable, into Clear. It describes how a pattern discovered by probing becomes a governed process and then a routine. Each step is checked before the next is taken.",
+"On the parade, the rent-plan probe follows the blue line. It starts as a test with two tenants (Complex), becomes a documented process with an expert check (Complicated) and, after six months, becomes the agent’s routine for all tenants (Clear).",
+"Jumping from probe straight to routine. The governed stage was skipped.",
+"Where on the blue line is this, and what check comes next?","",["dynamics|Alpha","dynamics|Delta"]);
+K("dynamics","Red","The red line is radical change when apparent stability turns out to be false. It runs from Clear through aporia, optionally with a shallow dive into chaos, and back into Complex. It is used when a routine rests on workarounds or assumptions that no longer hold.",
+"The receiver discovers that the agent’s nil-arrears figures for the parade rested on a workaround. The routine is broken open: arrears are re-stated, each tenant’s account is reviewed, and the rent process is rebuilt through probes. It is painful, but it is honest.",
+"Patching a false stability rather than rebuilding it. The workaround will return.",
+"Is this routine genuinely stable, or resting on something hidden?","",["clear|Gaming","dynamics|Delta"]);
+K("dynamics","Purple","Purple, or grazing, is a near-continuous cycle for situations where patterns never settle: start-ups, innovation teams and some trading businesses. Rather than moving towards stability, the system keeps probing and adjusting, with short cycles and distributed decisions.",
+"The parade’s café trades with the seasons, school holidays and the bus timetable. The receiver does not try to fix its rent terms permanently; he reviews them each quarter with the owner. Hotels and pubs in receivership often need the same pattern.",
+"Forcing a grazing asset into a fixed routine. It will keep breaking it.",
+"Will this ever settle, or should we plan short cycles instead?","",["dynamics|Blue","principles|Time and cadence"]);
+K("dynamics","Alpha","Alpha is the check for genuine repeatability before a pattern moves from Complex into Complicated. It asks whether the pattern has been seen more than once, independently, and not just in conditions that favoured it.",
+"Before the receiver formalises the parade’s ‘resident discount’ scheme, he checks that it has worked in two independent months and for two different shops. It has; the scheme becomes part of the strategy.",
+"Formalising after one success. Repeatability has not been shown.",
+"Have we seen this work at least twice, independently?","",["liminal|Complex–Complicated","complex|Amplify and dampen"]);
+K("dynamics","Beta","Beta checks whether a Complicated state still holds: what variations and exceptions have appeared? A process ready for routine should have its exceptions understood, because a checklist that ignores them will fail at the first one.",
+"Before the parade’s rent process becomes a checklist, the receiver lists the exceptions already met: a tenant who pays fortnightly, one on universal credit, one who pays in cash at the café. Each gets a line in the checklist.",
+"Checklists written from the typical case only. The exceptions are where they break.",
+"What exceptions have we already seen, and are they in the process?","",["dynamics|Delta","clear|Entropy death"]);
+K("dynamics","Gamma","Gamma is suspension in aporia: the point where a team deliberately holds a problem open and takes it apart. It uses decomposition, recomposition or exaptation, often with entangled trios, small groups from different disciplines who see the problem differently.",
+"Stuck on the upper floors, the receiver convenes a trio: a planning consultant, a housing manager and the café owner. In two hours they break the problem into access, use and value, and recompose it as supported housing with a separate entrance.",
+"Teams pushing harder on a stuck problem. Taking it apart often works better.",
+"Who are three people from different fields who could take this problem apart with us?","",["aporetic|Decompose","aporetic|Inducing aporia"]);
+K("dynamics","Delta","Delta is the last check before committing to Clear. If stability is not confirmed, the system should take the red line rather than lock in a false routine. Commitment to Clear is expensive to reverse, so delta deserves care.",
+"Before the lender adopts the parade’s rent process across its whole panel, the receiver asks: has it held through a winter, a rent review and a change of agent staff? It has held through two of the three. The panel adoption waits until the third.",
+"Panel-wide adoption on limited evidence. Delta was skipped.",
+"Has this held through every condition it will meet once routine?","",["dynamics|Into Clear","dynamics|Red"]);
+K("dynamics","Into Clear","Moving into Clear is a costly and hard-to-reverse commitment. The wiki compares it to changing which side of the road a country drives on: everyone must change together, and undoing it is just as disruptive. That is why the move should be slow and well evidenced.",
+"The lender wants every appointment on its panel to follow the parade’s new tenant-engagement process. The receiver advises a staged roll-out: three appointments first, then the panel. Changing a panel’s instructions is expensive to undo.",
+"Rapid routinisation across many cases. Reversal will cost even more.",
+"If this turned out to be wrong, how expensive would it be to undo?","",["dynamics|Delta","v45|Stepping"]);
+K("dynamics","Ritual dissent","In the dynamics, ritual dissent supports the shallow dive into chaos: a structured attack on an idea, used to break entrainment, the habit of seeing only what one expects. It deliberately disrupts a settled view without destroying it.",
+"Before the parade’s planned route goes to the lender, the receiver lets a team from outside the appointment attack it. They spot that the route depends on a planning consent nobody has applied for yet.",
+"Plans presented only to the people who built them. Entrainment has not been broken.",
+"Who has not seen this plan and could attack it?","",["complicated|Ritual dissent","dynamics|Red"]);
+K("dynamics","The classic dynamics","Kurtz and Snowden’s 2003 paper, “The new dynamics of strategy”, named the movements between domains: collapse, imposition, swarming, exploration, just-in-time transfer and others. They are shown here in today’s domain names. Naming the movement clarifies what is being asked of everyone involved.",
+"The receiver tells the lender: ‘This month we are exploring: moving from routine into complex to test new uses for the upper floors. Next month, if a use holds, we will move it into complicated with a planning application.’ The lender knows what kind of month to expect.",
+"Moves that nobody has named. People then expect the wrong kind of work.",
+"Which movement are we making, and have we told everyone?","classic",["dynamics|Blue","iter|Known and knowable"]);
+
+/* ---------- aporetic ---------- */
+K("aporetic","Aporia","Aporia is Greek for impasse. In Cynefin, after Derrida, it names a paradox or unanswerable uncertainty held knowingly. Unlike confusion, aporia is a chosen state: the practitioner recognises that the question cannot yet be answered, and holds it open on purpose.",
+"In the first report on the parade, the receiver writes: ‘We do not yet know whether the shops are an asset or a liability. Here is how we will find out in the next six weeks.’ The lender reads honesty, not weakness.",
+"Reports that answer every question on day one. Some answers are being invented.",
+"Which question here should we say we cannot yet answer?","",["aporetic|The aporetic turn","framework|The centre"]);
+K("aporetic","The aporetic turn","The aporetic turn, added in 2019–20, is the legitimate, deliberate move out of the central domain into another. It is made by decomposing the problem, recomposing it, exapting something, or making a shallow dive into chaos. It replaces drifting out of confusion with choosing a way out.",
+"After a month on the parade, the receiver makes the aporetic turn: he decomposes the appointment into shops, flats, upper floors and the café, and assigns each a domain and a method. The confusion is resolved by choice, not by default.",
+"Leaving confusion by whichever door opens first. That is drift, not a turn.",
+"How will we deliberately move out of the centre, and in which direction?","",["aporetic|Decompose","aporetic|Aporia"]);
+K("aporetic","Aporetic and confused","In 2020 disorder was split. Authentic disorder became the aporetic: confusion held knowingly, with a decision about how to proceed. Inauthentic disorder became the confused: being lost without knowing it, or pretending to know. The difference lies in awareness, not in how much is known.",
+"Two receivers on similar parades know equally little in week one. One says so, lists what she will find out, and holds the questions open: aporetic. The other writes a confident sale plan based on a template: confused, though it does not look like it.",
+"Confidence without evidence. It can be confusion in disguise.",
+"Are we choosing to hold this question open, or are we simply lost?","",["aporetic|Aporia","misuse|Start in the centre"]);
+K("aporetic","Inducing aporia","Aporia can be created deliberately through paradox, puzzlement and Socratic questioning. The aim is to break a settled view so that more possibilities become visible. It is a practice for leaders who sense that a team has converged too early.",
+"The lender’s team is fixed on a quick sale. The receiver asks: ‘What would make us glad, in a year, that we waited?’ The question has no easy answer. It opens a discussion about the café’s lease renewal and the upper floors that the quick sale would have ignored.",
+"Teams that always reach the same answer. A good question can reopen the field.",
+"What question could we ask that has no easy answer here?","",["aporetic|Aporia","dynamics|Gamma"]);
+K("aporetic","Decompose","Decomposition reduces the granularity of a problem until its parts sit clearly in one domain or another. A problem that seems confusing as a whole often turns out to be several problems, some ordered and some complex, which can then be handled with the right method each.",
+"‘The parade’ is confusing as a whole. Decomposed, it becomes: notices and insurance (Clear), valuation and title (Complicated), tenants and buyers (Complex), and the fire-damaged stair (Chaotic, then Complicated). Each part gets its own plan.",
+"Treating a whole appointment with one method. Its parts usually need different ones.",
+"What are the parts of this problem, and which domain is each in?","",["misuse|Not a label","make|Minimise the centre"]);
+K("aporetic","The receiver’s aporia","In receivership, aporia often takes the form of conflicting duties, or an appointment that is several domains at once. Saying so to the lender is legitimate; pretending otherwise is not. Recording the conflict and taking advice is the professional response.",
+"The lender wants a quick sale; the duty to take reasonable care to obtain the true market value points to a longer marketing period. The receiver writes the tension down, takes legal advice, and explains to the lender why the marketing period is set as it is.",
+"Conflicts resolved silently in favour of whoever is pressing hardest. The record should show the judgement.",
+"Where do our duties pull in different directions here, and have we written it down?","",["law|Cuckmere Brick (1971)","law|Downsview (1993)"]);
+
+/* ---------- law ---------- */
+K("law","The deed and LPA 1925","Law acts as a governing constraint: laws, rules and codes give stability, but they are sensitive to change and must be read for each case. The powers in the mortgage deed, together with the Law of Property Act 1925, bound what a receiver may do in every domain. They decide which domains the receiver may enter at all.",
+"On the parade, the deed gives the receiver power to let and to collect rent, but its power to carry out works is limited. That shapes the strategy from day one: refurbishment needs the lender’s express consent, and the probes are designed around what the deed allows.",
+"Strategies designed before the deed has been read. They may exceed the powers available.",
+"What does the deed allow us to do here, and what does it not?","",["law|Not legal advice","cons|Fixed, governing, enabling"]);
+K("law","Cuckmere Brick (1971)","Cuckmere Brick v Mutual Finance established that a mortgagee exercising its power of sale must take reasonable care to obtain the true market value at the time it chooses to sell. In Cynefin terms that is Complicated work: valuation, marketing and evidence, done competently and recorded.",
+"For the parade, the receiver records who was approached, through which channels, for how long, and why that route was chosen over auction. If the sale is challenged later, the file shows reasonable care.",
+"Sales with no record of how the market was tested. The duty cannot then be shown to have been met.",
+"If this sale were challenged, what would our file show?","",["complicated|The receiver’s Complicated","aporetic|The receiver’s aporia"]);
+K("law","Downsview (1993)","Downsview Nominees v First City Corporation set out the frame for receivers’ duties in equity: the primary duty is to the appointor, to bring about repayment, and the receiver must act in good faith towards the mortgagor. That frame holds in every domain, from routine to crisis.",
+"On the parade, recovery for the lender comes first. Good faith means the receiver does not sell to an associate at an undervalue, keeps the borrower informed where appropriate, and does not act for a collateral purpose.",
+"Actions that serve another purpose than recovery. Good faith is the boundary.",
+"Does this decision serve recovery for the appointor, and is it in good faith?","",["law|Cuckmere Brick (1971)","law|Medforth v Blake (2000)"]);
+K("law","Medforth v Blake (2000)","Medforth v Blake held that a receiver who chooses to manage the mortgaged property owes a duty to manage it with due diligence. In Cynefin terms, once the receiver decides to probe in Complex, the probes must be competently run.",
+"The receiver chooses to manage the parade actively: letting the vacant unit on a meanwhile licence and running pop-ups. Each is properly documented, insured and supervised, so that the management meets the standard due diligence requires.",
+"Probes run casually because they are ‘only tests’. Once managing, the duty applies.",
+"Now that we are managing this, are we doing it with due diligence?","",["complex|Parallel probes","law|Silven (2003)"]);
+K("law","Silven (2003)","Silven Properties v Royal Bank of Scotland held that a mortgagee, and a receiver, is under no obligation to improve the property or seek planning permission before selling. It gives permission to explore Complex, but not a duty to do so.",
+"The receiver chooses to submit a planning pre-application for the parade’s upper floors because the evidence suggests it will add value. The file records why. On another appointment where the evidence did not support it, he records why he did not.",
+"Assuming exploration is required, or assuming it is forbidden. It is permitted, and the choice should be recorded.",
+"Are we choosing to explore this, and have we recorded why or why not?","",["law|Medforth v Blake (2000)","complex|The receiver’s Complex"]);
+K("law","Emergencies","In chaos the duties still apply, but in a particular order: act to protect life and the security, record what was done and why, and report to the appointor at once. The record is made as soon as possible after the action, not before it.",
+"After the fire, the receiver acts first: residents rehoused, building secured, insurers called. Within twenty-four hours the lender has a written note of what happened, what was done and why.",
+"Delaying action for consent in an emergency, or acting without recording. Both cause problems later.",
+"What did we do, why, and has the appointor been told?","",["chaotic|The receiver’s Chaotic","chaotic|Novel practice"]);
+K("law","Not legal advice","Nothing in the field kit is legal advice. Each appointment turns on its own deed, its own facts and the advice of solicitors. The cases are cited to show how the law constrains each domain, not to settle any question in a particular appointment.",
+"On the parade, every question about the deed’s powers, the café’s lease protection and the sale terms went to the receiver’s solicitors. The Cynefin reading helped frame the questions; the answers came from legal advice.",
+"Using a framework summary in place of advice. The framework frames; the lawyer advises.",
+"Have we taken advice on the deed and the facts of this appointment?","",["law|The deed and LPA 1925","misuse|Not a recipe"]);
+
+/* ---------- misuse ---------- */
+K("misuse","Not a 2×2","Cynefin is not a four-box matrix. It has five domains, liminal states and dynamics between them. The domains differ in kind, not in value: none is better than another. The boundaries are drawn as organic curves precisely to avoid the look of a consultant’s grid.",
+"A lender’s analyst once summarised the parade as ‘top-right box: complex’. The receiver redrew it: the shops in Complex, the valuation in Complicated, notices in Clear, the fire in Chaos, with arrows showing how parts were moving. The analyst’s question changed from ‘which box?’ to ‘what is moving where?’",
+"Cynefin drawn as a grid in a slide deck. The dynamics have been lost.",
+"Are we using this as a map of movement, or as four boxes?","",["misuse|Not a label","framework|Three primary domains"]);
+K("misuse","Not a label","An appointment is rarely ‘in’ one domain. Different aspects sit in different domains and move between them over time. Labelling the whole appointment with one domain hides this and leads to one method being used for everything.",
+"The parade is not ‘a complex appointment’. Its notices are Clear, its valuation Complicated, its tenants Complex, and on one night its stair was Chaotic. Treating it all as complex would have meant probing the insurance renewal, which nobody wants.",
+"Whole appointments given a single domain. Decompose first.",
+"Which parts of this appointment are in which domain today?","",["aporetic|Decompose","misuse|Not a 2×2"]);
+K("misuse","Not a recipe","The domain models are a cook’s handbook, not a recipe. They prompt judgement rather than replace it. Following them step by step misses their point: they are reminders of what experienced practitioners notice, not a procedure.",
+"The receiver does not ‘apply’ the Complex model to the parade by working through its cells in order. He uses it to ask better questions in the case meeting, then decides what to do from the answers.",
+"Teams asking which cell to fill in next. That is recipe thinking.",
+"Is this model helping us think, or telling us what to do?","",["grammar|Cook’s handbook","law|Not legal advice"]);
+K("misuse","Start in the centre","Sense-making should increasingly start in the aporetic: assume you do not yet know, and make the confusion as knowing as possible. Starting with a diagnosis risks fixing the situation in the wrong domain before anything has been learned.",
+"On day one the receiver resists the lender’s question ‘what is the plan?’. He replies with what he knows, what he does not, and how he will find out by week four. The plan follows the evidence.",
+"Diagnosis on day one. It is almost always premature.",
+"What do we assume we know that we have not yet checked?","",["framework|The centre","hundred|Stay in the centre"]);
+K("misuse","Language","A receiver does not need to use Cynefin vocabulary with a lender. The framework is scaffolding for the receiver’s own thinking; the lender should hear the reasoning in its own terms. Jargon can create distance and hide disagreement.",
+"The receiver’s reports on the parade never mention Cynefin. They say ‘routine’, ‘needs expert advice’, ‘we are testing’ and ‘emergency’. The lender follows the reasoning without learning a framework.",
+"Reports full of framework terms. The reader may nod without understanding.",
+"Could we say this in the lender’s own words?","",["grammar|Rename the axes","grammar|Scaffolding"]);
+K("misuse","Coherence, not alignment","A receivership strategy should aim at coherence, a route that holds together with the evidence and the people, rather than mere alignment, where everyone agrees. Alignment without coherence can collapse when reality intrudes; coherence can survive disagreement.",
+"The lender, the agent and the tenants never fully agree on the parade’s strategy. But the route, let the shops, sell the flats, keep the café, holds together with the evidence and with what each party can live with. It survives a change of credit officer.",
+"Strategies judged by how many people agree. Ask whether they hold together.",
+"Does this route hold together with the evidence, even where people disagree?","",["grammar|Scaffolding","complex|Group think"]);
+
+/* ---------- principles ---------- */
+K("principles","Playing in tension","Playing in tension uses the pull between coherence and difference rather than resolving it. Either/or choices are replaced, where context allows, with both/and. The tension itself is productive, because it keeps a plan from collapsing into one side.",
+"The lender needs certainty for its provisions; the parade needs exploration to find its value. The receiver’s plan gives both: a firm minimum recovery figure for the lender’s books, and a bounded set of probes for upside.",
+"Plans that pick one side of a tension. The other side will return as a problem.",
+"How could this plan serve both needs at once?","",["principles|Liminality","complex|Coherence, not proof"]);
+K("principles","Heuristics not rules","Heuristics are flexible rules of thumb that guide decisions without dictating them. They work better than fixed rules in situations that change, because they can be applied with judgement. A good heuristic is short, memorable and points in a direction.",
+"‘Stabilise before you sell’ guided every decision on the parade: fix the stair light, let the empty unit, settle the café’s lease, then market. A fixed rule, ‘auction in twelve weeks’, would have forced a sale before any of that.",
+"Fixed deadlines in uncertain situations. They force decisions before the evidence exists.",
+"What rule of thumb could guide us here, instead of a fixed rule?","",["principles|Bounded applicability","chaotic|Commander’s intent"]);
+K("principles","Bounded applicability","A method works only within the context it was developed for. This principle, at the core of Cynefin, is a caution against importing solutions from elsewhere without checking that the conditions match.",
+"The panel’s standard template was designed for buy-to-let flats with assured shorthold tenancies. On the parade, with commercial leases and a mixed-use building, half of it does not apply. The receiver marks up which parts fit.",
+"Templates applied to assets they were not designed for. They carry hidden assumptions.",
+"Where was this method developed, and is this context like that one?","",["framework|Bounded applicability","clear|Ossification"]);
+K("principles","Beware unintended consequences","Every intervention in a complex system has effects beyond those intended. Watching for them is part of the method, not an afterthought. Some will be harmful, some beneficial, and both carry information.",
+"A rent concession to keep the nail bar on the parade was intended to help one tenant. Within a month, two other tenants asked for the same terms, and a buyer’s surveyor treated the concession as the new market rent. The receiver now considers precedent before any concession.",
+"Interventions judged only by their intended effect. The side effects may matter more.",
+"What else might this change, beyond what we intend?","",["principles|Flow and patterns","listen|Anti-stories"]);
+K("principles","Be a mirror, not an expert","The receiver’s role in Complex is often to help a system see itself, making space for its voices, rather than telling it what it is. A mirror reflects what is there; an expert imposes an interpretation. The first lets people own what they see.",
+"Before describing the parade to the lender, the receiver lets the tenants and residents describe it: what works, what does not, what they fear. Their account, in their words, goes into the first report.",
+"Expert diagnoses delivered to people who know the place better. They will resist it.",
+"Have we heard how the people here describe it before we describe it to them?","",["listen|Self-signification","v45|Rob England"]);
+K("principles","Time and cadence","Timing and rhythm matter as much as content. Actions taken at the right moment work; the same actions at the wrong time can fail. Every appointment has its own calendar of natural moments for change.",
+"On the parade, quarter days, the café’s lease renewal, the credit committee’s monthly meeting and the school holidays set the tempo. The receiver times the rent-plan launch for just after a quarter day and the lender update for two days before committee.",
+"Plans with dates but no rhythm. They miss the natural moments.",
+"What natural rhythms does this appointment have, and are we working with them?","",["dynamics|Purple","principles|Flow and patterns"]);
+K("principles","Flow and patterns","Attending to flow and patterns means watching how things move and recur over time, not taking snapshots. A single month’s figures can mislead; a pattern over several months shows direction.",
+"The parade’s arrears figure for March looked alarming. Over twelve months it showed a seasonal pattern: arrears always rose after Christmas and fell by May. The receiver reports the pattern, not the snapshot.",
+"Decisions made on one month’s figures. The pattern may say something different.",
+"What does this look like over twelve months rather than one?","",["principles|Time and cadence","listen|Patterns first"]);
+K("principles","Liminality","Liminality uses transitional spaces to suspend judgement and avoid converging too early on one answer. Keeping options open through a transition allows evidence to arrive before commitment.",
+"The receiver keeps two sale routes for the parade alive, whole-parade sale and split sale, until a third independent sounding from buyers confirms the split. Committing after the first sounding would have been premature.",
+"Options closed after the first piece of evidence. Liminality has been cut short.",
+"Should we keep both options open a little longer?","",["liminal|The liminal line","principles|Playing in tension"]);
+
+/* ---------- machines ---------- */
+K("machines","Context before capability","The 2026 post asks what machines should do and what must stay human, and answers by identifying the nature of the situation first. The question is not ‘what can the tool do?’ but ‘what kind of situation is this?’ Capability follows context: the same tool may be essential in one domain and dangerous in another.",
+"On the parade, the receiver uses software for the rent ledger, insurance diary and statutory returns. He does not let it decide which tenants get payment plans, how to read the street, or what to do on the night of the fire. The domain decides the role of the machine.",
+"Tools adopted for what they can do, regardless of context. The situation should choose the tool.",
+"What kind of situation is this, before we ask what the tool can do?","",["machines|Machines dominate by design","machines|Over-automation"]);
+K("machines","Machines dominate by design","In Clear, machines dominate by design. They automate, run checklists and rules engines, and manage workflows with speed and consistency at scale. People design the rules and watch for drift. This is where automation adds most value and least risk.",
+"The parade’s rent demands, insurance renewals and gas-safety reminders run automatically. The receiver’s team designed the rules and reviews the exceptions report weekly. Nobody types a rent demand by hand.",
+"Clear work still done manually. Effort is being spent where machines would be more consistent.",
+"Which routine here could a machine run more reliably than we do?","",["clear|The receiver’s Clear","machines|Drift"]);
+K("machines","Drift","People must watch Clear because conditions change gradually. A rule that fitted last year may not fit now, and a machine will keep applying it faithfully. Drift is the slow movement towards the cliff edge, and only people who look at the real situation can see it.",
+"The automated arrears letters on the parade kept going to a unit that had been surrendered. Nobody noticed for four months because the machine was working perfectly. A human review of the exceptions caught it.",
+"Automated routines with no human review. They drift silently.",
+"When did a person last check that this automated rule still fits?","",["clear|Entropy death","framework|Catastrophic fold"]);
+K("machines","Machines assist","In Complicated, machines assist analysis but cannot understand context, trade-offs or consequences. They can process comparable evidence, run valuation models and flag lease clauses. People choose among good practices and decide.",
+"The receiver uses an automated valuation model as one input on the parade’s flats. It cannot see the damp in flat 4 or the planning potential upstairs. The valuer uses its output, adjusts it and signs the report.",
+"Model outputs treated as decisions. The model has no view of the trade-offs.",
+"What does this model not know about our asset?","",["complicated|The receiver’s Complicated","machines|Duties are not delegable"]);
+K("machines","Meaning","In Complex, machines can detect that something happened but not why it matters. Meaning comes from intuition, ethics, creativity and stories. People must lead, because the work is interpreting patterns that only make sense in hindsight.",
+"A dashboard shows footfall on the parade rising on Thursdays. Only the café owner knows why: the new GP surgery’s late clinic. That meaning shapes the letting strategy for the vacant unit, towards a pharmacy.",
+"Dashboards read without asking the people who know why. The numbers lack meaning.",
+"Who can tell us why this pattern matters?","",["complex|The receiver’s Complex","listen|Micro-narratives"]);
+K("machines","Human authority","In Chaos, leaders act first, create order, then sense. That is a fundamentally human responsibility: someone must decide, be accountable and speak with authority. Machines can help later, monitoring and recording, but they cannot take command.",
+"On the night of the fire, the receiver decided to close the stair and move the residents. No system could have made that call. The next day, the monitoring sensors installed in the stair helped show when it was safe to reopen.",
+"Waiting for a system to tell you what to do in a crisis. Authority is human.",
+"Who has the authority to decide now?","",["chaotic|Last chance saloon","chaotic|Novel practice"]);
+K("machines","Aporia and confusion","The post distinguishes confusion, a negative state to escape, from aporia, a deliberate and generative uncertainty: the pause before clarity, where reframing happens. Machines tend to resolve uncertainty quickly, which can cut short a useful aporia.",
+"A software tool produced a recommended sale price for the parade within minutes of appointment. The receiver set it aside: it was resolving a question that needed holding open until the shops’ future was understood.",
+"Fast answers to questions that should stay open. The tool resolves too early.",
+"Is this a question we should hold open rather than answer now?","",["aporetic|Aporetic and confused","aporetic|Aporia"]);
+K("machines","Duties are not delegable","Software cannot hold a receiver’s duties. Good faith, reasonable care on sale and due diligence in management attach to the receiver personally, whatever tools are used. A receiver can use tools to discharge duties but cannot transfer them.",
+"The parade’s marketing used an online platform that suggested a reserve price. The receiver checked the suggestion against the valuations, set the reserve himself and recorded why. If the sale were challenged, the duty would be his, not the platform’s.",
+"Decisions justified by ‘the system said so’. The duty remains with the receiver.",
+"If this were challenged, could we explain the judgement without pointing at the tool?","",["law|Cuckmere Brick (1971)","law|Medforth v Blake (2000)"]);
+K("machines","Over-automation","The danger of automating everything is machines deciding where context, meaning or authority is needed. In receivership that is the equivalent of walking off the cliff: routine extended into places where routine fails.",
+"A panel lender proposed automating tenant arrears action across all appointments. On the parade, that would have issued forfeiture warnings to the café during its seasonal dip. The receiver kept arrears action on commercial units under human review.",
+"Automation extended from Clear into Complex. It will make confident mistakes.",
+"Which decisions here need context or authority that a machine lacks?","",["machines|Drift","framework|Catastrophic fold"]);
+
+/* ---------- crisis ---------- */
+K("crisis","Boundaries","Boundaries in a complex system should be firm enough to contain and flexible enough to adapt. Rigid boundaries become brittle: they hold until they break, and then they break catastrophically. Flexible boundaries bend and recover.",
+"The meanwhile licence on the parade’s vacant unit sets firm limits on hours, noise and use, but allows the occupier to change what they sell. When the food bank added an evening café, the boundary bent without breaking.",
+"Rules with no flexibility in a changing situation. They will snap.",
+"Is this boundary firm enough to hold and flexible enough to bend?","",["leader|Set barriers","cons|Robust"]);
+K("crisis","Attractors","An attractor is a pattern that forms around a stimulus: people or activity gather and a pattern emerges. In complex situations the method is to watch for attractors, amplify the beneficial ones and dampen the harmful ones, rather than trying to design the outcome directly.",
+"The evening café in the vacant unit became an attractor: residents gathered there, footfall rose, the nail bar stayed open later. The receiver amplified it with better lighting and a longer licence. A gathering of youths in the car park was dampened with lighting and a gate.",
+"Trying to design outcomes directly in Complex. Watch for what forms and steer it.",
+"What patterns are forming here, and which should we amplify or dampen?","",["complex|Amplify and dampen","crisis|Judged at the end"]);
+K("crisis","Judged at the end","The children’s party story makes a point about complex outcomes: you only know whether it was a good party at the end. Goodness could not be predicted in advance, only cultivated by setting boundaries and managing attractors.",
+"The lender asked in month two whether the parade strategy would work. The receiver’s honest answer: ‘We will know at the sale. Until then, here is what we are watching to see if it is heading the right way.’",
+"Demands for certainty about complex outcomes. They can only be judged at the end.",
+"What signals tell us we are heading the right way, before the end?","",["framework|Four illustrations","crisis|Attractors"]);
+K("crisis","Assess","The first phase of the field guide’s crisis cycle is Assess: orient, decide whether this is a crisis, and if so act quickly using existing authority. Waiting for new authority wastes the time that matters most.",
+"At 23:10 the receiver orients: smoke, occupied flats, fire service on scene. It is a crisis. He acts on his existing powers and protocol without waiting for the lender’s consent, and informs the lender as soon as the residents are safe.",
+"Waiting for permission before acting in a clear crisis. Existing authority is enough.",
+"Is this a crisis, and what authority do we already have to act?","",["crisis|Adapt","chaotic|Ability to impose constraints"]);
+K("crisis","Adapt","In Adapt, decisions are distributed into small crews with clear intent, and sensing networks are built so that the centre knows what is happening. The aim is to cover more ground faster than a central command could.",
+"After the fire, three crews work in parallel: one rehousing residents, one securing the building, one handling insurers and the press. Each knows the intent. The café owner and two residents act as a sensing network, reporting needs back to the receiver.",
+"All decisions routed through one person. The crisis outpaces them.",
+"How can we split this into crews with a shared intent, and who is sensing for us?","",["crisis|Commander’s intent","crisis|Exapt"]);
+K("crisis","Exapt","Exapt repurposes existing assets, roles and processes into new combinations. A crisis breaks normal patterns, which makes unexpected combinations possible. Exaptation uses what is already there in a new way rather than waiting for new resources.",
+"On the night of the fire, the café became a waiting room and the nail bar’s owner, a trained first-aider, checked the elderly residents. Neither role was planned. The receiver recognised and supported both.",
+"Waiting for purpose-built resources. What is already there may serve.",
+"What do we already have that could be used in a new way here?","",["chaotic|Crisis and innovation teams","complex|Exaptation corner"]);
+K("crisis","Transcend","Transcend is the closing phase: stabilise, codify lessons before memory fades, re-impose controls as planned, and build resilience. It turns the crisis into lasting improvement rather than a return to the old state.",
+"Within a fortnight of the fire, the receiver wrote up what had worked and what had not. The lessons, a tested out-of-hours number, the café as an assembly point, compartmentation, went into the parade’s sale pack and the lender’s panel guidance.",
+"Lessons written up months later, or not at all. Memory fades quickly.",
+"Have we written down what this crisis taught us while we still remember?","",["chaotic|Sense after acting","v45|The cylinder"]);
+K("crisis","Commander’s intent","In the crisis cycle, commander’s intent lets crews act coherently where orders cannot reach. It states the purpose and the end state, leaving the method to the people on the ground.",
+"‘Everyone safe tonight, everyone housed by Friday’ guided the parade’s three crews without further instruction. When a resident’s cat was missing, the rehousing crew decided on its own to delay one family’s taxi.",
+"Detailed orders in fast-moving situations. They cannot anticipate everything.",
+"What is the intent, in one sentence, that every crew can act on?","",["chaotic|Commander’s intent","crisis|Adapt"]);
+K("crisis","Restorable constraints","In a crisis some constraints must be broken to act. The rule is to break those that can be restored and avoid breaking those that cannot. Restorable constraints can be reinstated once order returns; irreversible ones leave permanent damage.",
+"On the night of the fire, the receiver set aside the normal procurement rules to get a board-up contractor (restorable). He did not let the insurance lapse while arguing with the insurer about the claim (not restorable).",
+"Breaking constraints without asking whether they can be restored. Some cannot.",
+"If we break this rule now, can we restore it afterwards?","",["cons|Restorable constraints","chaotic|Duffers, better dead"]);
+
+/* ---------- iter ---------- */
+K("iter","The napkin","The first drawing of Cynefin, on the back of a napkin, showed five domains: two ordered, one complex, one chaotic, and one confused in the middle. The confused centre was there from the start. It is not a later addition but the place the framework began.",
+"Every appointment on the receiver’s books starts in the centre. On the parade, day one is spent establishing what is not known before anything is classified.",
+"Treating the centre as an afterthought. It was the first domain drawn.",
+"Have we started in the centre on this appointment?","iterations",["framework|The centre","misuse|Start in the centre"]);
+K("iter","Known and knowable","In Kurtz and Snowden’s 2003 IBM Systems Journal paper the domains were named known, knowable, complex and chaos, around disorder. Known is what is already understood; knowable is what experts can find out. The names describe kinds of knowledge rather than kinds of difficulty.",
+"For the parade: the notice requirements are known; the true market value is knowable with a valuer; tenant behaviour is complex; the night of the fire was chaos.",
+"Confusing ‘known’ with ‘easy’. Known work can still be laborious.",
+"Is this already known, or knowable with expertise?","iterations",["iter|Simple and complicated","dynamics|The classic dynamics"]);
+K("iter","Wavy lines","The boundaries between domains are drawn as wavy lines because the domains are not quadrants on axes. Boundaries are organic and often contested: a situation may sit across one, and people may disagree about which side it is on.",
+"The parade’s café sits on the boundary between Complicated and Complex: its lease is a legal question, but whether the owner will renew is a matter of her plans and the street’s fortunes. The receiver treats both sides.",
+"Forcing an item onto one side of a boundary. It may genuinely sit across it.",
+"Does this sit across a boundary, and should we treat both sides?","iterations",["misuse|Not a 2×2","misuse|Not a label"]);
+K("iter","Simple and complicated","Snowden and Boone’s 2007 HBR article renamed known and knowable as simple and complicated and attached practices and decision models to each: sense–categorise–respond for simple, sense–analyse–respond for complicated. This is the vocabulary most lenders already know.",
+"The lender’s credit officer learned Cynefin from the HBR article. The receiver speaks of ‘simple’ and ‘complicated’ with her, and introduces the newer terms only where they help.",
+"Correcting a lender’s vocabulary for its own sake. Use the words they know.",
+"Which version of the framework does our audience know?","iterations",["iter|Known and knowable","misuse|Language"]);
+K("iter","Simple beside chaotic","Simple, now Clear, is drawn next to chaotic because the most frequent collapses into chaos come from success breeding complacency. The routines that work best for longest are the most likely to fail suddenly.",
+"The parade’s fire-safety routine had passed every annual check for years. It was precisely that success that stopped anyone noticing the propped fire door.",
+"Long success taken as proof of safety. It may be the opposite.",
+"Which of our most successful routines is the one we have stopped questioning?","iterations",["framework|Catastrophic fold","clear|The fold in practice"]);
+K("iter","Obvious","Simple was renamed Obvious to stress that cause and effect are self-evident to everyone, not that the work is easy. Routine work may still be laborious and important; obvious describes its knowledge, not its effort.",
+"Serving notices on the parade is obvious work, but it must be done correctly and on time. A mistake there can invalidate later steps. Routine is not trivial.",
+"Routine work given to whoever is free. It still needs doing well.",
+"Is this routine being done with the care it needs?","iterations",["framework|Simple, Obvious, Clear","clear|Best practice"]);
+K("iter","Liminality","The liminal line added transitional sub-domains: between complex and complicated, and a deliberate dip into chaos. It made the transitions visible as places in their own right, with their own risks and methods.",
+"The receiver’s plan for the parade lists transitions as stages: ‘pop-up to lease’, ‘strategy forming to marketing’, ‘fire to recovery’. Each has its own check.",
+"Plans with domains but no transitions. The liminal work is invisible.",
+"Where are the transitions in this plan, and what checks belong there?","iterations",["liminal|The liminal line","dynamics|Alpha"]);
+K("iter","Clear and aporetic","In 2020 Obvious became Clear and disorder was split into aporetic, confusion held knowingly, and confused, confusion not recognised. The change made it possible to say that being in the centre can be a deliberate, legitimate state.",
+"The receiver’s first report on the parade says: ‘We are deliberately holding these questions open’, listing them. That is aporetic. The lender knows it is a choice, not a failure.",
+"Uncertainty hidden because it seems like failure. Held knowingly, it is a method.",
+"Is our uncertainty knowing, and have we said so?","iterations",["aporetic|Aporetic and confused","framework|Simple, Obvious, Clear"]);
+K("iter","Machines and humans","The 2026 lens reads each domain for what machines can do and what must stay human: machines dominate Clear, assist in Complicated, support people in Complex, and monitor after people act in Chaos. It is the newest iteration of the framework.",
+"On the parade: the rent ledger and diary are automated; the valuation uses a model as one input; tenant engagement is human-led; the fire response was entirely human. The receiver can explain each choice.",
+"The same level of automation everywhere. Each domain needs a different balance.",
+"What should a machine do here, and what must stay human?","machines",["machines|Context before capability","machines|Over-automation"]);
+
+/* ---------- leader ---------- */
+K("leader","Danger signals in Simple","Snowden and Boone listed the danger signals in a simple context: complacency, oversimplification, entrained thinking, and best practice kept after the context has shifted. Each is a sign that the leader has stopped looking at the situation itself.",
+"On the parade, the panel template was applied without anyone reading the asset. It instructed vacant possession, which would have emptied the street. The danger signal was that nobody asked whether it fitted.",
+"Templates used without reading the asset. The context may have moved.",
+"Have we checked this best practice against this particular asset?","",["clear|Ossification","leader|Danger signals in Complicated"]);
+K("leader","Danger signals in Complicated","In a complicated context, the danger signals are overconfidence in past solutions, analysis paralysis and the exclusion of outsiders. Experts can become so invested in their methods that they miss what a non-expert would see.",
+"On the parade, the valuers debated bases for three months while the roof leaked into flat 6. A surveyor’s simple suggestion, fix the roof first, was ignored because it was outside the valuation question.",
+"Analysis continuing while practical problems worsen. Paralysis has set in.",
+"Is our analysis keeping us from acting on something obvious?","",["complicated|Competing expertise","leader|Danger signals in Complex"]);
+K("leader","Danger signals in Complex","In a complex context, the danger signals are the pull back to command and control, demands for facts before patterns form, and pressure for quick resolution. Each tries to force a complex situation into an ordered method.",
+"The lender demanded a completion date for the parade before the probes had run. The receiver explained that a date set now would be a guess, and offered instead a date by which the probes would report.",
+"Deadlines demanded before patterns have formed. They force premature closure.",
+"Are we being pushed to decide before the pattern is clear?","",["complex|Group think","leader|Manage starting conditions"]);
+K("leader","Danger signals in Chaos","After a crisis, the danger signals are command and control kept too long, a cult of the leader and missed innovation. The authoritarian style that was right in the first hours becomes harmful once order returns.",
+"Months after the fire, the receiver noticed he was still making every decision on the parade personally. He handed tenant liaison back to the agent and set up a monthly meeting with residents. Innovation resumed.",
+"Crisis leadership continuing after the crisis. It suppresses the ideas recovery needs.",
+"Has the crisis ended, and are we still leading as if it had not?","",["chaotic|Last chance saloon","chaotic|Crisis and innovation teams"]);
+K("leader","Four contexts at once","Snowden and Boone’s Palatine case showed one leader working in simple, complicated, complex and chaotic contexts during a single case, a shooting at a restaurant. Leadership style had to change as the case moved between contexts.",
+"In one week on the parade, the receiver led in four styles: command on the night of the fire, delegation for rehousing, expert consultation on the structural survey, and listening at the residents’ meeting.",
+"One leadership style for the whole appointment. It will fit some parts and fail others.",
+"Which context are we leading in right now, and does our style fit?","nightSvg",["leader|Danger signals in Chaos","misuse|Not a label"]);
+K("leader","Positive deviance","Positive deviance looks for solutions already working inside a system and spreads them. Rather than importing an answer, the leader finds the people who are succeeding despite the conditions and learns from them.",
+"Three tenants on the parade always paid on time. Asked why, they said they paid at the café when buying coffee. The receiver set up a payment point at the café for everyone, and arrears fell.",
+"Imported solutions while local ones go unnoticed. Someone may already know the answer.",
+"Who here is already succeeding, and what are they doing?","",["listen|Micro-narratives","principles|Be a mirror, not an expert"]);
+K("leader","Set barriers","Setting barriers means creating simple boundaries that let a system regulate itself. The barriers are few and clear, so that people can act freely within them without needing permission for each step.",
+"The meanwhile licence for the parade’s vacant unit has five short rules: hours, noise, no alcohol, rubbish collection, one month’s notice. Within them, the occupier decides everything else, and the unit thrives.",
+"Long lists of rules. People cannot act freely within them.",
+"What are the few boundaries that matter here?","",["crisis|Boundaries","principles|Heuristics not rules"]);
+K("leader","Manage starting conditions","Good outcomes in complex situations emerge from conditions, not plans. The leader’s job is to set the starting conditions well and monitor what emerges, rather than to plan the outcome in detail.",
+"Before the parade’s probes began, the receiver installed footfall counters, set up a tenants’ noticeboard and agreed how stories would be collected. When the pop-ups started, the conditions for learning from them were already in place.",
+"Probes started with no way of seeing their effect. The conditions were not set.",
+"What needs to be in place before we start, so that we can see what happens?","",["listen|Micro-narratives","complex|Parallel probes"]);
+
+/* ---------- cons ---------- */
+K("cons","Fixed, governing, enabling","Constraint types map to domains: fixed or rigid constraints hold Clear, governing constraints hold Complicated, enabling constraints hold Complex, and in Chaos there is no effective constraint. Naming the type of constraint before choosing a method avoids applying the wrong one.",
+"On the parade: the statutory notice regime is a fixed constraint; the lease terms and planning law are governing; the tenants’ noticeboard and the meanwhile licence are enabling. Each calls for a different kind of work.",
+"Methods chosen before the constraint is understood. The method may not fit.",
+"What kind of constraint holds this part of the appointment?","",["framework|Three primary domains","law|The deed and LPA 1925"]);
+K("cons","Containers and connectors","Constraints come in two kinds: containers hold things in, and connectors link things together. Both shape a system. Changing a connector can be as powerful as changing a container, and often cheaper.",
+"The deed is a container: it bounds what the receiver can do. The tenants’ meetings are connectors: they link the shops, the residents and the receiver. Adding a connector, a weekly message, changed the parade more than any container could.",
+"Effort spent only on containers. Connectors may be the cheaper lever.",
+"Would changing a connection here help more than changing a boundary?","",["estuary|Constraints, constructors, actors","cons|Fixed, governing, enabling"]);
+K("cons","Robust","Robustness means surviving unchanged or with minor modification, within explicit boundaries. It is shoring up: making something strong enough to withstand pressure without changing what it is.",
+"After the fire, the parade’s stair was propped and boarded: robust, so that it would stand until repairs. That bought time but did not make the building any better at surviving the next fire.",
+"Robustness mistaken for resilience. Shoring up does not teach a system to adapt.",
+"Are we making this robust, or resilient, and which does it need?","",["cons|Resilient","crisis|Boundaries"]);
+K("cons","Resilient","Resilience is keeping identity by changing, sometimes invisibly. A resilient system survives shocks by adapting, not by resisting. Its form may change while what makes it itself continues.",
+"The parade survived the loss of its bank and its post office by changing its uses: a café, a nail bar, a food bank, a pharmacy. It remained a neighbourhood parade, though almost every tenant had changed.",
+"Defending the current form at any cost. The identity may survive better through change.",
+"What makes this place itself, and could it survive by changing everything else?","",["cons|Robust","crisis|Exapt"]);
+K("cons","Start indirectly","Starting at abstraction, mapping constraints before discussing routes, avoids premature convergence on one hypothesis. Once a route is named, the discussion collapses around it; constraints first keeps the field open.",
+"At the parade’s first workshop, the receiver forbade any discussion of sale routes for the first hour. The group mapped constraints instead. When routes were finally discussed, a split sale emerged that nobody had proposed at the start.",
+"Workshops that begin with ‘what should we do?’ The answer will converge too early.",
+"Have we mapped the constraints before discussing what to do?","",["cons|Who can change it","complicated|The Longitude problem"]);
+K("cons","Who can change it","Separating who can change a constraint directs effort to where there is control. Some constraints can be changed by the receiver; others must be negotiated with someone else; others must simply be adapted to.",
+"On the parade: the meanwhile licence terms the receiver can change; the insurer’s conditions must be negotiated; the bus route change must be adapted to. Effort follows control.",
+"Effort spent on constraints nobody present can change. It is wasted.",
+"Who can change this constraint, and is it us?","",["estuary|Liminal line","estuary|Counterfactual border"]);
+K("cons","Restorable constraints","Some constraints are safe to break because they can be restored: a licence can be ended and re-granted. Others cannot be restored: a lapsed insurance cannot be backdated. The rule is to break only what can be restored.",
+"On the parade, the receiver ended a problematic licence knowing a new one could be granted. He never let the insurance lapse, even during a dispute with the insurer, because a gap could not be undone.",
+"Treating all constraints as equally changeable. Some changes are permanent.",
+"If we break this, can we restore it?","",["crisis|Restorable constraints","chaotic|Duffers, better dead"]);
+
+/* ---------- make ---------- */
+K("make","Contextualisation","Contextualisation builds the framework from the situation’s own material, rather than imposing a ready-made one. The group places its own items, and the boundaries emerge from where they cluster. The result belongs to the people who built it.",
+"The receiver builds the lender’s Cynefin from its own appointments: items from the parade and three other cases, placed by the lender’s team. The boundaries they draw show how the lender actually sees its book.",
+"Presenting a finished framework. The group then learns a diagram, not its own situation.",
+"Could we build this from our own items rather than present a template?","",["make|Three exemplars","make|Minimise the centre"]);
+K("make","Three exemplars","Contextualisation starts with three markers. Ordered: an item where a right answer exists. Complex: one where only hindsight will tell. Chaotic: one where you must act now, decisively. Real items are placed at each point, and everything else is placed relative to them.",
+"For the parade: ordered, the notice of appointment; complex, whether the café will renew; chaotic, the night of the fire. Every other item is placed nearer one marker or another.",
+"Abstract exemplars. Real items from the appointment work better.",
+"What real item from this appointment fits each of the three markers?","",["make|Contextualisation","framework|Four illustrations"]);
+K("make","Minimise the centre","Items left in the centre may be several things at once. Splitting them makes each part actionable. The aim is to shrink the centre until only genuinely aporetic items remain.",
+"‘The parade’ sits in the centre at first. Split, it becomes ‘the flats’ (heading to Complicated) and ‘the shops’ (Complex). ‘The café’ splits again into ‘the lease’ (Complicated) and ‘the owner’s plans’ (Complex).",
+"Large items left unexamined in the centre. They hide several different problems.",
+"Which items in the centre could be split into parts?","",["aporetic|Decompose","misuse|Not a label"]);
+K("make","The debrief","The exercise closes with three questions: what is different, what is the same, and what surprises us? The most useful output is often the difference between how two groups placed the same items.",
+"The lender’s team placed ‘the tenants’ in Clear; the receiver’s team placed them in Complex. That difference became the most valuable conversation of the workshop, and changed the lender’s instructions.",
+"Debriefs that only confirm. The surprises are where learning lies.",
+"What surprised us, and where did we place things differently?","",["make|Contextualisation","estuary|Energy and time"]);
+K("make","Four points and linear","Besides the three-point method, there are four-point and linear methods for constructing the framework. Three points is now preferred as the primary method, but the point is construction, not the diagram: any method the group can manage will do.",
+"With a busy credit committee, the receiver uses a simple linear method: a line from ‘we know the answer’ to ‘act now’, and items placed along it. It takes twenty minutes and still produces a framework the committee owns.",
+"Insisting on the preferred method when the room cannot manage it. The construction matters more.",
+"Which method can this room manage in the time we have?","",["make|Three exemplars","make|Contextualisation"]);
+
+/* ---------- estuary ---------- */
+K("estuary","The estuarine framework","The estuarine framework is the third major framework in the Cynefin ecosystem, after Cynefin itself and the domain models. It plots the actants of a situation on a grid of energy and time: how much effort and how long it would take to change each one. It shows what is realistically changeable before anyone commits to change it.",
+"In the first fortnight on the parade, the receiver maps the actants: the leases, the café owner, the borrower’s director, the bus route, the planning policy, the tenants’ WhatsApp group. The map shows which few things are actually the receiver’s to change. The strategy is built around those.",
+"Strategies that promise to change things nobody mapped. They may be beyond reach.",
+"Which actants here are realistically ours to change, and at what cost?","",["estuary|Energy and time","hundred|Map before acting"]);
+K("estuary","Estuary, not delta","An estuary, unlike a delta, has many shifting flows: some features are stable for years, some change with every tide, and some things can only be done at the turn. The metaphor captures a landscape where the timing of action matters as much as its direction.",
+"On the parade, the leases are sandbanks, stable for years. The tenants’ mood is a channel, changing weekly. The café’s lease renewal is a turn of the tide: there is one window to act on it. The receiver checks each at its own rhythm.",
+"Checking everything at the same frequency. Sandbanks and channels need different rhythms.",
+"Is this a sandbank, a channel or a turn of the tide?","",["estuary|Energy and time","principles|Time and cadence"]);
+K("estuary","Energy and time","The axes of the estuarine map measure how much energy (effort, resources, people) and how much time it would take to change an actant, judged from the position of the group doing the mapping. The same actant may sit in different places for different groups.",
+"The lender’s team and the agent each place ‘the borrower’s director’ separately. The lender places him as cheap to change (‘we can just tell him’); the agent places him as costly and slow. The gap reveals who thinks they have power, and opens a useful discussion.",
+"One group’s map treated as everyone’s. Position changes placement.",
+"From whose position are we judging how costly this is to change?","",["estuary|What is, not what is wanted","make|The debrief"]);
+K("estuary","What is, not what is wanted","The map records where each actant is now, by the cost of changing it, whether or not anyone wants it changed. It is a description of the landscape, not a wish list. Placing things where we wish they were produces a map that misleads.",
+"Everyone on the parade wishes the borrower’s director were easy to move. The receiver places him honestly: high energy, long time. The strategy then works around him rather than assuming he can be shifted.",
+"Maps that show the hoped-for landscape. They lead to plans that fail.",
+"Are we placing this where it is, or where we wish it were?","",["estuary|Energy and time","complex|Group think"]);
+K("estuary","Constraints, constructors, actors","Three kinds of actant are mapped. Constraints connect or contain. Constructors produce consistent transformations. Actors act with intention. Distinguishing them matters because each is changed in a different way.",
+"On the parade: a lease is a constraint; the agent’s monthly reporting routine is a constructor; the credit committee is an actor. To change the agent’s reports, the receiver changes the routine; to change the committee’s view, he gives it evidence.",
+"Treating every actant as an actor to be persuaded. Some need their routine changed instead.",
+"Is this a constraint, a constructor or an actor, and how is that kind changed?","",["estuary|Constructors","cons|Containers and connectors"]);
+K("estuary","Constructors","The term comes from Deutsch and Marletto’s constructor theory: a constructor brings about a transformation and keeps the ability to do it again. A catalyst is a constructor; so is a routine. To change outcomes consistently, change the constructor rather than each output.",
+"Every month the agent’s report on the parade came back with the same gaps. Correcting each report changed nothing. The receiver changed the template and the checklist the agent used: the constructor. The next report was complete.",
+"Correcting outputs one at a time. The constructor keeps producing the same thing.",
+"What routine is producing this result, and could we change it?","",["estuary|Constraints, constructors, actors","clear|Gaming"]);
+K("estuary","Counterfactual border","The counterfactual border separates what can be changed from what is treated as unchangeable for now. Beyond it, the advice is to work with an actant as it stands, negotiate it across the border, or break it into parts some of which may be changeable.",
+"The LPA powers and the lease terms on the parade sit beyond the border. The receiver stops arguing with them and designs around them: the meanwhile licence works within the lease, not against it.",
+"Effort spent fighting what cannot be changed. Design around it instead.",
+"Is this beyond our counterfactual border, and how could we work with it?","",["estuary|Liminal line","cons|Who can change it"]);
+K("estuary","Liminal line","Between the counterfactual border and the volatile line lies a liminal zone: things that can change, but not by those doing the mapping. This is where outside support and resources are found, through requests and well-timed approaches.",
+"The credit committee, the council’s planning department and the tribunal sit in the parade’s liminal zone. The receiver cannot change them directly, but a well-timed request, with evidence, can.",
+"Treating outside actors as beyond reach. A good request may move them.",
+"Who outside our group could change this, and what would we ask them?","",["estuary|Counterfactual border","estuary|Communication actions"]);
+K("estuary","Volatile line","Actants that change quickly and cheaply are volatile. If they matter, their volatility is a risk: one rumour or one bad day can shift them. The first move is often to raise the energy and time needed to change them, making them more stable.",
+"The parade’s tenants’ WhatsApp group could swing from calm to panic on one message. The receiver gave it a reliable source: a weekly message with facts. A single rumour could no longer tip it.",
+"Important things left volatile. They can be swung by anyone.",
+"Which important actants could be tipped by one event, and how can we steady them?","",["listen|Rumour as an actant","estuary|Vector actions"]);
+K("estuary","Vector actions","Vector actions change things. Compass rose actions change the space around an item rather than the item itself; destroy removes it; stabilise fixes it in place. Compass rose actions are often the most effective, because direct change is expensive.",
+"To make the vacant unit on the parade easier to let, the receiver did not cut its rent. He changed what surrounded it: new lighting, a cleaned frontage, the evening café next door. The cost of re-letting fell.",
+"Direct change attempted where indirect change would be cheaper. Look at the surroundings.",
+"Could we change what surrounds this rather than the thing itself?","",["estuary|Signal actions","estuary|Vector Theory of Change"]);
+K("estuary","Signal actions","Signal actions watch rather than change. A monitor watches an actant; a trigger fires a response when a threshold is crossed; a conditional applies when something else happens. Deep in counterfactual space, a monitor becomes a forward scout, watching for the unchangeable to change.",
+"The council’s planning policy for the parade’s upper floors is beyond the receiver’s reach. He puts a forward scout on it: the planning consultant reports any policy consultation. When one opens, the receiver responds within the window.",
+"Unchangeable actants ignored. They may change, and someone should be watching.",
+"What should we be watching, and what would trigger us to act?","",["estuary|Vector actions","estuary|Counterfactual border"]);
+K("estuary","Communication actions","Communication actions reach out: research, request and interaction, which creates, severs or conditions connections between actants. Changing who is connected to whom can be more powerful than changing any single actant.",
+"The borrower’s director kept telling tenants the receivership would end soon. The receiver did not argue with him; he gave the tenants a better connection, a named contact with a weekly update. The director’s link to them weakened on its own.",
+"Fighting a harmful connection head-on. Offering a better one may work better.",
+"Which connection here could we create, strengthen or weaken?","",["cons|Containers and connectors","estuary|Liminal line"]);
+K("estuary","Vector Theory of Change","The Vector Theory of Change sits behind the estuarine framework: know where you are; travel with direction rather than abstract goals; make the wanted cheaper than the unwanted; use many small nudges; decompose; monitor, amplify and dampen. It replaces target-setting with steering.",
+"The receiver’s strategy report on the parade sets a direction (towards a tenanted, saleable parade) with monitors (footfall, arrears, stories), rather than a target value by a date. The lender can see progress without a figure that would anchor the sale.",
+"Reports built around a target value and date. They anchor and mislead in complex work.",
+"What direction are we travelling, and how will we know we are on course?","",["estuary|Micro-projects","complex|Amplify and dampen"]);
+K("estuary","Decompose to disagree","When people disagree about where an actant sits, the disagreement is a cue to break it into finer parts, which usually sit in different places. Coarse actants hide the distinctions that matter.",
+"The receiver and the agent disagreed about where ‘the lender’ sat on the parade’s map. Decomposed, the relationship manager was cheap to change and the credit committee costly. Both were right about different parts.",
+"Arguing about where a coarse actant sits. Split it first.",
+"Is our disagreement a sign that this should be split into parts?","",["aporetic|Decompose","make|Minimise the centre"]);
+K("estuary","Dark actants","Some effects have no visible cause. These unattributed phenomena go to a parking lot and are investigated in parallel as possible dark actants: forces nobody has yet named. Ignoring them leaves the map incomplete.",
+"Arrears rose across several unrelated tenants on the parade in the same month. Nothing on the map explained it. Parked and investigated, the cause turned out to be a change in the council’s business rates relief that nobody had mapped.",
+"Unexplained patterns dismissed as noise. There may be an actor nobody has noticed.",
+"What effect here has no visible cause, and who is looking into it?","",["estuary|Micro-projects","listen|Rumour as an actant"]);
+K("estuary","Micro-projects","The map produces micro-projects: small actions that target gaps or shift actants, combined into portfolios, with monitoring of both the landscape and the items. The portfolio, not any single project, carries the strategy.",
+"The receiver reports to the lender as a portfolio: what we are shifting (the vacant unit, the tenants’ trust), what we are watching (planning policy, the director), what we are leaving alone (the leases). Each has a small project and a monitor.",
+"One big project instead of many small ones. Failure is then all or nothing.",
+"What small projects could shift this, and how will we watch them?","",["estuary|Vector Theory of Change","complex|Parallel probes"]);
+
+/* ---------- listen ---------- */
+K("listen","Micro-narratives","A micro-narrative is a short story from someone’s own experience, the kind already told at the counter or on the stair. It is not a crafted case study. Collected in numbers, such stories reveal patterns that surveys and figures miss, because they carry what people actually noticed.",
+"Every tenant and resident on the parade is asked the same open prompt each month: tell us about a moment this month when the receivership made a difference to you. Sixty stories arrive in month one. They reveal the stair light problem and the fear of eviction before any figure does.",
+"Collecting only crafted case studies or complaints. Ordinary stories carry the pattern.",
+"What open prompt could we ask everyone, every month?","",["listen|Self-signification","listen|Patterns first"]);
+K("listen","Self-signification","In self-signification, the teller interprets their own story by placing it on signifiers. The meaning is theirs, not the receiver’s summary. That removes the interpreter’s bias and lets patterns emerge from the tellers themselves.",
+"On the parade, each teller places their story on the triad and dyad. The agent never codes the stories. When the agent had previously summarised tenant feedback, it always came back as ‘tenants are happy’; self-signified, the picture was more mixed.",
+"Someone else coding the stories. Their view creeps into the data.",
+"Who is interpreting these stories, the tellers or us?","",["listen|The triad","principles|Be a mirror, not an expert"]);
+K("listen","The triad","A triad offers three balanced labels, none obviously right, and asks the teller to place the story between them. Because no answer is socially correct, the teller has to think. The resulting position carries more information than a yes/no question.",
+"The parade’s triad asks: in your story, what mattered most: getting paid, being safe or being heard? A resident, a shopkeeper and the lender can all place a story on the same triangle, which makes their stories comparable.",
+"Triads with one obviously correct answer. Tellers will choose it regardless.",
+"Are our three labels balanced, with none obviously right?","listen",["listen|The dyad","listen|Self-signification"]);
+K("listen","The dyad","A dyad is a slider between two extremes that are both bad, such as too slow and too hasty. The middle is the only good place. Dyads reveal which way a pattern leans, and therefore which way to adjust.",
+"On the parade, the dyad asks whether the receiver’s response was too slow or too hasty. In month two the cloud leans to too hasty. The receiver slows the changes to rent accounts and demands, even though the arrears figures look fine.",
+"Dyads with one good extreme. They become satisfaction scales.",
+"Which way is the cloud leaning, and what should we slow down or speed up?","listen",["listen|The triad","listen|Patterns first"]);
+K("listen","Patterns first","Look at the pattern of the cloud before reading individual stories. Otherwise the first vivid story primes the reader to see what they hoped for. Stories are then read to explain a pattern, not to establish one.",
+"The receiver’s monthly report on the parade opens with where the cloud sits on the triad and dyad, and how it moved. Only then does it quote two or three stories that explain the movement.",
+"Reports that open with the best anecdote. The reader is primed before seeing the data.",
+"What does the pattern show before we read any single story?","listen",["listen|Micro-narratives","principles|Flow and patterns"]);
+K("listen","The standard question","The standard question asks: what would we do to have more stories like these, and fewer like those? It is plural on purpose, asking to shift a pattern rather than fix one case. The answers become micro-projects.",
+"On the parade, the stories about feeling unsafe on the stair produce three micro-projects: fix the light, repair the fire door, add a sign with the receiver’s number. The next round of stories is used to judge them.",
+"Responding to one story at a time. The pattern needs shifting, not the case.",
+"What would we do to get more stories like these and fewer like those?","listen",["listen|More like this, less like that","estuary|Micro-projects"]);
+K("listen","More like this, less like that","In the workshop, groups read story cards aloud, sort them into more and less, cluster the themes, and develop actions from them. Hearing the stories read aloud matters: it builds shared understanding across groups.",
+"The receiver runs the workshop on the parade with tenants and the agent in the same room. The agent hears, for the first time, residents’ stories about the propped fire door. Half the value comes from people hearing each other.",
+"Sorting stories without reading them aloud. The shared understanding is lost.",
+"Who should be in the room to hear these stories together?","listen",["listen|The standard question","make|The debrief"]);
+K("listen","Anti-stories","Imposed stories provoke anti-stories: cynical retellings that amplify every gap between promise and experience. Trying to change a narrative by announcement usually backfires. Changing experience is the only reliable way to change the stories.",
+"The agent proposed a glossy letter, ‘A new chapter for Station Road’. The receiver declined. Instead the stair light was fixed and the fire door repaired. Within a month the stories began to mention them.",
+"Communications that promise more than experience delivers. They feed the cynics.",
+"Are we trying to change the story, or the experience it comes from?","listen",["listen|Rumour as an actant","principles|Beware unintended consequences"]);
+K("listen","Rumour as an actant","Rumour shows up first as a cluster of stories, long before it appears in arrears or voids. Treated as an actant on the estuary map, it can be monitored and stabilised. Caught early, it can be answered with facts before it spreads.",
+"In month three, several stories on the parade mention an auction. There is none planned. The receiver puts the facts in the weekly message the same day. The cluster fades the next month, and no tenant gives notice.",
+"Rumours noticed only when tenants leave. The stories showed them weeks earlier.",
+"What clusters of stories are appearing that might be rumour?","listen",["estuary|Volatile line","listen|Anti-stories"]);
+K("listen","The unconvinced appointor","A pattern can improve for tenants while leaving the appointor unconvinced. The lender is a constituency too, with its own concerns and its own stories. Its needs have to be heard as carefully as the tenants’.",
+"The parade’s tenant stories improved steadily, but the credit officer still worried. The receiver gave her a story-pattern of her own each month: what is moving, what is being tested, what we are watching. Her confidence grew.",
+"Assuming the lender will be persuaded by tenants’ stories. Its concerns are different.",
+"What does the lender need to see, in its own terms?","listen",["misuse|Language","principles|Playing in tension"]);
+
+/* ---------- hundred ---------- */
+K("hundred","Act, then sense","On the day of appointment, the receiver acts first: secures the site, places insurance and checks for risk to life. Only then does the work of understanding begin. Day one is treated as potentially chaotic, because the receiver does not yet know what is there.",
+"On day one at the parade, the receiver’s team changes the locks on the vacant unit, confirms insurance, walks the stair for hazards and puts the out-of-hours number on a notice in the hall. The first letter to tenants goes out the next day.",
+"Letters sent before the site is secure. The first risk is physical, not administrative.",
+"Is the site secure, insured and safe before anything else?","",["chaotic|The decay of action","chaotic|The receiver’s Chaotic"]);
+K("hundred","Stay in the centre","Early diagnosis fixes the appointment in the wrong domain. Holding the question open in the first weeks lets it be decomposed properly first. The receiver resists the pressure to say what kind of appointment it is.",
+"The receiver’s first issue list for the parade has no domain labels. The labels are added only at the contextualisation workshop in week three, by the lender’s team and the receiver together.",
+"Domain labels on the day-one issue list. They will be wrong.",
+"Have we labelled anything before we understand it?","",["misuse|Start in the centre","framework|The centre"]);
+K("hundred","Map before acting","Mapping the estuary in week one shows what is the receiver’s to change before anything is promised to the lender or the tenants. Promises made before mapping often turn out to depend on things beyond reach.",
+"The receiver brings the estuarine map to the first lender call on the parade instead of a timetable. The lender sees what can change quickly, what will take time and what is beyond reach, and its expectations are set accordingly.",
+"Timetables offered before mapping. They promise what may be out of reach.",
+"What have we promised that depends on something we have not mapped?","",["estuary|The estuarine framework","estuary|What is, not what is wanted"]);
+K("hundred","Value and probe in parallel","Valuation is complicated work on a stated basis; probes are complex work on the market. Running them together lets each inform the other: the probes give the valuer evidence, and the valuation tells the probes what matters.",
+"On the parade the soft-market test is both a probe and evidence for the valuer. Buyer interest in the split sale feeds directly into the valuation report, and the valuation’s figures tell the receiver which probes matter most.",
+"Valuation commissioned and probes started months apart. Neither informs the other.",
+"How can the probes and the valuation inform each other here?","",["complex|Parallel probes","complicated|The receiver’s Complicated"]);
+K("hundred","Formalise what held","A probe becomes a routine at the alpha point on the blue line: once it has proved repeatable, with an expert check. Formalising too early freezes an untested pattern; formalising too late leaves good practice to chance.",
+"The parade’s rent-plan process went into the agent’s routine only after two months of it working with different tenants, and after the receiver’s solicitor had checked the payment-plan letters.",
+"Probes formalised after one success, or never formalised at all. Both waste the learning.",
+"Has this probe proved itself enough to become routine?","",["dynamics|Alpha","dynamics|Blue"]);
+K("hundred","Return to the centre","At day 100 the receiver re-diagnoses. Some issues will have changed domain; others will have appeared. The estuary is re-mapped and the triad re-run. Day 100 is treated as a new appointment day, not a progress review.",
+"At day 100 on the parade, the café’s lease has moved from Complex to Complicated, the upper floors from the centre to Complex, and a new issue, the bus route change, has appeared. The receiver re-maps and re-plans.",
+"Day 100 treated as a review against the original plan. The landscape has moved.",
+"If this were day one, what would we see now?","",["hundred|Stay in the centre","estuary|Micro-projects"]);
+
+/* attach the extended reverse explainers to every card */
+(function(){var by={};CARDS.forEach(function(c){by[c.d+"|"+c.t]=c});var miss=[];CARDS.forEach(function(c){var e=CX6[c.d+"|"+c.t];if(!e){miss.push(c.d+"|"+c.t);return}c.deep=e[0];c.cas=e[1];c.watch=e[2];c.ask=e[3];c.go=e[4];c.rel=e[5].map(function(k){return by[k]}).filter(Boolean)});
+ Object.keys(CX6).forEach(function(k){if(!by[k])miss.push("orphan "+k)});if(miss.length&&window.console)console.warn("Card explainers:",miss)})();
+
 (function(){
 "use strict";
 var NS="http://www.w3.org/2000/svg";
@@ -2746,9 +3589,15 @@ function RunHist(el,title,cols){if(!el)return {add:function(){}};var rows=[];el.
 function Timers(){var ids=[];return {set:function(f,ms){var i=setTimeout(f,ms);ids.push(i);return i},every:function(f,ms){var i=setInterval(f,ms);ids.push(i);return i},clear:function(){ids.forEach(function(i){clearTimeout(i);clearInterval(i)});ids=[]}}}
 
 /* ================= CARDS ================= */
-function cardEl(c){var b=H("button",{class:"rev",type:"button","aria-pressed":"false"});
- b.innerHTML='<span class="who2">'+c.w+'</span><span class="t">'+c.t+'</span><span class="face front">'+c.f+'</span><span class="face back">'+c.b+(c.x?'<span class="ext"><b>In practice.</b> '+c.x+'</span>':'')+'</span><span class="tagp">'+DECKS[c.d]+'</span><span class="turn">TURN ↻</span>';
- b.addEventListener("click",function(){var on=b.classList.toggle("on");b.setAttribute("aria-pressed",on);b.querySelector(".turn").textContent=on?"TURN BACK ↺":"TURN ↻";});return b}
+function cardEl(c){var b=H("div",{class:"rev",role:"button",tabindex:"0","aria-pressed":"false","aria-label":c.t+": turn the card"});
+ var goEl=c.go&&document.getElementById(c.go),goSec=goEl&&(goEl.closest("section")||goEl),goH=goSec&&goSec.querySelector("h2"),rel=c.rel||[];
+ var back='<span class="ans">'+c.b+'</span>'+(c.deep?'<span class="xsec"><b>Going deeper</b>'+c.deep+'</span>':'')+(c.cas?'<span class="xsec xcase"><b>On the parade</b>'+c.cas+'</span>':'')+(c.watch?'<span class="xsec xwatch"><b>Watch for</b>'+c.watch+'</span>':'')+(c.x?'<span class="xsec xprac"><b>In practice</b>'+c.x+'</span>':'')+(c.ask?'<span class="xsec xask"><b>Ask in the next meeting</b>“'+c.ask+'”</span>':'');
+ var foot=(goEl||rel.length)?'<span class="xfoot">'+(goEl?'<a href="#'+c.go+'" class="xl xgo">Try it: '+(goH?goH.textContent:c.go)+' →</a>':'')+(rel.length?'<span class="xrel">Related: '+rel.map(function(r){return '<a href="#atlas" class="xl xr" data-card="'+r.t.replace(/"/g,"&quot;")+'">'+r.t+'</a>'}).join(" · ")+'</span>':'')+'</span>':'';
+ b.innerHTML='<span class="who2">'+c.w+'</span><span class="t">'+c.t+'</span><span class="face front">'+c.f+(c.deep?'<span class="xhint">Turn for the answer, a deeper reading, a worked example on the parade, what to watch for and a question to ask.</span>':'')+'</span><span class="face back">'+back+foot+'</span><span class="tagp">'+DECKS[c.d]+'</span><span class="turn">TURN ↻</span>';
+ function tog(){var on=b.classList.toggle("on");b.setAttribute("aria-pressed",on);b.querySelector(".turn").textContent=on?"TURN BACK ↺":"TURN ↻"}
+ function go(el){if(el)el.scrollIntoView({behavior:"smooth",block:"start"})}
+ b.addEventListener("click",function(e){var a=e.target.closest("a");if(a){e.stopPropagation();e.preventDefault();if(a.classList.contains("xr")){var q=document.getElementById("atlasQ"),dk=document.getElementById("atlasDeck");if(q){q.value=a.getAttribute("data-card");if(dk)dk.value="";q.dispatchEvent(new Event("input"));setTimeout(function(){var g=document.getElementById("atlasGrid"),t=a.getAttribute("data-card"),f=null;if(g)[].some.call(g.querySelectorAll(".rev"),function(r){if(r.querySelector(".t").textContent===t){f=r;return true}});if(f&&!f.classList.contains("on"))f.click();go(f||document.getElementById("atlas"))},30)}}else if(a.classList.contains("xgo")){go(goEl)}return}tog()});
+ b.addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target===b){e.preventDefault();tog()}});return b}
 $$(".revs[data-deck]").forEach(function(box){var d=box.getAttribute("data-deck");CARDS.filter(function(c){return c.d===d}).forEach(function(c){box.appendChild(cardEl(c))});var cnt=$('[data-count="'+d+'"]');if(cnt)cnt.textContent=box.children.length+" cards"});
 $$("[data-turnall]").forEach(function(b){b.addEventListener("click",function(){var box=$('.revs[data-deck="'+b.getAttribute("data-turnall")+'"]');var cards=$$(".rev",box);var anyOff=cards.some(function(c){return !c.classList.contains("on")});cards.forEach(function(c){if(c.classList.contains("on")!==anyOff)c.click()});b.textContent=anyOff?"Turn all back":"Turn all"})});
 var ct=$("#cardTotal");if(ct)ct.textContent=CARDS.length;
@@ -3660,7 +4509,7 @@ function saveFile(fn,data,type){function plain(){var blob=new Blob([data],{type:
   /* challenges */
   function drawCh(){var d=0;chBox.innerHTML='<span class="tkh">Challenges · they tick themselves when you achieve them</span><ul>'+T.ch.map(function(c,i){var ok=DONE[id+":"+i];if(ok)d++;return '<li class="'+(ok?"ok":"")+'"><span class="tck">'+(ok?"✓":"○")+'</span><span><b>'+esc(c[0])+'</b>'+(ok?'':'<button type="button" class="tch-hint" data-hint="'+i+'">Hint</button><span class="tch-h" data-h="'+i+'" hidden>'+esc(c[2])+'</span>')+'</span></li>'}).join("")+'</ul>';$(".tchc",bar).textContent=d+"/"+nCh;$(".tchc",bar).classList.toggle("all",d===nCh)}
   chBox.addEventListener("click",function(e){var h=e.target.closest("[data-hint]");if(h){var s=$('[data-h="'+h.getAttribute("data-hint")+'"]',chBox);s.hidden=!s.hidden}});
-  var pan=$(".panelx",grid);function test(){var tx=pan?pan.innerText:"";var hit=false;T.ch.forEach(function(c,i){if(!DONE[id+":"+i]&&c[1].test(tx)){DONE[id+":"+i]=1;hit=c[0]}});if(hit){store("fcr6-ch",DONE);drawCh();var t=H("div",{class:"ttoast"},"★ Challenge complete: "+esc(hit),document.body);setTimeout(function(){t.classList.add("go")},2600);setTimeout(function(){t.remove()},3400)}}
+  var pan=$(".panelx",grid);var touched=false,scope=(pan&&pan.closest("section"))||document;["pointerdown","keydown","touchstart"].forEach(function(t){scope.addEventListener(t,function(e){if(!e.target.closest||!e.target.closest(".tcall"))touched=true},{passive:true,capture:true})});function test(){if(!touched)return;var tx=pan?pan.innerText:"";var hit=false;T.ch.forEach(function(c,i){if(!DONE[id+":"+i]&&c[1].test(tx)){DONE[id+":"+i]=1;hit=c[0]}});if(hit){store("fcr6-ch",DONE);drawCh();var t=H("div",{class:"ttoast"},"★ Challenge complete: "+esc(hit),document.body);setTimeout(function(){t.classList.add("go")},2600);setTimeout(function(){t.remove()},3400)}}
   if(pan){var tm=0;new MutationObserver(function(){clearTimeout(tm);tm=setTimeout(test,250)}).observe(pan,{childList:true,subtree:true,characterData:true})}drawCh();
   /* notes */
   ntBox.innerHTML='<span class="tkh">My notes on this instrument · kept in this browser</span><textarea rows="4" placeholder="What did you notice? What does it say about your own appointment?"></textarea><div class="tnb"><button type="button" class="chip" data-dl>Download all my notes</button><span class="tns"></span></div>';var ta=$("textarea",ntBox);ta.value=NOTES[id]||"";var st0=0;ta.addEventListener("input",function(){NOTES[id]=ta.value;clearTimeout(st0);st0=setTimeout(function(){store("fcr6-notes",NOTES);$(".tns",ntBox).textContent="Saved"},400)});
@@ -3685,7 +4534,7 @@ function saveFile(fn,data,type){function plain(){var blob=new Blob([data],{type:
 
 /* ================= ATLAS ================= */
 (function(){var g=$("#atlasGrid");if(!g)return;var q=$("#atlasQ"),dk=$("#atlasDeck");H("option",{value:""},"All decks ("+CARDS.length+")",dk);Object.keys(DECKS).forEach(function(k){H("option",{value:k},DECKS[k]+" ("+CARDS.filter(function(c){return c.d===k}).length+")",dk)});
- function upd(){clear(g);var s=q.value.toLowerCase().trim(),d=dk.value;var hits=CARDS.filter(function(c){return (!d||c.d===d)&&(!s||(c.t+" "+c.f+" "+c.b+" "+c.w).toLowerCase().indexOf(s)>=0)});hits.slice(0,60).forEach(function(c){g.appendChild(cardEl(c))});$("#atlasCount").textContent=hits.length+" card"+(hits.length===1?"":"s")+(hits.length>60?" · showing first 60":"")}
+ function upd(){clear(g);var s=q.value.toLowerCase().trim(),d=dk.value;var hits=CARDS.filter(function(c){return (!d||c.d===d)&&(!s||(c.t+" "+c.f+" "+c.b+" "+c.w+" "+(c.deep||"")+" "+(c.cas||"")+" "+(c.ask||"")).toLowerCase().indexOf(s)>=0)});hits.slice(0,60).forEach(function(c){g.appendChild(cardEl(c))});$("#atlasCount").textContent=hits.length+" card"+(hits.length===1?"":"s")+(hits.length>60?" · showing first 60":"")}
  q.addEventListener("input",upd);dk.addEventListener("change",upd);var bar=q.parentNode;
  chip(bar,"Random card",function(){var c=CARDS[Math.floor(Math.random()*CARDS.length)];q.value=c.t;dk.value="";upd();var e=g.querySelector(".rev");if(e)e.click()});
  addReset(bar,function(){q.value="";dk.value="";upd()});upd()})();
