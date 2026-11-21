@@ -802,6 +802,8 @@ svg.dsvg.zoomed:active{cursor:grabbing}
 .tdeep{display:flex;gap:6px;align-items:center;margin-top:8px;font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer}
 .tfaq .tq{border-bottom:1px solid rgba(42,66,98,.5);padding:6px 0}.tfaq summary{cursor:pointer;color:var(--bone);font-size:15px}
 .tfaq .tq p{margin:6px 0 4px;font-size:14.5px;line-height:1.55}.tqm{font-size:13.5px;color:var(--muted);margin:10px 0 0}
+
+.tapnote{border-left:3px solid #D2AE63;background:rgba(210,174,99,.1);padding:8px 10px;margin-bottom:10px;font-size:14px;line-height:1.5}.tapnote b{color:#EDE6D6}
 </style>
 </head>
 <body>
@@ -3112,9 +3114,7 @@ function renderIter(par,it,o){o=o||{};var g=S("g",null,par);var mono="IBM Plex M
  var start=HEX.map(function(h,i){return [250+(i%5)*65,215+Math.floor(i/5)*48]});
  var items=HEX.map(function(h,i){var g=S("g",{style:"cursor:grab",tabindex:"0",role:"button","aria-label":h.n},svg);var p={x:start[i][0],y:start[i][1]};var hx=S("path",{d:hexPath(0,0,16),fill:"#1E3555",stroke:C.bone,"stroke-width":1.4},g);var lab=txt(g,0,30,"",{"text-anchor":"middle",fill:C.text,style:"font-size:10.5px;pointer-events:none"});var num=txt(g,0,4,String(i+1),{"text-anchor":"middle",fill:C.bone,"font-family":"IBM Plex Mono, monospace",style:"font-size:11px;pointer-events:none"});
   var it={h:h,g:g,p:p,hx:hx,lab:lab};place(it);var drag=false,ox,oy;
-  g.addEventListener("pointerdown",function(ev){drag=true;g.setPointerCapture(ev.pointerId);var q=toSvg(ev);ox=q.x-p.x;oy=q.y-p.y;g.style.cursor="grabbing"});
-  g.addEventListener("pointermove",function(ev){if(!drag)return;var q=toSvg(ev);p.x=Math.max(20,Math.min(740,q.x-ox));p.y=Math.max(20,Math.min(500,q.y-oy));place(it)});
-  g.addEventListener("pointerup",function(){drag=false;g.style.cursor="grab";showItem(it)});key(g,function(){showItem(it)});return it});
+  dragOn(g,svg,{start:function(q){drag=true;ox=q.x-p.x;oy=q.y-p.y;g.style.cursor="grabbing"},move:function(q){p.x=Math.max(20,Math.min(740,q.x-ox));p.y=Math.max(20,Math.min(500,q.y-oy));place(it)},end:function(){drag=false;g.style.cursor="grab";showItem(it)}});key(g,function(){showItem(it)});return it});
  function hexPath(x,y,r){var d="";for(var a=0;a<6;a++){var t=Math.PI/3*a+Math.PI/6;d+=(a?"L":"M")+(x+r*Math.cos(t)).toFixed(1)+","+(y+r*Math.sin(t)).toFixed(1)}return d+"Z"}
  function place(it){it.g.setAttribute("transform","translate("+it.p.x+","+it.p.y+")")}
  function toSvg(ev){var pt=svg.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;return pt.matrixTransform(svg.getScreenCTM().inverse())}
@@ -3210,6 +3210,14 @@ function renderIter(par,it,o){o=o||{};var g=S("g",null,par);var mono="IBM Plex M
 
 /* ================= INSTRUMENTS 4 ================= */
 function svgPt(svg,ev){var p=svg.createSVGPoint();p.x=ev.clientX;p.y=ev.clientY;var m=svg.getScreenCTM();return m?p.matrixTransform(m.inverse()):{x:0,y:0}}
+
+/* robust drag for mouse, pen and touch (iPad): window-level tracking, tap vs drag, no page scroll while dragging */
+function dragOn(el,svg,o){el.style.touchAction="none";el.addEventListener("touchstart",function(e){e.preventDefault()},{passive:false});
+ el.addEventListener("pointerdown",function(ev){if(ev.button>0)return;ev.preventDefault();ev.stopPropagation();var p0=svgPt(svg,ev),moved=false;window.__fcrDrag=true;if(o.start)o.start(p0,ev);
+  function mv(e){var p=svgPt(svg,e);if(!moved&&Math.hypot(p.x-p0.x,p.y-p0.y)>4)moved=true;if(moved&&o.move)o.move(p,e);if(e.cancelable)e.preventDefault()}
+  function up(e){window.removeEventListener("pointermove",mv);window.removeEventListener("pointerup",up);window.removeEventListener("pointercancel",up);window.__fcrDrag=false;if(o.end)o.end(moved,e)}
+  window.addEventListener("pointermove",mv,{passive:false});window.addEventListener("pointerup",up);window.addEventListener("pointercancel",up)})}
+document.addEventListener("touchmove",function(e){if(window.__fcrDrag)e.preventDefault()},{passive:false});
 function tween(ms,fn,done){if(reduce){fn(1);if(done)done();return {stop:function(){}}}var t0=performance.now(),live=true;function f(now){if(!live)return;var k=Math.min(1,(now-t0)/ms);fn(ease(k));if(k<1)requestAnimationFrame(f);else if(done)done()}requestAnimationFrame(f);return {stop:function(){live=false}}}
 var MONO="IBM Plex Mono, monospace";
 function mono(p,x,y,s,a){var o={fill:C.muted,"font-family":MONO,style:"font-size:10.5px;letter-spacing:.1em"};for(var k in a)o[k]=a[k];return txt(p,x,y,s,o)}
@@ -3240,9 +3248,7 @@ function mono(p,x,y,s,a){var o={fill:C.muted,"font-family":MONO,style:"font-size
  function shape(g,k,r,col){if(k==="constraint")return S("path",{d:(function(){var d="";for(var a=0;a<6;a++){var t=Math.PI/3*a+Math.PI/6;d+=(a?"L":"M")+(r*Math.cos(t)).toFixed(1)+","+(r*Math.sin(t)).toFixed(1)}return d+"Z"})(),fill:col,stroke:C.ink,"stroke-width":2},g);if(k==="constructor")return S("rect",{x:-r*.85,y:-r*.85,width:r*1.7,height:r*1.7,transform:"rotate(45)",fill:col,stroke:C.ink,"stroke-width":2},g);return S("circle",{r:r*.92,fill:col,stroke:C.ink,"stroke-width":2},g)}
  var A=ACTANTS.map(function(a,i){var g=S("g",{class:"hot",tabindex:"0",role:"button","aria-label":a.n,style:"cursor:pointer"},al);var halo=S("circle",{r:21,fill:"none",stroke:C.bone,"stroke-width":2,opacity:0},g);var sug=S("circle",{r:25,fill:"none","stroke-width":2,"stroke-dasharray":"3 3",opacity:0},g);var sh=shape(g,a.k,14,TYC[a.k]);var num=txt(g,0,4,String(i+1),{"text-anchor":"middle",fill:C.ink,style:"font-size:11px;font-weight:600"});var bd=S("g",null,g);
   var o={a:{t:a.t,e:a.e},src:a,g:g,halo:halo,sug:sug,sh:sh,bd:bd,acts:[],gone:false,i:i};
-  var down=null;g.addEventListener("pointerdown",function(ev){down={x:ev.clientX,y:ev.clientY,moved:false};g.setPointerCapture(ev.pointerId)});
-  g.addEventListener("pointermove",function(ev){if(!down)return;if(Math.abs(ev.clientX-down.x)+Math.abs(ev.clientY-down.y)>4)down.moved=true;if(down.moved){var p=svgPt(svg,ev);o.a.t=Math.max(0,Math.min(1,ti(p.x)));o.a.e=Math.max(0,Math.min(1,ei(p.y)));place(o);o.z=zone(o.a);legend();if(st.sel===o)info(o)}});
-  g.addEventListener("pointerup",function(){if(down&&!down.moved)click(o);down=null});key(g,function(){click(o)});
+  dragOn(g,svg,{move:function(p){o.a.t=Math.max(0,Math.min(1,ti(p.x)));o.a.e=Math.max(0,Math.min(1,ei(p.y)));place(o);o.z=zone(o.a);legend();if(st.sel===o)info(o)},end:function(moved){if(!moved)click(o)}});key(g,function(){click(o)});
   var li=H("li",{tabindex:"0"},'<b>'+(i+1)+'</b> '+a.n,list);li.addEventListener("click",function(){click(o)});key(li,function(){click(o)});o.li=li;return o});
  function place(o){o.g.setAttribute("transform","translate("+px(o.a.t)+","+py(o.a.e)+")")}
  function click(o){if(st.link&&st.link!==o){var a=st.link,b=o;S("line",{x1:px(a.a.t),y1:py(a.a.e),x2:px(b.a.t),y2:py(b.a.e),stroke:PURPLE,"stroke-width":2,"stroke-dasharray":"2 4",class:"eslink"},ll);addProj("link",a,"Interaction: connect "+a.src.n.toLowerCase()+" with "+b.src.n.toLowerCase()+".");st.link=null;select(b);return}select(o)}
@@ -3280,7 +3286,7 @@ function mono(p,x,y,s,a){var o={fill:C.muted,"font-family":MONO,style:"font-size
   lines();panel.innerHTML='<span class="caps">Estuarine mapping · step '+k+' of 7</span><h3>'+s[0].replace(/^\d · /,"")+'</h3><p class="q">'+s[1]+'</p>'}
  var qt=S("g",{style:"transition:opacity .5s",opacity:1},svg);S("rect",{x:170,y:200,width:420,height:90,fill:C.panel,stroke:C.brass},qt);wrapText(qt,190,232,"What shapes whether this parade can be let and sold well within eighteen months?",380,22,{fill:C.bone,style:"font-size:17px;font-style:italic","font-family":"Cormorant Garamond, Georgia, serif",cw:8});qt.style.opacity=0;
  /* drag the borders */
- function dragH(h,f){var on=false;h.addEventListener("pointerdown",function(ev){on=true;h.setPointerCapture(ev.pointerId);ev.stopPropagation()});h.addEventListener("pointermove",function(ev){if(!on)return;var p=svgPt(svg,ev);f(ti(p.x),ei(p.y));lines();if(st.sel)info(st.sel)});h.addEventListener("pointerup",function(){on=false});}
+ function dragH(h,f){dragOn(h,svg,{move:function(p){f(ti(p.x),ei(p.y));lines();if(st.sel)info(st.sel)}})}
  dragH(hCF,function(t,e){st.cf=Math.max(1.12,Math.min(1.9,t+e))});dragH(hV,function(t,e){st.v=Math.max(.1,Math.min(.45,Math.sqrt(t*t+e*e)))});
  hCF.addEventListener("keydown",function(ev){if(ev.key==="ArrowUp"||ev.key==="ArrowRight"){st.cf=Math.min(1.9,st.cf+.04);lines()}if(ev.key==="ArrowDown"||ev.key==="ArrowLeft"){st.cf=Math.max(1.12,st.cf-.04);lines()}});
  hV.addEventListener("keydown",function(ev){if(ev.key==="ArrowUp"||ev.key==="ArrowRight"){st.v=Math.min(.45,st.v+.02);lines()}if(ev.key==="ArrowDown"||ev.key==="ArrowLeft"){st.v=Math.max(.1,st.v-.02);lines()}});
@@ -3666,6 +3672,16 @@ function saveFile(fn,data,type){function plain(){var blob=new Blob([data],{type:
   var gd=GUIDE_EL[id],hw=T.how;if(gd&&hw){var more=H("div",{class:"gmore"},'<div class="gcol"><h4>Reading the diagram</h4><dl>'+hw.see.map(function(x){return '<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>'}).join("")+'</dl><h4>The controls</h4><dl>'+hw.ctl.map(function(x){return '<dt>'+x[0]+'</dt><dd>'+x[1]+'</dd>'}).join("")+'</dl></div><div class="gcol"><h4>Three ways to use it</h4><ol class="gdepth"><li><b>One minute.</b> '+hw.d[0]+'</li><li><b>Five minutes.</b> '+hw.d[1]+'</li><li><b>Fifteen minutes.</b> '+hw.d[2]+'</li></ol><h4>Common misreadings</h4><ul>'+hw.mis.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><h4>Questions for your team</h4><ul>'+hw.team.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><p><button type="button" class="chip play" data-gtour>▶ Walk me through it</button> <button type="button" class="chip" data-glab>⌖ Label the diagram</button></p></div>');$(".gbody",gd).appendChild(more);
    more.addEventListener("click",function(e){if(e.target.closest("[data-gtour]"))start(id);if(e.target.closest("[data-glab]"))labels(true)})}});
 })();
+
+/* ================= safety net: every tappable diagram element explains itself ================= */
+(function(){$$("svg.dsvg").forEach(function(svg){var grid=svg.closest(".dgrid");var pan=grid&&grid.querySelector(".panelx");if(!pan)return;
+  function explain(h){var lab=h.getAttribute("aria-label")||"";if(!lab)return;var name=(typeof GUIDE!=="undefined"&&GUIDE[svg.id])?GUIDE[svg.id].n:"This diagram";var amp=/^(Amplify|Dampen)\s/.exec(lab);
+   if(amp){var note=document.createElement("div");note.className="tapnote";note.innerHTML="<b>"+amp[1]+" works at the checkpoints.</b> Press ▶ Run: at weeks 4 and 8 the run pauses, and then ▲ amplifies a promising probe and ▼ dampens a weak one.";var old=pan.querySelector(".tapnote");if(old)old.remove();pan.insertBefore(note,pan.firstChild);setTimeout(function(){note.remove()},6000);return}
+   var i=lab.indexOf(": "),head=i>0?lab.slice(0,i):lab,rest=i>0?lab.slice(i+2):"";
+   pan.innerHTML='<span class="caps">'+name+' · you tapped</span><h3>'+head+'</h3>'+(rest?'<p class="q">'+rest+'</p>':'')+'<dl><dt>What this is</dt><dd>One element of the diagram. Read it against the elements around it.</dd><dt>Next</dt><dd>Use the controls above the diagram, or press <b>▶ Walk me through it</b> for a guided tour of every part.</dd></dl>'}
+  function snap(){return pan.innerHTML.length+"|"+pan.textContent.slice(0,200)+"|"+svg.innerHTML.length}
+  function watch(e){if(e.type==="keydown"&&e.key!=="Enter"&&e.key!==" ")return;var h=e.target.closest&&e.target.closest(".hot,[role=button]");if(!h||!svg.contains(h)||h===svg)return;var s0=snap();setTimeout(function(){if(snap()===s0)explain(h)},220)}
+  svg.addEventListener("click",watch,true);svg.addEventListener("keydown",watch,true)})})();
 
 /* ================= ATLAS ================= */
 (function(){var g=$("#atlasGrid");if(!g)return;var q=$("#atlasQ"),dk=$("#atlasDeck");H("option",{value:""},"All decks ("+CARDS.length+")",dk);Object.keys(DECKS).forEach(function(k){H("option",{value:k},DECKS[k]+" ("+CARDS.filter(function(c){return c.d===k}).length+")",dk)});
